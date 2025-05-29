@@ -1,0 +1,37 @@
+Processing reader public keys (if applicable for MA-ABE setup)...
+Processing reader: MANUFACTURER
+/usr/local/lib/python3.6/dist-packages/ipfshttpclient/client/__init__.py:75: VersionMismatch: Unsupported daemon version '0.26.0' (not in range: 0.5.0 \u2264 \u2026 < 0.9.0)
+  warnings.warn(exceptions.VersionMismatch(version, minimum, maximum))
+ipfs hash: QmQiUrK4TihL9S3JZyAeC54VtPjLrDLxMghw4kqxpx71y1
+tx_hash: 0x69be533ab2aa58cbe76f6380c02d1a52698d40304903d26b910c1a87cfba5d16
+✅ Processed public key setup for MANUFACTURER
+Processing reader: ELECTRIC_COMPONENT_SUPPLIER
+/usr/local/lib/python3.6/dist-packages/ipfshttpclient/client/__init__.py:75: VersionMismatch: Unsupported daemon version '0.26.0' (not in range: 0.5.0 \u2264 \u2026 < 0.9.0)
+  warnings.warn(exceptions.VersionMismatch(version, minimum, maximum))
+ipfs hash: Qmdm2hMuoDF2tYUM1rS9KF4AeYK5NynByn6vHAh9QZnHtm
+tx_hash: 0xaf4400f8cc25ea9eebb5cf91158292afa75d5b8e65fa98f6bc38bbe7cb7dd3c0
+✅ Processed public key setup for ELECTRIC_COMPONENT_SUPPLIER
+Processing reader: LOGISTIC
+/usr/local/lib/python3.6/dist-packages/ipfshttpclient/client/__init__.py:75: VersionMismatch: Unsupported daemon version '0.26.0' (not in range: 0.5.0 \u2264 \u2026 < 0.9.0)
+  warnings.warn(exceptions.VersionMismatch(version, minimum, maximum))
+ipfs hash: QmSbAiedWPVrpHdFCqgqkEosv2xejUv5aKezm186EyX53r
+tx_hash: 0xbd51291a41e678bf7c44534ccde7fd3b037a2898f7c40fff3f9b04a6fd1848a6
+✅ Processed public key setup for LOGISTIC
+Processing reader: INTERNATIONAL_CUSTOMS
+/usr/local/lib/python3.6/dist-packages/ipfshttpclient/client/__init__.py:75: VersionMismatch: Unsupported daemon version '0.26.0' (not in range: 0.5.0 \u2264 \u2026 < 0.9.0)
+  warnings.warn(exceptions.VersionMismatch(version, minimum, maximum))
+ipfs hash: QmX1G2no8cZcnpJXQcKjj9KN6mmXqggbfgfhMCYWGhpyss
+tx_hash: 0x150dbe0f60124c89451a4ef46e21f89b029da06d5df1830bd49d0716999ad1e8
+✅ Processed public key setup for INTERNATIONAL_CUSTOMS
+Processing reader: RAW_MATERIAL_SUPPLIER
+/usr/local/lib/python3.6/dist-packages/ipfshttpclient/client/__init__.py:75: VersionMismatch: Unsupported daemon version '0.26.0' (not in range: 0.5.0 \u2264 \u2026 < 0.9.0)
+  warnings.warn(exceptions.VersionMismatch(version, minimum, maximum))
+ipfs hash: QmeRsnQo1x4qyFHhooaDC4jtXeN98aD9feK3nRDoQ6aqtW
+tx_hash: 0xfb0749d3fcce9460dc765db0441d12eb7c32065fce4d97801a732834c468b386
+✅ Processed public key setup for RAW_MATERIAL_SUPPLIER
+Running MARTZK attribute certification process...
+/usr/local/lib/python3.6/dist-packages/ipfshttpclient/client/__init__.py:75: VersionMismatch: Unsupported daemon version '0.26.0' (not in range: 0.5.0 \u2264 \u2026 < 0.9.0)
+  warnings.warn(exceptions.VersionMismatch(version, minimum, maximum))
+Process instance ID: 13089188058644799875
+IPFS hash: QmcTwzgDEoa2RtXEEBMKjq7fpEA85P3RgcN9PyJRH4URL7
+✅ MARTZK Attribute certification process completed.

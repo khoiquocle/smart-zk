@@ -1,0 +1,44 @@
+FROM python:3.8-slim
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libgmp-dev \
+    libssl-dev \
+    wget \
+    curl \
+    nodejs \
+    npm \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install snarkjs globally
+RUN npm install -g snarkjs
+
+# Set working directory
+WORKDIR /app
+
+# Copy requirements first for better caching
+COPY requirements-benchmark.txt .
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements-benchmark.txt
+
+# Copy the application code
+COPY . .
+
+# Create necessary directories
+RUN mkdir -p output_files databases/data_owner databases/reader logs
+
+# Set environment variables
+ENV PYTHONPATH=/app/src:/app
+ENV IPFS_HOST=127.0.0.1
+ENV IPFS_PORT=5001
+
+# Create a non-root user for security
+RUN useradd -m -u 1000 benchmark
+RUN chown -R benchmark:benchmark /app
+USER benchmark
+
+# Default command
+CMD ["python3", "src/benchmark_martzk.py", "--help"] 
