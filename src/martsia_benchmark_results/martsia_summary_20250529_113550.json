@@ -1,0 +1,14 @@
+{
+  "benchmark_info": {
+    "timestamp": "2025-05-29T11:34:33.978682",
+    "iterations": 5,
+    "blockchain_config": {
+      "gas_price_gwei": 20,
+      "eth_price_usd": 2000
+    },
+    "enhanced_gas_tracking": false
+  },
+  "performance_summary": {},
+  "cost_summary": {},
+  "scalability_summary": {}
+}

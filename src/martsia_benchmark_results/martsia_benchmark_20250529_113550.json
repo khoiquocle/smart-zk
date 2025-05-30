@@ -1,0 +1,2325 @@
+{
+  "performance": {
+    "0": {
+      "maabe_setup": {
+        "operation_type": "maabe_setup",
+        "start_time": 1748518473.9800858,
+        "stdout": "Starting operation at 2025-05-29 11:34:34.013831\nSetting up MA-ABE with 3 authorities and 10 attributes\nMA-ABE global parameters size: 1792 bytes\nAuthority master keys size: 1536 bytes\nMA-ABE Setup completed in 0.400491s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "setup_time": 0.400491
+        },
+        "total_time": 0.4391460418701172,
+        "memory_delta": 0.0,
+        "cpu_usage": -38.0,
+        "peak_memory": 104.90625
+      },
+      "maabe_keygen": {
+        "operation_type": "maabe_keygen",
+        "start_time": 1748518474.4195073,
+        "stdout": "Starting operation at 2025-05-29 11:34:34.455248\nGenerating keys for user MANUFACTURER with 5 attributes\nKey size: 576 bytes\nKeyGen completed in 0.045117s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "keygen_time": 0.045117
+        },
+        "total_time": 0.08514761924743652,
+        "memory_delta": 0.0,
+        "cpu_usage": 7.8,
+        "peak_memory": 104.90625
+      },
+      "maabe_encrypt": {
+        "operation_type": "maabe_encrypt",
+        "start_time": 1748518474.5049572,
+        "stdout": "Starting operation at 2025-05-29 11:34:34.542720\nEncrypting 1KB message with medium policy\nCiphertext size: 1424 bytes\nEncryption overhead: 39.1%\nEncryption completed in 0.076671s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "encrypt_time": 0.076671
+        },
+        "total_time": 0.11993646621704102,
+        "memory_delta": 0.0,
+        "cpu_usage": 8.8,
+        "peak_memory": 104.90625
+      },
+      "maabe_decrypt": {
+        "operation_type": "maabe_decrypt",
+        "start_time": 1748518474.6254337,
+        "stdout": "Starting operation at 2025-05-29 11:34:34.663790\nDecrypting with 3 satisfying attributes\nDecryption completed in 0.054108s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "decrypt_time": 0.054108
+        },
+        "total_time": 0.09655904769897461,
+        "memory_delta": 0.0,
+        "cpu_usage": 8.1,
+        "peak_memory": 104.90625
+      },
+      "zksnark_setup_attribute": {
+        "operation_type": "zksnark_setup",
+        "start_time": 1748518474.7222855,
+        "stdout": "Starting operation at 2025-05-29 11:34:34.760091\nSetting up zkSNARK for attribute circuit\nProving key size: 512 bytes\nVerification key size: 256 bytes\nzkSNARK Setup completed in 0.700262s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "setup_zkp_time": 0.700262
+        },
+        "total_time": 0.742297887802124,
+        "memory_delta": 0.0,
+        "cpu_usage": 9.5,
+        "peak_memory": 104.90625
+      },
+      "zksnark_witness_attribute": {
+        "operation_type": "zksnark_witness",
+        "start_time": 1748518475.4648793,
+        "stdout": "Starting operation at 2025-05-29 11:34:35.502932\nGenerating witness for attribute circuit with small input\nWitness generation completed in 0.050093s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "witness_gen_time": 0.050093
+        },
+        "total_time": 0.09227919578552246,
+        "memory_delta": 0.0,
+        "cpu_usage": 6.1,
+        "peak_memory": 104.90625
+      },
+      "zksnark_proof_attribute": {
+        "operation_type": "zksnark_proof",
+        "start_time": 1748518475.5574465,
+        "stdout": "Starting operation at 2025-05-29 11:34:35.591346\nGenerating proof for attribute circuit\nProof size: 256 bytes\nProof generation completed in 0.300210s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "proof_gen_time": 0.30021
+        },
+        "total_time": 0.3385775089263916,
+        "memory_delta": 0.0,
+        "cpu_usage": 4.1,
+        "peak_memory": 104.90625
+      },
+      "zksnark_verify_offchain_attribute": {
+        "operation_type": "zksnark_verify_offchain",
+        "start_time": 1748518475.8963177,
+        "stdout": "Starting operation at 2025-05-29 11:34:35.937056\nVerifying proof off-chain for attribute circuit\nOff-chain verification completed in 0.010095s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "verify_offchain_time": 0.010095
+        },
+        "total_time": 0.05489063262939453,
+        "memory_delta": 0.0,
+        "cpu_usage": 9.2,
+        "peak_memory": 104.90625
+      },
+      "zksnark_verify_onchain_attribute": {
+        "operation_type": "zksnark_verify_onchain",
+        "start_time": 1748518475.9515064,
+        "stdout": "Starting operation at 2025-05-29 11:34:35.987952\nVerifying proof on-chain for attribute circuit\nverify_attribute_proof gas: 100000\nOn-chain verification completed in 0.180969s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "verify_onchain_time": 0.180969
+        },
+        "total_time": 0.22187566757202148,
+        "memory_delta": 0.0,
+        "cpu_usage": -40.4,
+        "peak_memory": 104.90625
+      },
+      "zksnark_setup_policy": {
+        "operation_type": "zksnark_setup",
+        "start_time": 1748518476.1738055,
+        "stdout": "Starting operation at 2025-05-29 11:34:36.210365\nSetting up zkSNARK for policy circuit\nProving key size: 1024 bytes\nVerification key size: 256 bytes\nzkSNARK Setup completed in 1.201289s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "setup_zkp_time": 1.201289
+        },
+        "total_time": 1.2420070171356201,
+        "memory_delta": 0.0,
+        "cpu_usage": 7.4,
+        "peak_memory": 104.90625
+      },
+      "zksnark_witness_policy": {
+        "operation_type": "zksnark_witness",
+        "start_time": 1748518477.4161124,
+        "stdout": "Starting operation at 2025-05-29 11:34:37.452726\nGenerating witness for policy circuit with small input\nWitness generation completed in 0.080129s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "witness_gen_time": 0.080129
+        },
+        "total_time": 0.12076735496520996,
+        "memory_delta": 0.0,
+        "cpu_usage": 6.0,
+        "peak_memory": 104.90625
+      },
+      "zksnark_proof_policy": {
+        "operation_type": "zksnark_proof",
+        "start_time": 1748518477.5371747,
+        "stdout": "Starting operation at 2025-05-29 11:34:37.572127\nGenerating proof for policy circuit\nProof size: 256 bytes\nProof generation completed in 0.500440s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "proof_gen_time": 0.50044
+        },
+        "total_time": 0.5398979187011719,
+        "memory_delta": 0.0,
+        "cpu_usage": 4.2,
+        "peak_memory": 104.90625
+      },
+      "zksnark_verify_offchain_policy": {
+        "operation_type": "zksnark_verify_offchain",
+        "start_time": 1748518478.0773613,
+        "stdout": "Starting operation at 2025-05-29 11:34:38.110577\nVerifying proof off-chain for policy circuit\nOff-chain verification completed in 0.010082s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "verify_offchain_time": 0.010082
+        },
+        "total_time": 0.04664325714111328,
+        "memory_delta": 0.0,
+        "cpu_usage": 9.3,
+        "peak_memory": 104.90625
+      },
+      "zksnark_verify_onchain_policy": {
+        "operation_type": "zksnark_verify_onchain",
+        "start_time": 1748518478.1242905,
+        "stdout": "Starting operation at 2025-05-29 11:34:38.156042\nVerifying proof on-chain for policy circuit\nverify_policy_proof gas: 331309\nOn-chain verification completed in 0.223052s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "verify_onchain_time": 0.223052
+        },
+        "total_time": 0.25896263122558594,
+        "memory_delta": 0.0,
+        "cpu_usage": 3.9,
+        "peak_memory": 104.90625
+      },
+      "zksnark_setup_process": {
+        "operation_type": "zksnark_setup",
+        "start_time": 1748518478.3835666,
+        "stdout": "Starting operation at 2025-05-29 11:34:38.416737\nSetting up zkSNARK for process circuit\nProving key size: 1536 bytes\nVerification key size: 256 bytes\nzkSNARK Setup completed in 1.701032s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "setup_zkp_time": 1.701032
+        },
+        "total_time": 1.7387566566467285,
+        "memory_delta": 0.0,
+        "cpu_usage": 3.9,
+        "peak_memory": 104.90625
+      },
+      "zksnark_witness_process": {
+        "operation_type": "zksnark_witness",
+        "start_time": 1748518480.1227758,
+        "stdout": "Starting operation at 2025-05-29 11:34:40.159104\nGenerating witness for process circuit with small input\nWitness generation completed in 0.120174s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "witness_gen_time": 0.120174
+        },
+        "total_time": 0.160430908203125,
+        "memory_delta": 0.0,
+        "cpu_usage": 6.2,
+        "peak_memory": 104.90625
+      },
+      "zksnark_proof_process": {
+        "operation_type": "zksnark_proof",
+        "start_time": 1748518480.2835226,
+        "stdout": "Starting operation at 2025-05-29 11:34:40.317510\nGenerating proof for process circuit\nProof size: 256 bytes\nProof generation completed in 0.800869s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "proof_gen_time": 0.800869
+        },
+        "total_time": 0.8392727375030518,
+        "memory_delta": 0.0,
+        "cpu_usage": 3.8,
+        "peak_memory": 104.90625
+      },
+      "zksnark_verify_offchain_process": {
+        "operation_type": "zksnark_verify_offchain",
+        "start_time": 1748518481.1233385,
+        "stdout": "Starting operation at 2025-05-29 11:34:41.158611\nVerifying proof off-chain for process circuit\nOff-chain verification completed in 0.010074s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "verify_offchain_time": 0.010074
+        },
+        "total_time": 0.048593759536743164,
+        "memory_delta": 0.0,
+        "cpu_usage": 8.1,
+        "peak_memory": 104.90625
+      },
+      "zksnark_verify_onchain_process": {
+        "operation_type": "zksnark_verify_onchain",
+        "start_time": 1748518481.1722174,
+        "stdout": "Starting operation at 2025-05-29 11:34:41.210221\nVerifying proof on-chain for process circuit\nverify_process_proof gas: 276280\nOn-chain verification completed in 0.284385s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "verify_onchain_time": 0.284385
+        },
+        "total_time": 0.3263697624206543,
+        "memory_delta": 0.0,
+        "cpu_usage": 3.9,
+        "peak_memory": 104.90625
+      },
+      "e2e_latency": {
+        "key_request": {
+          "operation_type": "key_request_latency",
+          "start_time": 1748518481.498878,
+          "stdout": "Starting operation at 2025-05-29 11:34:41.530528\nProcessing key request for MANUFACTURER\nKey request completed in 0.700807s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {},
+          "total_time": 0.7373170852661133,
+          "memory_delta": 0.0,
+          "cpu_usage": 3.3,
+          "peak_memory": 104.90625
+        },
+        "decryption": {
+          "operation_type": "decryption_latency",
+          "start_time": 1748518482.2365139,
+          "stdout": "Starting operation at 2025-05-29 11:34:42.270236\nProcessing end-to-end decryption for MANUFACTURER\nDecryption end-to-end completed in 1.351526s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {},
+          "total_time": 1.3891208171844482,
+          "memory_delta": 0.0,
+          "cpu_usage": 3.5,
+          "peak_memory": 104.90625
+        }
+      },
+      "blockchain_costs": {
+        "deploy_contracts": {
+          "operation_type": "blockchain_deploy_contracts",
+          "start_time": 1748518483.6259568,
+          "stdout": "Starting operation at 2025-05-29 11:34:43.668541\nDeploying MARTZK smart contracts\nContract deployment gas: 2423629\nContract deployment completed in 1.501632s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {},
+          "total_time": 1.548779010772705,
+          "memory_delta": 0.0,
+          "cpu_usage": 5.7,
+          "peak_memory": 104.90625
+        },
+        "set_attr_commit": {
+          "operation_type": "blockchain_set_attr_commit",
+          "start_time": 1748518485.1751854,
+          "stdout": "Starting operation at 2025-05-29 11:34:45.210302\nSetting user attribute commitment\nset_attr_commit gas: 75910\nSet attribute commitment completed in 0.200278s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {},
+          "total_time": 0.23984766006469727,
+          "memory_delta": 0.0,
+          "cpu_usage": 7.7,
+          "peak_memory": 104.90625
+        },
+        "verify_attr_proof": {
+          "operation_type": "blockchain_verify_attr_proof",
+          "start_time": 1748518485.415335,
+          "stdout": "Starting operation at 2025-05-29 11:34:45.450434\nVerifying attribute proof on-chain\nverify_attr_proof gas: 216588\nVerify attribute proof completed in 0.300254s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {},
+          "total_time": 0.33948326110839844,
+          "memory_delta": 0.0,
+          "cpu_usage": 6.0,
+          "peak_memory": 104.90625
+        },
+        "verify_policy_proof": {
+          "operation_type": "blockchain_verify_policy_proof",
+          "start_time": 1748518485.7551126,
+          "stdout": "Starting operation at 2025-05-29 11:34:45.788290\nVerifying policy proof on-chain\nverify_policy_proof gas: 305274\nVerify policy proof completed in 0.400279s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {},
+          "total_time": 0.4382314682006836,
+          "memory_delta": 0.0,
+          "cpu_usage": 10.3,
+          "peak_memory": 104.90625
+        },
+        "verify_process_proof": {
+          "operation_type": "blockchain_verify_process_proof",
+          "start_time": 1748518486.1936483,
+          "stdout": "Starting operation at 2025-05-29 11:34:46.227241\nVerifying process proof on-chain\nverify_process_proof gas: 231345\nVerify process proof completed in 0.350341s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {},
+          "total_time": 0.3889129161834717,
+          "memory_delta": 0.0,
+          "cpu_usage": 9.4,
+          "peak_memory": 104.90625
+        }
+      }
+    },
+    "1": {
+      "maabe_setup": {
+        "operation_type": "maabe_setup",
+        "start_time": 1748518487.08371,
+        "stdout": "Starting operation at 2025-05-29 11:34:47.118246\nSetting up MA-ABE with 3 authorities and 10 attributes\nMA-ABE global parameters size: 1792 bytes\nAuthority master keys size: 1536 bytes\nMA-ABE Setup completed in 0.400472s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "setup_time": 0.400472
+        },
+        "total_time": 0.43991899490356445,
+        "memory_delta": 0.0,
+        "cpu_usage": -1.9000000000000004,
+        "peak_memory": 104.90625
+      },
+      "maabe_keygen": {
+        "operation_type": "maabe_keygen",
+        "start_time": 1748518487.5240183,
+        "stdout": "Starting operation at 2025-05-29 11:34:47.558694\nGenerating keys for user MANUFACTURER with 5 attributes\nKey size: 576 bytes\nKeyGen completed in 0.045119s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "keygen_time": 0.045119
+        },
+        "total_time": 0.08787727355957031,
+        "memory_delta": 0.0,
+        "cpu_usage": 24.5,
+        "peak_memory": 104.90625
+      },
+      "maabe_encrypt": {
+        "operation_type": "maabe_encrypt",
+        "start_time": 1748518487.6122139,
+        "stdout": "Starting operation at 2025-05-29 11:34:47.664572\nEncrypting 1KB message with medium policy\nCiphertext size: 1424 bytes\nEncryption overhead: 39.1%\nEncryption completed in 0.076684s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "encrypt_time": 0.076684
+        },
+        "total_time": 0.1373293399810791,
+        "memory_delta": 0.0,
+        "cpu_usage": 40.3,
+        "peak_memory": 104.90625
+      },
+      "maabe_decrypt": {
+        "operation_type": "maabe_decrypt",
+        "start_time": 1748518487.7500954,
+        "stdout": "Starting operation at 2025-05-29 11:34:47.800737\nDecrypting with 3 satisfying attributes\nDecryption completed in 0.054116s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "decrypt_time": 0.054116
+        },
+        "total_time": 0.10956311225891113,
+        "memory_delta": 0.0,
+        "cpu_usage": 26.7,
+        "peak_memory": 104.90625
+      },
+      "zksnark_setup_attribute": {
+        "operation_type": "zksnark_setup",
+        "start_time": 1748518487.8599672,
+        "stdout": "Starting operation at 2025-05-29 11:34:47.895268\nSetting up zkSNARK for attribute circuit\nProving key size: 512 bytes\nVerification key size: 256 bytes\nzkSNARK Setup completed in 0.700300s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "setup_zkp_time": 0.7003
+        },
+        "total_time": 0.7415475845336914,
+        "memory_delta": 0.0,
+        "cpu_usage": 9.8,
+        "peak_memory": 104.90625
+      },
+      "zksnark_witness_attribute": {
+        "operation_type": "zksnark_witness",
+        "start_time": 1748518488.601821,
+        "stdout": "Starting operation at 2025-05-29 11:34:48.636364\nGenerating witness for attribute circuit with small input\nWitness generation completed in 0.050099s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "witness_gen_time": 0.050099
+        },
+        "total_time": 0.08926010131835938,
+        "memory_delta": 0.0,
+        "cpu_usage": 13.8,
+        "peak_memory": 104.90625
+      },
+      "zksnark_proof_attribute": {
+        "operation_type": "zksnark_proof",
+        "start_time": 1748518488.6914332,
+        "stdout": "Starting operation at 2025-05-29 11:34:48.728684\nGenerating proof for attribute circuit\nProof size: 256 bytes\nProof generation completed in 0.300371s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "proof_gen_time": 0.300371
+        },
+        "total_time": 0.34344029426574707,
+        "memory_delta": 0.0,
+        "cpu_usage": 12.7,
+        "peak_memory": 104.90625
+      },
+      "zksnark_verify_offchain_attribute": {
+        "operation_type": "zksnark_verify_offchain",
+        "start_time": 1748518489.035192,
+        "stdout": "Starting operation at 2025-05-29 11:34:49.082503\nVerifying proof off-chain for attribute circuit\nOff-chain verification completed in 0.010096s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "verify_offchain_time": 0.010096
+        },
+        "total_time": 0.0614323616027832,
+        "memory_delta": 0.0,
+        "cpu_usage": 17.3,
+        "peak_memory": 104.90625
+      },
+      "zksnark_verify_onchain_attribute": {
+        "operation_type": "zksnark_verify_onchain",
+        "start_time": 1748518489.0969293,
+        "stdout": "Starting operation at 2025-05-29 11:34:49.140489\nVerifying proof on-chain for attribute circuit\nverify_attribute_proof gas: 100000\nOn-chain verification completed in 0.277551s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "verify_onchain_time": 0.277551
+        },
+        "total_time": 0.3258821964263916,
+        "memory_delta": 0.0,
+        "cpu_usage": 14.6,
+        "peak_memory": 104.90625
+      },
+      "zksnark_setup_policy": {
+        "operation_type": "zksnark_setup",
+        "start_time": 1748518489.4231062,
+        "stdout": "Starting operation at 2025-05-29 11:34:49.456133\nSetting up zkSNARK for policy circuit\nProving key size: 1024 bytes\nVerification key size: 256 bytes\nzkSNARK Setup completed in 1.200441s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "setup_zkp_time": 1.200441
+        },
+        "total_time": 1.2381339073181152,
+        "memory_delta": 0.0,
+        "cpu_usage": 12.2,
+        "peak_memory": 104.90625
+      },
+      "zksnark_witness_policy": {
+        "operation_type": "zksnark_witness",
+        "start_time": 1748518490.661544,
+        "stdout": "Starting operation at 2025-05-29 11:34:50.698929\nGenerating witness for policy circuit with small input\nWitness generation completed in 0.080128s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "witness_gen_time": 0.080128
+        },
+        "total_time": 0.12254858016967773,
+        "memory_delta": 0.0,
+        "cpu_usage": 11.4,
+        "peak_memory": 104.90625
+      },
+      "zksnark_proof_policy": {
+        "operation_type": "zksnark_proof",
+        "start_time": 1748518490.784391,
+        "stdout": "Starting operation at 2025-05-29 11:34:50.820885\nGenerating proof for policy circuit\nProof size: 256 bytes\nProof generation completed in 0.500562s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "proof_gen_time": 0.500562
+        },
+        "total_time": 0.5410583019256592,
+        "memory_delta": 0.0,
+        "cpu_usage": 13.9,
+        "peak_memory": 104.90625
+      },
+      "zksnark_verify_offchain_policy": {
+        "operation_type": "zksnark_verify_offchain",
+        "start_time": 1748518491.3257573,
+        "stdout": "Starting operation at 2025-05-29 11:34:51.361204\nVerifying proof off-chain for policy circuit\nOff-chain verification completed in 0.010085s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "verify_offchain_time": 0.010085
+        },
+        "total_time": 0.04912686347961426,
+        "memory_delta": 0.0,
+        "cpu_usage": 18.4,
+        "peak_memory": 104.90625
+      },
+      "zksnark_verify_onchain_policy": {
+        "operation_type": "zksnark_verify_onchain",
+        "start_time": 1748518491.3753006,
+        "stdout": "Starting operation at 2025-05-29 11:34:51.413384\nVerifying proof on-chain for policy circuit\nverify_policy_proof gas: 318442\nOn-chain verification completed in 0.258202s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "verify_onchain_time": 0.258202
+        },
+        "total_time": 0.30118227005004883,
+        "memory_delta": 0.0,
+        "cpu_usage": 24.8,
+        "peak_memory": 104.90625
+      },
+      "zksnark_setup_process": {
+        "operation_type": "zksnark_setup",
+        "start_time": 1748518491.6768916,
+        "stdout": "Starting operation at 2025-05-29 11:34:51.736348\nSetting up zkSNARK for process circuit\nProving key size: 1536 bytes\nVerification key size: 256 bytes\nzkSNARK Setup completed in 1.701227s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "setup_zkp_time": 1.701227
+        },
+        "total_time": 1.7681360244750977,
+        "memory_delta": 0.0,
+        "cpu_usage": 17.2,
+        "peak_memory": 104.90625
+      },
+      "zksnark_witness_process": {
+        "operation_type": "zksnark_witness",
+        "start_time": 1748518493.44558,
+        "stdout": "Starting operation at 2025-05-29 11:34:53.481467\nGenerating witness for process circuit with small input\nWitness generation completed in 0.120063s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "witness_gen_time": 0.120063
+        },
+        "total_time": 0.15981435775756836,
+        "memory_delta": 0.0,
+        "cpu_usage": -84.9,
+        "peak_memory": 104.90625
+      },
+      "zksnark_proof_process": {
+        "operation_type": "zksnark_proof",
+        "start_time": 1748518493.605708,
+        "stdout": "Starting operation at 2025-05-29 11:34:53.648733\nGenerating proof for process circuit\nProof size: 256 bytes\nProof generation completed in 0.800813s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "proof_gen_time": 0.800813
+        },
+        "total_time": 0.8485019207000732,
+        "memory_delta": 0.0,
+        "cpu_usage": 43.1,
+        "peak_memory": 104.90625
+      },
+      "zksnark_verify_offchain_process": {
+        "operation_type": "zksnark_verify_offchain",
+        "start_time": 1748518494.4547799,
+        "stdout": "Starting operation at 2025-05-29 11:34:54.495417\nVerifying proof off-chain for process circuit\nOff-chain verification completed in 0.010117s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "verify_offchain_time": 0.010117
+        },
+        "total_time": 0.059777021408081055,
+        "memory_delta": 0.0,
+        "cpu_usage": 48.6,
+        "peak_memory": 104.90625
+      },
+      "zksnark_verify_onchain_process": {
+        "operation_type": "zksnark_verify_onchain",
+        "start_time": 1748518494.5151734,
+        "stdout": "Starting operation at 2025-05-29 11:34:54.552208\nVerifying proof on-chain for process circuit\nverify_process_proof gas: 264295\nOn-chain verification completed in 0.266127s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "verify_onchain_time": 0.266127
+        },
+        "total_time": 0.30797362327575684,
+        "memory_delta": 0.0,
+        "cpu_usage": 31.7,
+        "peak_memory": 104.90625
+      },
+      "e2e_latency": {
+        "key_request": {
+          "operation_type": "key_request_latency",
+          "start_time": 1748518494.8234558,
+          "stdout": "Starting operation at 2025-05-29 11:34:54.860790\nProcessing key request for MANUFACTURER\nKey request completed in 0.700917s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {},
+          "total_time": 0.743523120880127,
+          "memory_delta": 0.0,
+          "cpu_usage": -82.2,
+          "peak_memory": 104.90625
+        },
+        "decryption": {
+          "operation_type": "decryption_latency",
+          "start_time": 1748518495.5674334,
+          "stdout": "Starting operation at 2025-05-29 11:34:55.603147\nProcessing end-to-end decryption for MANUFACTURER\nDecryption end-to-end completed in 1.351378s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {},
+          "total_time": 1.3911659717559814,
+          "memory_delta": 0.0,
+          "cpu_usage": -81.4,
+          "peak_memory": 104.90625
+        }
+      },
+      "blockchain_costs": {
+        "deploy_contracts": {
+          "operation_type": "blockchain_deploy_contracts",
+          "start_time": 1748518496.959031,
+          "stdout": "Starting operation at 2025-05-29 11:34:56.995348\nDeploying MARTZK smart contracts\nContract deployment gas: 2442910\nContract deployment completed in 1.501262s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {},
+          "total_time": 1.5478873252868652,
+          "memory_delta": 0.0,
+          "cpu_usage": 24.9,
+          "peak_memory": 104.90625
+        },
+        "set_attr_commit": {
+          "operation_type": "blockchain_set_attr_commit",
+          "start_time": 1748518498.5072377,
+          "stdout": "Starting operation at 2025-05-29 11:34:58.542280\nSetting user attribute commitment\nset_attr_commit gas: 62680\nSet attribute commitment completed in 0.200307s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {},
+          "total_time": 0.24025177955627441,
+          "memory_delta": 0.0,
+          "cpu_usage": 11.6,
+          "peak_memory": 104.90625
+        },
+        "verify_attr_proof": {
+          "operation_type": "blockchain_verify_attr_proof",
+          "start_time": 1748518498.7477958,
+          "stdout": "Starting operation at 2025-05-29 11:34:58.780373\nVerifying attribute proof on-chain\nverify_attr_proof gas: 275703\nVerify attribute proof completed in 0.300407s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {},
+          "total_time": 0.3373408317565918,
+          "memory_delta": 0.0,
+          "cpu_usage": 7.0,
+          "peak_memory": 104.90625
+        },
+        "verify_policy_proof": {
+          "operation_type": "blockchain_verify_policy_proof",
+          "start_time": 1748518499.0856574,
+          "stdout": "Starting operation at 2025-05-29 11:34:59.124290\nVerifying policy proof on-chain\nverify_policy_proof gas: 303139\nVerify policy proof completed in 0.400542s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {},
+          "total_time": 0.4432344436645508,
+          "memory_delta": 0.0,
+          "cpu_usage": 15.1,
+          "peak_memory": 104.90625
+        },
+        "verify_process_proof": {
+          "operation_type": "blockchain_verify_process_proof",
+          "start_time": 1748518499.5293605,
+          "stdout": "Starting operation at 2025-05-29 11:34:59.572543\nVerifying process proof on-chain\nverify_process_proof gas: 270615\nVerify process proof completed in 0.350463s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {},
+          "total_time": 0.40068602561950684,
+          "memory_delta": 0.0,
+          "cpu_usage": 10.8,
+          "peak_memory": 104.90625
+        }
+      }
+    },
+    "2": {
+      "maabe_setup": {
+        "operation_type": "maabe_setup",
+        "start_time": 1748518500.4309852,
+        "stdout": "Starting operation at 2025-05-29 11:35:00.468143\nSetting up MA-ABE with 3 authorities and 10 attributes\nMA-ABE global parameters size: 1792 bytes\nAuthority master keys size: 1536 bytes\nMA-ABE Setup completed in 0.400411s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "setup_time": 0.400411
+        },
+        "total_time": 0.44446778297424316,
+        "memory_delta": 0.140625,
+        "cpu_usage": 0.7000000000000011,
+        "peak_memory": 105.046875
+      },
+      "maabe_keygen": {
+        "operation_type": "maabe_keygen",
+        "start_time": 1748518500.8759193,
+        "stdout": "Starting operation at 2025-05-29 11:35:00.913104\nGenerating keys for user MANUFACTURER with 5 attributes\nKey size: 576 bytes\nKeyGen completed in 0.045128s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "keygen_time": 0.045128
+        },
+        "total_time": 0.08713722229003906,
+        "memory_delta": 0.0,
+        "cpu_usage": 18.2,
+        "peak_memory": 105.046875
+      },
+      "maabe_encrypt": {
+        "operation_type": "maabe_encrypt",
+        "start_time": 1748518500.9633691,
+        "stdout": "Starting operation at 2025-05-29 11:35:01.014278\nEncrypting 1KB message with medium policy\nCiphertext size: 1424 bytes\nEncryption overhead: 39.1%\nEncryption completed in 0.076756s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "encrypt_time": 0.076756
+        },
+        "total_time": 0.13197994232177734,
+        "memory_delta": 0.0,
+        "cpu_usage": 27.3,
+        "peak_memory": 105.046875
+      },
+      "maabe_decrypt": {
+        "operation_type": "maabe_decrypt",
+        "start_time": 1748518501.0958323,
+        "stdout": "Starting operation at 2025-05-29 11:35:01.140188\nDecrypting with 3 satisfying attributes\nDecryption completed in 0.054117s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "decrypt_time": 0.054117
+        },
+        "total_time": 0.10274386405944824,
+        "memory_delta": 0.0,
+        "cpu_usage": 20.4,
+        "peak_memory": 105.046875
+      },
+      "zksnark_setup_attribute": {
+        "operation_type": "zksnark_setup",
+        "start_time": 1748518501.1988864,
+        "stdout": "Starting operation at 2025-05-29 11:35:01.236663\nSetting up zkSNARK for attribute circuit\nProving key size: 512 bytes\nVerification key size: 256 bytes\nzkSNARK Setup completed in 0.700688s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "setup_zkp_time": 0.700688
+        },
+        "total_time": 0.7459158897399902,
+        "memory_delta": 0.0,
+        "cpu_usage": 18.8,
+        "peak_memory": 105.046875
+      },
+      "zksnark_witness_attribute": {
+        "operation_type": "zksnark_witness",
+        "start_time": 1748518501.9454086,
+        "stdout": "Starting operation at 2025-05-29 11:35:01.983318\nGenerating witness for attribute circuit with small input\nWitness generation completed in 0.050102s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "witness_gen_time": 0.050102
+        },
+        "total_time": 0.09287667274475098,
+        "memory_delta": 0.0,
+        "cpu_usage": 12.6,
+        "peak_memory": 105.046875
+      },
+      "zksnark_proof_attribute": {
+        "operation_type": "zksnark_proof",
+        "start_time": 1748518502.0386288,
+        "stdout": "Starting operation at 2025-05-29 11:35:02.072882\nGenerating proof for attribute circuit\nProof size: 256 bytes\nProof generation completed in 0.300389s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "proof_gen_time": 0.300389
+        },
+        "total_time": 0.33850646018981934,
+        "memory_delta": 0.0,
+        "cpu_usage": 4.3,
+        "peak_memory": 105.046875
+      },
+      "zksnark_verify_offchain_attribute": {
+        "operation_type": "zksnark_verify_offchain",
+        "start_time": 1748518502.3774235,
+        "stdout": "Starting operation at 2025-05-29 11:35:02.415895\nVerifying proof off-chain for attribute circuit\nOff-chain verification completed in 0.010105s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "verify_offchain_time": 0.010105
+        },
+        "total_time": 0.053070068359375,
+        "memory_delta": 0.0,
+        "cpu_usage": 9.4,
+        "peak_memory": 105.046875
+      },
+      "zksnark_verify_onchain_attribute": {
+        "operation_type": "zksnark_verify_onchain",
+        "start_time": 1748518502.4309747,
+        "stdout": "Starting operation at 2025-05-29 11:35:02.470561\nVerifying proof on-chain for attribute circuit\nverify_attribute_proof gas: 100000\nOn-chain verification completed in 0.158646s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "verify_onchain_time": 0.158646
+        },
+        "total_time": 0.20216584205627441,
+        "memory_delta": 0.0,
+        "cpu_usage": 7.2,
+        "peak_memory": 105.046875
+      },
+      "zksnark_setup_policy": {
+        "operation_type": "zksnark_setup",
+        "start_time": 1748518502.6334462,
+        "stdout": "Starting operation at 2025-05-29 11:35:02.666345\nSetting up zkSNARK for policy circuit\nProving key size: 1024 bytes\nVerification key size: 256 bytes\nzkSNARK Setup completed in 1.200271s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "setup_zkp_time": 1.200271
+        },
+        "total_time": 1.2371516227722168,
+        "memory_delta": 0.0,
+        "cpu_usage": 8.1,
+        "peak_memory": 105.046875
+      },
+      "zksnark_witness_policy": {
+        "operation_type": "zksnark_witness",
+        "start_time": 1748518503.8709111,
+        "stdout": "Starting operation at 2025-05-29 11:35:03.912093\nGenerating witness for policy circuit with small input\nWitness generation completed in 0.080131s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "witness_gen_time": 0.080131
+        },
+        "total_time": 0.12633323669433594,
+        "memory_delta": 0.0,
+        "cpu_usage": 10.7,
+        "peak_memory": 105.046875
+      },
+      "zksnark_proof_policy": {
+        "operation_type": "zksnark_proof",
+        "start_time": 1748518503.9975429,
+        "stdout": "Starting operation at 2025-05-29 11:35:04.032206\nGenerating proof for policy circuit\nProof size: 256 bytes\nProof generation completed in 0.500577s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "proof_gen_time": 0.500577
+        },
+        "total_time": 0.5395233631134033,
+        "memory_delta": 0.0,
+        "cpu_usage": 5.4,
+        "peak_memory": 105.046875
+      },
+      "zksnark_verify_offchain_policy": {
+        "operation_type": "zksnark_verify_offchain",
+        "start_time": 1748518504.5373743,
+        "stdout": "Starting operation at 2025-05-29 11:35:04.574613\nVerifying proof off-chain for policy circuit\nOff-chain verification completed in 0.010082s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "verify_offchain_time": 0.010082
+        },
+        "total_time": 0.05115818977355957,
+        "memory_delta": 0.0,
+        "cpu_usage": 8.8,
+        "peak_memory": 105.046875
+      },
+      "zksnark_verify_onchain_policy": {
+        "operation_type": "zksnark_verify_onchain",
+        "start_time": 1748518504.5888216,
+        "stdout": "Starting operation at 2025-05-29 11:35:04.623206\nVerifying proof on-chain for policy circuit\nverify_policy_proof gas: 266677\nOn-chain verification completed in 0.165390s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "verify_onchain_time": 0.16539
+        },
+        "total_time": 0.20622563362121582,
+        "memory_delta": 0.0,
+        "cpu_usage": 5.4,
+        "peak_memory": 105.046875
+      },
+      "zksnark_setup_process": {
+        "operation_type": "zksnark_setup",
+        "start_time": 1748518504.79535,
+        "stdout": "Starting operation at 2025-05-29 11:35:04.830683\nSetting up zkSNARK for process circuit\nProving key size: 1536 bytes\nVerification key size: 256 bytes\nzkSNARK Setup completed in 1.700901s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "setup_zkp_time": 1.700901
+        },
+        "total_time": 1.7437305450439453,
+        "memory_delta": 0.0,
+        "cpu_usage": 15.4,
+        "peak_memory": 105.046875
+      },
+      "zksnark_witness_process": {
+        "operation_type": "zksnark_witness",
+        "start_time": 1748518506.5396273,
+        "stdout": "Starting operation at 2025-05-29 11:35:06.587523\nGenerating witness for process circuit with small input\nWitness generation completed in 0.120177s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "witness_gen_time": 0.120177
+        },
+        "total_time": 0.17682647705078125,
+        "memory_delta": 0.0,
+        "cpu_usage": -75.7,
+        "peak_memory": 105.046875
+      },
+      "zksnark_proof_process": {
+        "operation_type": "zksnark_proof",
+        "start_time": 1748518506.7170703,
+        "stdout": "Starting operation at 2025-05-29 11:35:06.754949\nGenerating proof for process circuit\nProof size: 256 bytes\nProof generation completed in 0.800601s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "proof_gen_time": 0.800601
+        },
+        "total_time": 0.8431417942047119,
+        "memory_delta": 0.0,
+        "cpu_usage": 20.7,
+        "peak_memory": 105.046875
+      },
+      "zksnark_verify_offchain_process": {
+        "operation_type": "zksnark_verify_offchain",
+        "start_time": 1748518507.5607176,
+        "stdout": "Starting operation at 2025-05-29 11:35:07.595767\nVerifying proof off-chain for process circuit\nOff-chain verification completed in 0.010080s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "verify_offchain_time": 0.01008
+        },
+        "total_time": 0.04929494857788086,
+        "memory_delta": 0.0,
+        "cpu_usage": 10.3,
+        "peak_memory": 105.046875
+      },
+      "zksnark_verify_onchain_process": {
+        "operation_type": "zksnark_verify_onchain",
+        "start_time": 1748518507.6105072,
+        "stdout": "Starting operation at 2025-05-29 11:35:07.651045\nVerifying proof on-chain for process circuit\nverify_process_proof gas: 235435\nOn-chain verification completed in 0.182826s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "verify_onchain_time": 0.182826
+        },
+        "total_time": 0.2271559238433838,
+        "memory_delta": 0.0,
+        "cpu_usage": 21.1,
+        "peak_memory": 105.046875
+      },
+      "e2e_latency": {
+        "key_request": {
+          "operation_type": "key_request_latency",
+          "start_time": 1748518507.8379617,
+          "stdout": "Starting operation at 2025-05-29 11:35:07.874898\nProcessing key request for MANUFACTURER\nKey request completed in 0.700757s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {},
+          "total_time": 0.7449111938476562,
+          "memory_delta": 0.0,
+          "cpu_usage": 21.7,
+          "peak_memory": 105.046875
+        },
+        "decryption": {
+          "operation_type": "decryption_latency",
+          "start_time": 1748518508.5832388,
+          "stdout": "Starting operation at 2025-05-29 11:35:08.621165\nProcessing end-to-end decryption for MANUFACTURER\nDecryption end-to-end completed in 1.351371s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {},
+          "total_time": 1.3938531875610352,
+          "memory_delta": 0.0,
+          "cpu_usage": 17.5,
+          "peak_memory": 105.046875
+        }
+      },
+      "blockchain_costs": {
+        "deploy_contracts": {
+          "operation_type": "blockchain_deploy_contracts",
+          "start_time": 1748518509.9774163,
+          "stdout": "Starting operation at 2025-05-29 11:35:10.014596\nDeploying MARTZK smart contracts\nContract deployment gas: 2327334\nContract deployment completed in 1.500977s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {},
+          "total_time": 1.5422306060791016,
+          "memory_delta": 0.0,
+          "cpu_usage": 21.2,
+          "peak_memory": 105.046875
+        },
+        "set_attr_commit": {
+          "operation_type": "blockchain_set_attr_commit",
+          "start_time": 1748518511.519954,
+          "stdout": "Starting operation at 2025-05-29 11:35:11.555957\nSetting user attribute commitment\nset_attr_commit gas: 69136\nSet attribute commitment completed in 0.200309s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {},
+          "total_time": 0.24318790435791016,
+          "memory_delta": 0.0,
+          "cpu_usage": 27.3,
+          "peak_memory": 105.046875
+        },
+        "verify_attr_proof": {
+          "operation_type": "blockchain_verify_attr_proof",
+          "start_time": 1748518511.7636077,
+          "stdout": "Starting operation at 2025-05-29 11:35:11.814635\nVerifying attribute proof on-chain\nverify_attr_proof gas: 289691\nVerify attribute proof completed in 0.300430s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {},
+          "total_time": 0.35875964164733887,
+          "memory_delta": 0.0,
+          "cpu_usage": 21.2,
+          "peak_memory": 105.046875
+        },
+        "verify_policy_proof": {
+          "operation_type": "blockchain_verify_policy_proof",
+          "start_time": 1748518512.1228902,
+          "stdout": "Starting operation at 2025-05-29 11:35:12.158082\nVerifying policy proof on-chain\nverify_policy_proof gas: 262044\nVerify policy proof completed in 0.400517s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {},
+          "total_time": 0.4395022392272949,
+          "memory_delta": 0.0,
+          "cpu_usage": 6.4,
+          "peak_memory": 105.046875
+        },
+        "verify_process_proof": {
+          "operation_type": "blockchain_verify_process_proof",
+          "start_time": 1748518512.5626998,
+          "stdout": "Starting operation at 2025-05-29 11:35:12.595020\nVerifying process proof on-chain\nverify_process_proof gas: 199550\nVerify process proof completed in 0.350441s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {},
+          "total_time": 0.3877294063568115,
+          "memory_delta": 0.0,
+          "cpu_usage": 8.2,
+          "peak_memory": 105.046875
+        }
+      }
+    },
+    "3": {
+      "maabe_setup": {
+        "operation_type": "maabe_setup",
+        "start_time": 1748518513.4515653,
+        "stdout": "Starting operation at 2025-05-29 11:35:13.483491\nSetting up MA-ABE with 3 authorities and 10 attributes\nMA-ABE global parameters size: 1792 bytes\nAuthority master keys size: 1536 bytes\nMA-ABE Setup completed in 0.400502s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "setup_time": 0.400502
+        },
+        "total_time": 0.43663668632507324,
+        "memory_delta": 0.0,
+        "cpu_usage": 8.000000000000002,
+        "peak_memory": 105.046875
+      },
+      "maabe_keygen": {
+        "operation_type": "maabe_keygen",
+        "start_time": 1748518513.888517,
+        "stdout": "Starting operation at 2025-05-29 11:35:13.922311\nGenerating keys for user MANUFACTURER with 5 attributes\nKey size: 576 bytes\nKeyGen completed in 0.045117s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "keygen_time": 0.045117
+        },
+        "total_time": 0.08287191390991211,
+        "memory_delta": 0.0,
+        "cpu_usage": 14.2,
+        "peak_memory": 105.046875
+      },
+      "maabe_encrypt": {
+        "operation_type": "maabe_encrypt",
+        "start_time": 1748518513.9717357,
+        "stdout": "Starting operation at 2025-05-29 11:35:14.007492\nEncrypting 1KB message with medium policy\nCiphertext size: 1424 bytes\nEncryption overhead: 39.1%\nEncryption completed in 0.076688s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "encrypt_time": 0.076688
+        },
+        "total_time": 0.11737179756164551,
+        "memory_delta": 0.0,
+        "cpu_usage": 20.9,
+        "peak_memory": 105.046875
+      },
+      "maabe_decrypt": {
+        "operation_type": "maabe_decrypt",
+        "start_time": 1748518514.089768,
+        "stdout": "Starting operation at 2025-05-29 11:35:14.134822\nDecrypting with 3 satisfying attributes\nDecryption completed in 0.054105s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "decrypt_time": 0.054105
+        },
+        "total_time": 0.10341191291809082,
+        "memory_delta": 0.0,
+        "cpu_usage": 23.7,
+        "peak_memory": 105.046875
+      },
+      "zksnark_setup_attribute": {
+        "operation_type": "zksnark_setup",
+        "start_time": 1748518514.1934946,
+        "stdout": "Starting operation at 2025-05-29 11:35:14.228244\nSetting up zkSNARK for attribute circuit\nProving key size: 512 bytes\nVerification key size: 256 bytes\nzkSNARK Setup completed in 0.700319s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "setup_zkp_time": 0.700319
+        },
+        "total_time": 0.7390940189361572,
+        "memory_delta": 0.0,
+        "cpu_usage": 13.8,
+        "peak_memory": 105.046875
+      },
+      "zksnark_witness_attribute": {
+        "operation_type": "zksnark_witness",
+        "start_time": 1748518514.932897,
+        "stdout": "Starting operation at 2025-05-29 11:35:14.966621\nGenerating witness for attribute circuit with small input\nWitness generation completed in 0.050102s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "witness_gen_time": 0.050102
+        },
+        "total_time": 0.08816027641296387,
+        "memory_delta": 0.0,
+        "cpu_usage": 12.6,
+        "peak_memory": 105.046875
+      },
+      "zksnark_proof_attribute": {
+        "operation_type": "zksnark_proof",
+        "start_time": 1748518515.0214016,
+        "stdout": "Starting operation at 2025-05-29 11:35:15.073137\nGenerating proof for attribute circuit\nProof size: 256 bytes\nProof generation completed in 0.300266s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "proof_gen_time": 0.300266
+        },
+        "total_time": 0.3575162887573242,
+        "memory_delta": 0.0,
+        "cpu_usage": 16.4,
+        "peak_memory": 105.046875
+      },
+      "zksnark_verify_offchain_attribute": {
+        "operation_type": "zksnark_verify_offchain",
+        "start_time": 1748518515.3795059,
+        "stdout": "Starting operation at 2025-05-29 11:35:15.416882\nVerifying proof off-chain for attribute circuit\nOff-chain verification completed in 0.010105s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "verify_offchain_time": 0.010105
+        },
+        "total_time": 0.05245399475097656,
+        "memory_delta": 0.0,
+        "cpu_usage": -65.6,
+        "peak_memory": 105.046875
+      },
+      "zksnark_verify_onchain_attribute": {
+        "operation_type": "zksnark_verify_onchain",
+        "start_time": 1748518515.4323432,
+        "stdout": "Starting operation at 2025-05-29 11:35:15.471149\nVerifying proof on-chain for attribute circuit\nverify_attribute_proof gas: 100000\nOn-chain verification completed in 0.245204s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "verify_onchain_time": 0.245204
+        },
+        "total_time": 0.2878694534301758,
+        "memory_delta": 0.0,
+        "cpu_usage": 15.4,
+        "peak_memory": 105.046875
+      },
+      "zksnark_setup_policy": {
+        "operation_type": "zksnark_setup",
+        "start_time": 1748518515.720537,
+        "stdout": "Starting operation at 2025-05-29 11:35:15.757803\nSetting up zkSNARK for policy circuit\nProving key size: 1024 bytes\nVerification key size: 256 bytes\nzkSNARK Setup completed in 1.200814s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "setup_zkp_time": 1.200814
+        },
+        "total_time": 1.2422289848327637,
+        "memory_delta": 0.0,
+        "cpu_usage": 8.0,
+        "peak_memory": 105.046875
+      },
+      "zksnark_witness_policy": {
+        "operation_type": "zksnark_witness",
+        "start_time": 1748518516.9630659,
+        "stdout": "Starting operation at 2025-05-29 11:35:16.996815\nGenerating witness for policy circuit with small input\nWitness generation completed in 0.080133s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "witness_gen_time": 0.080133
+        },
+        "total_time": 0.11774158477783203,
+        "memory_delta": 0.0,
+        "cpu_usage": 3.8,
+        "peak_memory": 105.046875
+      },
+      "zksnark_proof_policy": {
+        "operation_type": "zksnark_proof",
+        "start_time": 1748518517.0811207,
+        "stdout": "Starting operation at 2025-05-29 11:35:17.116312\nGenerating proof for policy circuit\nProof size: 256 bytes\nProof generation completed in 0.500565s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "proof_gen_time": 0.500565
+        },
+        "total_time": 0.5397529602050781,
+        "memory_delta": 0.0,
+        "cpu_usage": 5.1,
+        "peak_memory": 105.046875
+      },
+      "zksnark_verify_offchain_policy": {
+        "operation_type": "zksnark_verify_offchain",
+        "start_time": 1748518517.6211693,
+        "stdout": "Starting operation at 2025-05-29 11:35:17.656975\nVerifying proof off-chain for policy circuit\nOff-chain verification completed in 0.010107s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "verify_offchain_time": 0.010107
+        },
+        "total_time": 0.04972219467163086,
+        "memory_delta": 0.0,
+        "cpu_usage": 10.0,
+        "peak_memory": 105.046875
+      },
+      "zksnark_verify_onchain_policy": {
+        "operation_type": "zksnark_verify_onchain",
+        "start_time": 1748518517.6712,
+        "stdout": "Starting operation at 2025-05-29 11:35:17.710321\nVerifying proof on-chain for policy circuit\nverify_policy_proof gas: 256851\nOn-chain verification completed in 0.205664s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "verify_onchain_time": 0.205664
+        },
+        "total_time": 0.2486586570739746,
+        "memory_delta": 0.0,
+        "cpu_usage": 5.8,
+        "peak_memory": 105.046875
+      },
+      "zksnark_setup_process": {
+        "operation_type": "zksnark_setup",
+        "start_time": 1748518517.9201581,
+        "stdout": "Starting operation at 2025-05-29 11:35:17.954407\nSetting up zkSNARK for process circuit\nProving key size: 1536 bytes\nVerification key size: 256 bytes\nzkSNARK Setup completed in 1.701199s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "setup_zkp_time": 1.701199
+        },
+        "total_time": 1.7398841381072998,
+        "memory_delta": 0.0,
+        "cpu_usage": 15.7,
+        "peak_memory": 105.046875
+      },
+      "zksnark_witness_process": {
+        "operation_type": "zksnark_witness",
+        "start_time": 1748518519.6604018,
+        "stdout": "Starting operation at 2025-05-29 11:35:19.696543\nGenerating witness for process circuit with small input\nWitness generation completed in 0.120173s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "witness_gen_time": 0.120173
+        },
+        "total_time": 0.16088199615478516,
+        "memory_delta": 0.0,
+        "cpu_usage": 16.7,
+        "peak_memory": 105.046875
+      },
+      "zksnark_proof_process": {
+        "operation_type": "zksnark_proof",
+        "start_time": 1748518519.8217826,
+        "stdout": "Starting operation at 2025-05-29 11:35:19.860978\nGenerating proof for process circuit\nProof size: 256 bytes\nProof generation completed in 0.800591s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "proof_gen_time": 0.800591
+        },
+        "total_time": 0.8437259197235107,
+        "memory_delta": 0.0,
+        "cpu_usage": 19.7,
+        "peak_memory": 105.046875
+      },
+      "zksnark_verify_offchain_process": {
+        "operation_type": "zksnark_verify_offchain",
+        "start_time": 1748518520.6658082,
+        "stdout": "Starting operation at 2025-05-29 11:35:20.701274\nVerifying proof off-chain for process circuit\nOff-chain verification completed in 0.010089s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "verify_offchain_time": 0.010089
+        },
+        "total_time": 0.048941850662231445,
+        "memory_delta": 0.0,
+        "cpu_usage": 10.2,
+        "peak_memory": 105.046875
+      },
+      "zksnark_verify_onchain_process": {
+        "operation_type": "zksnark_verify_onchain",
+        "start_time": 1748518520.715038,
+        "stdout": "Starting operation at 2025-05-29 11:35:20.749097\nVerifying proof on-chain for process circuit\nverify_process_proof gas: 272748\nOn-chain verification completed in 0.282481s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "verify_onchain_time": 0.282481
+        },
+        "total_time": 0.32054591178894043,
+        "memory_delta": 0.0,
+        "cpu_usage": 5.9,
+        "peak_memory": 105.046875
+      },
+      "e2e_latency": {
+        "key_request": {
+          "operation_type": "key_request_latency",
+          "start_time": 1748518521.0359178,
+          "stdout": "Starting operation at 2025-05-29 11:35:21.072108\nProcessing key request for MANUFACTURER\nKey request completed in 0.700777s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {},
+          "total_time": 0.7430739402770996,
+          "memory_delta": 0.0,
+          "cpu_usage": 14.8,
+          "peak_memory": 105.046875
+        },
+        "decryption": {
+          "operation_type": "decryption_latency",
+          "start_time": 1748518521.7795355,
+          "stdout": "Starting operation at 2025-05-29 11:35:21.823033\nProcessing end-to-end decryption for MANUFACTURER\nDecryption end-to-end completed in 1.351500s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {},
+          "total_time": 1.3993289470672607,
+          "memory_delta": 0.0,
+          "cpu_usage": 10.5,
+          "peak_memory": 105.046875
+        }
+      },
+      "blockchain_costs": {
+        "deploy_contracts": {
+          "operation_type": "blockchain_deploy_contracts",
+          "start_time": 1748518523.1791906,
+          "stdout": "Starting operation at 2025-05-29 11:35:23.214607\nDeploying MARTZK smart contracts\nContract deployment gas: 2155909\nContract deployment completed in 1.500977s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {},
+          "total_time": 1.5407259464263916,
+          "memory_delta": 0.0,
+          "cpu_usage": 4.2,
+          "peak_memory": 105.046875
+        },
+        "set_attr_commit": {
+          "operation_type": "blockchain_set_attr_commit",
+          "start_time": 1748518524.7202108,
+          "stdout": "Starting operation at 2025-05-29 11:35:24.754909\nSetting user attribute commitment\nset_attr_commit gas: 62159\nSet attribute commitment completed in 0.200301s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {},
+          "total_time": 0.238969087600708,
+          "memory_delta": 0.0,
+          "cpu_usage": 2.8,
+          "peak_memory": 105.046875
+        },
+        "verify_attr_proof": {
+          "operation_type": "blockchain_verify_attr_proof",
+          "start_time": 1748518524.9595165,
+          "stdout": "Starting operation at 2025-05-29 11:35:24.992609\nVerifying attribute proof on-chain\nverify_attr_proof gas: 237674\nVerify attribute proof completed in 0.300435s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {},
+          "total_time": 0.3388080596923828,
+          "memory_delta": 0.0,
+          "cpu_usage": -94.6,
+          "peak_memory": 105.046875
+        },
+        "verify_policy_proof": {
+          "operation_type": "blockchain_verify_policy_proof",
+          "start_time": 1748518525.2986484,
+          "stdout": "Starting operation at 2025-05-29 11:35:25.335991\nVerifying policy proof on-chain\nverify_policy_proof gas: 304369\nVerify policy proof completed in 0.400498s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {},
+          "total_time": 0.44243407249450684,
+          "memory_delta": 0.0,
+          "cpu_usage": 9.8,
+          "peak_memory": 105.046875
+        },
+        "verify_process_proof": {
+          "operation_type": "blockchain_verify_process_proof",
+          "start_time": 1748518525.7414048,
+          "stdout": "Starting operation at 2025-05-29 11:35:25.777974\nVerifying process proof on-chain\nverify_process_proof gas: 200027\nVerify process proof completed in 0.350437s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {},
+          "total_time": 0.3909111022949219,
+          "memory_delta": 0.0,
+          "cpu_usage": 6.3,
+          "peak_memory": 105.046875
+        }
+      }
+    },
+    "4": {
+      "maabe_setup": {
+        "operation_type": "maabe_setup",
+        "start_time": 1748518526.6334708,
+        "stdout": "Starting operation at 2025-05-29 11:35:26.667699\nSetting up MA-ABE with 3 authorities and 10 attributes\nMA-ABE global parameters size: 1792 bytes\nAuthority master keys size: 1536 bytes\nMA-ABE Setup completed in 0.400508s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "setup_time": 0.400508
+        },
+        "total_time": 0.4390866756439209,
+        "memory_delta": 0.0,
+        "cpu_usage": 0.8000000000000007,
+        "peak_memory": 105.046875
+      },
+      "maabe_keygen": {
+        "operation_type": "maabe_keygen",
+        "start_time": 1748518527.0728588,
+        "stdout": "Starting operation at 2025-05-29 11:35:27.108396\nGenerating keys for user MANUFACTURER with 5 attributes\nKey size: 576 bytes\nKeyGen completed in 0.045131s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "keygen_time": 0.045131
+        },
+        "total_time": 0.08442163467407227,
+        "memory_delta": 0.0,
+        "cpu_usage": 6.0,
+        "peak_memory": 105.046875
+      },
+      "maabe_encrypt": {
+        "operation_type": "maabe_encrypt",
+        "start_time": 1748518527.1575813,
+        "stdout": "Starting operation at 2025-05-29 11:35:27.194350\nEncrypting 1KB message with medium policy\nCiphertext size: 1424 bytes\nEncryption overhead: 39.1%\nEncryption completed in 0.076671s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "encrypt_time": 0.076671
+        },
+        "total_time": 0.11760425567626953,
+        "memory_delta": 0.0,
+        "cpu_usage": 5.2,
+        "peak_memory": 105.046875
+      },
+      "maabe_decrypt": {
+        "operation_type": "maabe_decrypt",
+        "start_time": 1748518527.275481,
+        "stdout": "Starting operation at 2025-05-29 11:35:27.311238\nDecrypting with 3 satisfying attributes\nDecryption completed in 0.054094s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "decrypt_time": 0.054094
+        },
+        "total_time": 0.09435033798217773,
+        "memory_delta": 0.0,
+        "cpu_usage": 6.0,
+        "peak_memory": 105.046875
+      },
+      "zksnark_setup_attribute": {
+        "operation_type": "zksnark_setup",
+        "start_time": 1748518527.3702457,
+        "stdout": "Starting operation at 2025-05-29 11:35:27.404959\nSetting up zkSNARK for attribute circuit\nProving key size: 512 bytes\nVerification key size: 256 bytes\nzkSNARK Setup completed in 0.700792s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "setup_zkp_time": 0.700792
+        },
+        "total_time": 0.7395353317260742,
+        "memory_delta": 0.0,
+        "cpu_usage": 4.3,
+        "peak_memory": 105.046875
+      },
+      "zksnark_witness_attribute": {
+        "operation_type": "zksnark_witness",
+        "start_time": 1748518528.1100914,
+        "stdout": "Starting operation at 2025-05-29 11:35:28.143688\nGenerating witness for attribute circuit with small input\nWitness generation completed in 0.050096s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "witness_gen_time": 0.050096
+        },
+        "total_time": 0.0881202220916748,
+        "memory_delta": 0.0,
+        "cpu_usage": 6.3,
+        "peak_memory": 105.046875
+      },
+      "zksnark_proof_attribute": {
+        "operation_type": "zksnark_proof",
+        "start_time": 1748518528.1985261,
+        "stdout": "Starting operation at 2025-05-29 11:35:28.233450\nGenerating proof for attribute circuit\nProof size: 256 bytes\nProof generation completed in 0.300371s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "proof_gen_time": 0.300371
+        },
+        "total_time": 0.33915281295776367,
+        "memory_delta": 0.0,
+        "cpu_usage": 18.9,
+        "peak_memory": 105.046875
+      },
+      "zksnark_verify_offchain_attribute": {
+        "operation_type": "zksnark_verify_offchain",
+        "start_time": 1748518528.5379944,
+        "stdout": "Starting operation at 2025-05-29 11:35:28.572270\nVerifying proof off-chain for attribute circuit\nOff-chain verification completed in 0.010085s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "verify_offchain_time": 0.010085
+        },
+        "total_time": 0.04791760444641113,
+        "memory_delta": 0.0,
+        "cpu_usage": 8.1,
+        "peak_memory": 105.046875
+      },
+      "zksnark_verify_onchain_attribute": {
+        "operation_type": "zksnark_verify_onchain",
+        "start_time": 1748518528.586204,
+        "stdout": "Starting operation at 2025-05-29 11:35:28.620457\nVerifying proof on-chain for attribute circuit\nverify_attribute_proof gas: 100000\nOn-chain verification completed in 0.221134s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "verify_onchain_time": 0.221134
+        },
+        "total_time": 0.25924205780029297,
+        "memory_delta": 0.0,
+        "cpu_usage": 4.1,
+        "peak_memory": 105.046875
+      },
+      "zksnark_setup_policy": {
+        "operation_type": "zksnark_setup",
+        "start_time": 1748518528.8457735,
+        "stdout": "Starting operation at 2025-05-29 11:35:28.881099\nSetting up zkSNARK for policy circuit\nProving key size: 1024 bytes\nVerification key size: 256 bytes\nzkSNARK Setup completed in 1.200479s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "setup_zkp_time": 1.200479
+        },
+        "total_time": 1.2403411865234375,
+        "memory_delta": 0.0,
+        "cpu_usage": 9.5,
+        "peak_memory": 105.046875
+      },
+      "zksnark_witness_policy": {
+        "operation_type": "zksnark_witness",
+        "start_time": 1748518530.0864184,
+        "stdout": "Starting operation at 2025-05-29 11:35:30.123151\nGenerating witness for policy circuit with small input\nWitness generation completed in 0.080123s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "witness_gen_time": 0.080123
+        },
+        "total_time": 0.12151384353637695,
+        "memory_delta": 0.0,
+        "cpu_usage": 9.0,
+        "peak_memory": 105.046875
+      },
+      "zksnark_proof_policy": {
+        "operation_type": "zksnark_proof",
+        "start_time": 1748518530.2082326,
+        "stdout": "Starting operation at 2025-05-29 11:35:30.243790\nGenerating proof for policy circuit\nProof size: 256 bytes\nProof generation completed in 0.500567s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "proof_gen_time": 0.500567
+        },
+        "total_time": 0.5402898788452148,
+        "memory_delta": 0.0,
+        "cpu_usage": 5.8,
+        "peak_memory": 105.046875
+      },
+      "zksnark_verify_offchain_policy": {
+        "operation_type": "zksnark_verify_offchain",
+        "start_time": 1748518530.7488985,
+        "stdout": "Starting operation at 2025-05-29 11:35:30.784041\nVerifying proof off-chain for policy circuit\nOff-chain verification completed in 0.010080s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "verify_offchain_time": 0.01008
+        },
+        "total_time": 0.04894590377807617,
+        "memory_delta": 0.0,
+        "cpu_usage": 6.8,
+        "peak_memory": 105.046875
+      },
+      "zksnark_verify_onchain_policy": {
+        "operation_type": "zksnark_verify_onchain",
+        "start_time": 1748518530.7981296,
+        "stdout": "Starting operation at 2025-05-29 11:35:30.831008\nVerifying proof on-chain for policy circuit\nverify_policy_proof gas: 308789\nOn-chain verification completed in 0.248356s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "verify_onchain_time": 0.248356
+        },
+        "total_time": 0.28531932830810547,
+        "memory_delta": 0.0,
+        "cpu_usage": 2.9,
+        "peak_memory": 105.046875
+      },
+      "zksnark_setup_process": {
+        "operation_type": "zksnark_setup",
+        "start_time": 1748518531.083748,
+        "stdout": "Starting operation at 2025-05-29 11:35:31.118531\nSetting up zkSNARK for process circuit\nProving key size: 1536 bytes\nVerification key size: 256 bytes\nzkSNARK Setup completed in 1.701042s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "setup_zkp_time": 1.701042
+        },
+        "total_time": 1.740077257156372,
+        "memory_delta": 0.0,
+        "cpu_usage": 4.2,
+        "peak_memory": 105.046875
+      },
+      "zksnark_witness_process": {
+        "operation_type": "zksnark_witness",
+        "start_time": 1748518532.8241272,
+        "stdout": "Starting operation at 2025-05-29 11:35:32.860321\nGenerating witness for process circuit with small input\nWitness generation completed in 0.120167s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "witness_gen_time": 0.120167
+        },
+        "total_time": 0.1603991985321045,
+        "memory_delta": 0.0,
+        "cpu_usage": 4.2,
+        "peak_memory": 105.046875
+      },
+      "zksnark_proof_process": {
+        "operation_type": "zksnark_proof",
+        "start_time": 1748518532.9848354,
+        "stdout": "Starting operation at 2025-05-29 11:35:33.018532\nGenerating proof for process circuit\nProof size: 256 bytes\nProof generation completed in 0.800856s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "proof_gen_time": 0.800856
+        },
+        "total_time": 0.8387739658355713,
+        "memory_delta": 0.0,
+        "cpu_usage": 4.9,
+        "peak_memory": 105.046875
+      },
+      "zksnark_verify_offchain_process": {
+        "operation_type": "zksnark_verify_offchain",
+        "start_time": 1748518533.8238957,
+        "stdout": "Starting operation at 2025-05-29 11:35:33.856394\nVerifying proof off-chain for process circuit\nOff-chain verification completed in 0.010077s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "verify_offchain_time": 0.010077
+        },
+        "total_time": 0.04585456848144531,
+        "memory_delta": 0.0,
+        "cpu_usage": 13.1,
+        "peak_memory": 105.046875
+      },
+      "zksnark_verify_onchain_process": {
+        "operation_type": "zksnark_verify_onchain",
+        "start_time": 1748518533.8700306,
+        "stdout": "Starting operation at 2025-05-29 11:35:33.906700\nVerifying proof on-chain for process circuit\nverify_process_proof gas: 278968\nOn-chain verification completed in 0.251654s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {
+          "verify_onchain_time": 0.251654
+        },
+        "total_time": 0.29263949394226074,
+        "memory_delta": 0.0,
+        "cpu_usage": 8.6,
+        "peak_memory": 105.046875
+      },
+      "e2e_latency": {
+        "key_request": {
+          "operation_type": "key_request_latency",
+          "start_time": 1748518534.1629574,
+          "stdout": "Starting operation at 2025-05-29 11:35:34.198105\nProcessing key request for MANUFACTURER\nKey request completed in 0.700873s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {},
+          "total_time": 0.7399396896362305,
+          "memory_delta": 0.0,
+          "cpu_usage": 3.8,
+          "peak_memory": 105.046875
+        },
+        "decryption": {
+          "operation_type": "decryption_latency",
+          "start_time": 1748518534.9031832,
+          "stdout": "Starting operation at 2025-05-29 11:35:34.938713\nProcessing end-to-end decryption for MANUFACTURER\nDecryption end-to-end completed in 1.351542s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {},
+          "total_time": 1.3913915157318115,
+          "memory_delta": 0.0,
+          "cpu_usage": 3.3,
+          "peak_memory": 105.046875
+        }
+      },
+      "blockchain_costs": {
+        "deploy_contracts": {
+          "operation_type": "blockchain_deploy_contracts",
+          "start_time": 1748518536.294905,
+          "stdout": "Starting operation at 2025-05-29 11:35:36.329405\nDeploying MARTZK smart contracts\nContract deployment gas: 2980043\nContract deployment completed in 1.501166s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {},
+          "total_time": 1.5396947860717773,
+          "memory_delta": 0.0,
+          "cpu_usage": 2.9,
+          "peak_memory": 105.046875
+        },
+        "set_attr_commit": {
+          "operation_type": "blockchain_set_attr_commit",
+          "start_time": 1748518537.8348901,
+          "stdout": "Starting operation at 2025-05-29 11:35:37.869449\nSetting user attribute commitment\nset_attr_commit gas: 60699\nSet attribute commitment completed in 0.200135s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {},
+          "total_time": 0.23881125450134277,
+          "memory_delta": 0.0,
+          "cpu_usage": 2.3,
+          "peak_memory": 105.046875
+        },
+        "verify_attr_proof": {
+          "operation_type": "blockchain_verify_attr_proof",
+          "start_time": 1748518538.0739942,
+          "stdout": "Starting operation at 2025-05-29 11:35:38.108909\nVerifying attribute proof on-chain\nverify_attr_proof gas: 251373\nVerify attribute proof completed in 0.300373s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {},
+          "total_time": 0.3390834331512451,
+          "memory_delta": 0.0,
+          "cpu_usage": 1.5,
+          "peak_memory": 105.046875
+        },
+        "verify_policy_proof": {
+          "operation_type": "blockchain_verify_policy_proof",
+          "start_time": 1748518538.4133868,
+          "stdout": "Starting operation at 2025-05-29 11:35:38.447841\nVerifying policy proof on-chain\nverify_policy_proof gas: 342879\nVerify policy proof completed in 0.400500s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {},
+          "total_time": 0.43872833251953125,
+          "memory_delta": 0.0,
+          "cpu_usage": 1.7,
+          "peak_memory": 105.046875
+        },
+        "verify_process_proof": {
+          "operation_type": "blockchain_verify_process_proof",
+          "start_time": 1748518538.8524036,
+          "stdout": "Starting operation at 2025-05-29 11:35:38.886176\nVerifying process proof on-chain\nverify_process_proof gas: 216903\nVerify process proof completed in 0.350401s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {},
+          "total_time": 0.38805174827575684,
+          "memory_delta": 0.0,
+          "cpu_usage": 1.3,
+          "peak_memory": 105.046875
+        }
+      }
+    }
+  },
+  "costs": {},
+  "scalability": {
+    "authorities": {
+      "1": {
+        "setup": {
+          "operation_type": "maabe_setup",
+          "start_time": 1748518539.7417269,
+          "stdout": "Starting operation at 2025-05-29 11:35:39.775169\nSetting up MA-ABE with 1 authorities and 10 attributes\nMA-ABE global parameters size: 1280 bytes\nAuthority master keys size: 512 bytes\nMA-ABE Setup completed in 0.300406s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {
+            "setup_time": 0.300406
+          },
+          "total_time": 0.3382573127746582,
+          "memory_delta": 0.0,
+          "cpu_usage": 1.1,
+          "peak_memory": 105.046875
+        },
+        "keygen": {
+          "operation_type": "maabe_keygen",
+          "start_time": 1748518540.0802891,
+          "stdout": "Starting operation at 2025-05-29 11:35:40.114728\nGenerating keys for user MANUFACTURER with 5 attributes\nKey size: 576 bytes\nKeyGen completed in 0.045105s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {
+            "keygen_time": 0.045105
+          },
+          "total_time": 0.08294844627380371,
+          "memory_delta": 0.0,
+          "cpu_usage": 4.7,
+          "peak_memory": 105.046875
+        },
+        "encrypt": {
+          "operation_type": "maabe_encrypt",
+          "start_time": 1748518540.1635451,
+          "stdout": "Starting operation at 2025-05-29 11:35:40.197084\nEncrypting 1KB message with medium policy\nCiphertext size: 1424 bytes\nEncryption overhead: 39.1%\nEncryption completed in 0.076644s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {
+            "encrypt_time": 0.076644
+          },
+          "total_time": 0.11370038986206055,
+          "memory_delta": 0.0,
+          "cpu_usage": -97.6,
+          "peak_memory": 105.046875
+        }
+      },
+      "2": {
+        "setup": {
+          "operation_type": "maabe_setup",
+          "start_time": 1748518540.2775583,
+          "stdout": "Starting operation at 2025-05-29 11:35:40.311581\nSetting up MA-ABE with 2 authorities and 10 attributes\nMA-ABE global parameters size: 1536 bytes\nAuthority master keys size: 1024 bytes\nMA-ABE Setup completed in 0.350447s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {
+            "setup_time": 0.350447
+          },
+          "total_time": 0.3881800174713135,
+          "memory_delta": 0.0,
+          "cpu_usage": 1.6,
+          "peak_memory": 105.046875
+        },
+        "keygen": {
+          "operation_type": "maabe_keygen",
+          "start_time": 1748518540.666035,
+          "stdout": "Starting operation at 2025-05-29 11:35:40.699145\nGenerating keys for user MANUFACTURER with 5 attributes\nKey size: 576 bytes\nKeyGen completed in 0.045105s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {
+            "keygen_time": 0.045105
+          },
+          "total_time": 0.08161163330078125,
+          "memory_delta": 0.0,
+          "cpu_usage": 3.4,
+          "peak_memory": 105.046875
+        },
+        "encrypt": {
+          "operation_type": "maabe_encrypt",
+          "start_time": 1748518540.747926,
+          "stdout": "Starting operation at 2025-05-29 11:35:40.786248\nEncrypting 1KB message with medium policy\nCiphertext size: 1424 bytes\nEncryption overhead: 39.1%\nEncryption completed in 0.076648s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {
+            "encrypt_time": 0.076648
+          },
+          "total_time": 0.1187143325805664,
+          "memory_delta": 0.0,
+          "cpu_usage": 1.9,
+          "peak_memory": 105.046875
+        }
+      },
+      "3": {
+        "setup": {
+          "operation_type": "maabe_setup",
+          "start_time": 1748518540.8669555,
+          "stdout": "Starting operation at 2025-05-29 11:35:40.900784\nSetting up MA-ABE with 3 authorities and 10 attributes\nMA-ABE global parameters size: 1792 bytes\nAuthority master keys size: 1536 bytes\nMA-ABE Setup completed in 0.400514s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {
+            "setup_time": 0.400514
+          },
+          "total_time": 0.43825507164001465,
+          "memory_delta": 0.0,
+          "cpu_usage": 1.0,
+          "peak_memory": 105.046875
+        },
+        "keygen": {
+          "operation_type": "maabe_keygen",
+          "start_time": 1748518541.3055158,
+          "stdout": "Starting operation at 2025-05-29 11:35:41.341412\nGenerating keys for user MANUFACTURER with 5 attributes\nKey size: 576 bytes\nKeyGen completed in 0.045099s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {
+            "keygen_time": 0.045099
+          },
+          "total_time": 0.08454561233520508,
+          "memory_delta": 0.0,
+          "cpu_usage": 3.9,
+          "peak_memory": 105.046875
+        },
+        "encrypt": {
+          "operation_type": "maabe_encrypt",
+          "start_time": 1748518541.3905122,
+          "stdout": "Starting operation at 2025-05-29 11:35:41.424827\nEncrypting 1KB message with medium policy\nCiphertext size: 1424 bytes\nEncryption overhead: 39.1%\nEncryption completed in 0.076662s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {
+            "encrypt_time": 0.076662
+          },
+          "total_time": 0.11527180671691895,
+          "memory_delta": 0.0,
+          "cpu_usage": 2.9,
+          "peak_memory": 105.046875
+        }
+      },
+      "4": {
+        "setup": {
+          "operation_type": "maabe_setup",
+          "start_time": 1748518541.506095,
+          "stdout": "Starting operation at 2025-05-29 11:35:41.541246\nSetting up MA-ABE with 4 authorities and 10 attributes\nMA-ABE global parameters size: 2048 bytes\nAuthority master keys size: 2048 bytes\nMA-ABE Setup completed in 0.450553s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {
+            "setup_time": 0.450553
+          },
+          "total_time": 0.48976659774780273,
+          "memory_delta": 0.0,
+          "cpu_usage": 1.5,
+          "peak_memory": 105.046875
+        },
+        "keygen": {
+          "operation_type": "maabe_keygen",
+          "start_time": 1748518541.9961638,
+          "stdout": "Starting operation at 2025-05-29 11:35:42.029932\nGenerating keys for user MANUFACTURER with 5 attributes\nKey size: 576 bytes\nKeyGen completed in 0.045099s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {
+            "keygen_time": 0.045099
+          },
+          "total_time": 0.08239293098449707,
+          "memory_delta": 0.0,
+          "cpu_usage": 3.4,
+          "peak_memory": 105.046875
+        },
+        "encrypt": {
+          "operation_type": "maabe_encrypt",
+          "start_time": 1748518542.0788493,
+          "stdout": "Starting operation at 2025-05-29 11:35:42.113472\nEncrypting 1KB message with medium policy\nCiphertext size: 1424 bytes\nEncryption overhead: 39.1%\nEncryption completed in 0.076675s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {
+            "encrypt_time": 0.076675
+          },
+          "total_time": 0.1155245304107666,
+          "memory_delta": 0.0,
+          "cpu_usage": 4.8,
+          "peak_memory": 105.046875
+        }
+      },
+      "5": {
+        "setup": {
+          "operation_type": "maabe_setup",
+          "start_time": 1748518542.194714,
+          "stdout": "Starting operation at 2025-05-29 11:35:42.226645\nSetting up MA-ABE with 5 authorities and 10 attributes\nMA-ABE global parameters size: 2304 bytes\nAuthority master keys size: 2560 bytes\nMA-ABE Setup completed in 0.500343s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {
+            "setup_time": 0.500343
+          },
+          "total_time": 0.5362939834594727,
+          "memory_delta": 0.0,
+          "cpu_usage": 1.5,
+          "peak_memory": 105.046875
+        },
+        "keygen": {
+          "operation_type": "maabe_keygen",
+          "start_time": 1748518542.7313008,
+          "stdout": "Starting operation at 2025-05-29 11:35:42.764230\nGenerating keys for user MANUFACTURER with 5 attributes\nKey size: 576 bytes\nKeyGen completed in 0.045102s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {
+            "keygen_time": 0.045102
+          },
+          "total_time": 0.08212065696716309,
+          "memory_delta": 0.0,
+          "cpu_usage": 4.0,
+          "peak_memory": 105.046875
+        },
+        "encrypt": {
+          "operation_type": "maabe_encrypt",
+          "start_time": 1748518542.8137317,
+          "stdout": "Starting operation at 2025-05-29 11:35:42.846488\nEncrypting 1KB message with medium policy\nCiphertext size: 1424 bytes\nEncryption overhead: 39.1%\nEncryption completed in 0.076673s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {
+            "encrypt_time": 0.076673
+          },
+          "total_time": 0.1129770278930664,
+          "memory_delta": 0.0,
+          "cpu_usage": 2.5,
+          "peak_memory": 105.046875
+        }
+      }
+    },
+    "users": {
+      "10": {
+        "operation_type": "user_scalability",
+        "start_time": 1748518542.9270241,
+        "stdout": "Starting operation at 2025-05-29 11:35:42.964040\nSimulating system load with 10 concurrent users\nUser scalability test (10 users) completed in 0.010093s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {},
+        "total_time": 0.05040311813354492,
+        "memory_delta": 0.0,
+        "cpu_usage": 8.8,
+        "peak_memory": 105.046875
+      },
+      "50": {
+        "operation_type": "user_scalability",
+        "start_time": 1748518542.9777417,
+        "stdout": "Starting operation at 2025-05-29 11:35:43.012354\nSimulating system load with 50 concurrent users\nUser scalability test (50 users) completed in 0.050108s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {},
+        "total_time": 0.08830571174621582,
+        "memory_delta": 0.0,
+        "cpu_usage": 3.8,
+        "peak_memory": 105.1875
+      },
+      "100": {
+        "operation_type": "user_scalability",
+        "start_time": 1748518543.0663605,
+        "stdout": "Starting operation at 2025-05-29 11:35:43.099950\nSimulating system load with 100 concurrent users\nUser scalability test (100 users) completed in 0.100156s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {},
+        "total_time": 0.1373584270477295,
+        "memory_delta": 0.0,
+        "cpu_usage": 2.8,
+        "peak_memory": 105.1875
+      },
+      "200": {
+        "operation_type": "user_scalability",
+        "start_time": 1748518543.2040324,
+        "stdout": "Starting operation at 2025-05-29 11:35:43.239298\nSimulating system load with 200 concurrent users\nUser scalability test (200 users) completed in 0.200259s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {},
+        "total_time": 0.23941373825073242,
+        "memory_delta": 0.0,
+        "cpu_usage": 1.4,
+        "peak_memory": 105.1875
+      },
+      "500": {
+        "operation_type": "user_scalability",
+        "start_time": 1748518543.4437585,
+        "stdout": "Starting operation at 2025-05-29 11:35:43.476634\nSimulating system load with 500 concurrent users\nUser scalability test (500 users) completed in 0.500551s\n",
+        "stderr": "",
+        "success": true,
+        "detailed_timing": {},
+        "total_time": 0.5370960235595703,
+        "memory_delta": 0.0,
+        "cpu_usage": 4.5,
+        "peak_memory": 105.1875
+      }
+    },
+    "attributes": {
+      "5": {
+        "setup": {
+          "operation_type": "maabe_setup",
+          "start_time": 1748518543.98118,
+          "stdout": "Starting operation at 2025-05-29 11:35:44.016396\nSetting up MA-ABE with 3 authorities and 5 attributes\nMA-ABE global parameters size: 1792 bytes\nAuthority master keys size: 1536 bytes\nMA-ABE Setup completed in 0.350456s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {
+            "setup_time": 0.350456
+          },
+          "total_time": 0.389723539352417,
+          "memory_delta": 0.0,
+          "cpu_usage": 2.3,
+          "peak_memory": 105.1875
+        },
+        "keygen": {
+          "operation_type": "maabe_keygen",
+          "start_time": 1748518544.3712084,
+          "stdout": "Starting operation at 2025-05-29 11:35:44.402142\nGenerating keys for user MANUFACTURER with 5 attributes\nKey size: 576 bytes\nKeyGen completed in 0.045096s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {
+            "keygen_time": 0.045096
+          },
+          "total_time": 0.0794363021850586,
+          "memory_delta": 0.0,
+          "cpu_usage": 4.9,
+          "peak_memory": 105.1875
+        }
+      },
+      "10": {
+        "setup": {
+          "operation_type": "maabe_setup",
+          "start_time": 1748518544.4509425,
+          "stdout": "Starting operation at 2025-05-29 11:35:44.483063\nSetting up MA-ABE with 3 authorities and 10 attributes\nMA-ABE global parameters size: 1792 bytes\nAuthority master keys size: 1536 bytes\nMA-ABE Setup completed in 0.400546s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {
+            "setup_time": 0.400546
+          },
+          "total_time": 0.437272310256958,
+          "memory_delta": 0.0,
+          "cpu_usage": 1.7,
+          "peak_memory": 105.1875
+        },
+        "keygen": {
+          "operation_type": "maabe_keygen",
+          "start_time": 1748518544.8885176,
+          "stdout": "Starting operation at 2025-05-29 11:35:44.921265\nGenerating keys for user MANUFACTURER with 10 attributes\nKey size: 896 bytes\nKeyGen completed in 0.070147s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {
+            "keygen_time": 0.070147
+          },
+          "total_time": 0.10672211647033691,
+          "memory_delta": 0.0,
+          "cpu_usage": 2.6,
+          "peak_memory": 105.1875
+        }
+      },
+      "15": {
+        "setup": {
+          "operation_type": "maabe_setup",
+          "start_time": 1748518544.9955628,
+          "stdout": "Starting operation at 2025-05-29 11:35:45.031471\nSetting up MA-ABE with 3 authorities and 15 attributes\nMA-ABE global parameters size: 1792 bytes\nAuthority master keys size: 1536 bytes\nMA-ABE Setup completed in 0.450319s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {
+            "setup_time": 0.450319
+          },
+          "total_time": 0.49009156227111816,
+          "memory_delta": 0.0,
+          "cpu_usage": 1.1,
+          "peak_memory": 105.1875
+        },
+        "keygen": {
+          "operation_type": "maabe_keygen",
+          "start_time": 1748518545.4859407,
+          "stdout": "Starting operation at 2025-05-29 11:35:45.519195\nGenerating keys for user MANUFACTURER with 15 attributes\nKey size: 1216 bytes\nKeyGen completed in 0.095186s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {
+            "keygen_time": 0.095186
+          },
+          "total_time": 0.1331632137298584,
+          "memory_delta": 0.0,
+          "cpu_usage": 2.5,
+          "peak_memory": 105.1875
+        }
+      },
+      "20": {
+        "setup": {
+          "operation_type": "maabe_setup",
+          "start_time": 1748518545.619419,
+          "stdout": "Starting operation at 2025-05-29 11:35:45.651309\nSetting up MA-ABE with 3 authorities and 20 attributes\nMA-ABE global parameters size: 1792 bytes\nAuthority master keys size: 1536 bytes\nMA-ABE Setup completed in 0.500602s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {
+            "setup_time": 0.500602
+          },
+          "total_time": 0.5363881587982178,
+          "memory_delta": 0.0,
+          "cpu_usage": 1.2,
+          "peak_memory": 105.1875
+        },
+        "keygen": {
+          "operation_type": "maabe_keygen",
+          "start_time": 1748518546.1561034,
+          "stdout": "Starting operation at 2025-05-29 11:35:46.193766\nGenerating keys for user MANUFACTURER with 20 attributes\nKey size: 1536 bytes\nKeyGen completed in 0.120180s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {
+            "keygen_time": 0.12018
+          },
+          "total_time": 0.16193079948425293,
+          "memory_delta": 0.0,
+          "cpu_usage": 3.1,
+          "peak_memory": 105.1875
+        }
+      },
+      "25": {
+        "setup": {
+          "operation_type": "maabe_setup",
+          "start_time": 1748518546.3183439,
+          "stdout": "Starting operation at 2025-05-29 11:35:46.351252\nSetting up MA-ABE with 3 authorities and 25 attributes\nMA-ABE global parameters size: 1792 bytes\nAuthority master keys size: 1536 bytes\nMA-ABE Setup completed in 0.550641s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {
+            "setup_time": 0.550641
+          },
+          "total_time": 0.5876193046569824,
+          "memory_delta": 0.0,
+          "cpu_usage": 1.6,
+          "peak_memory": 105.1875
+        },
+        "keygen": {
+          "operation_type": "maabe_keygen",
+          "start_time": 1748518546.9062598,
+          "stdout": "Starting operation at 2025-05-29 11:35:46.940309\nGenerating keys for user MANUFACTURER with 25 attributes\nKey size: 1856 bytes\nKeyGen completed in 0.145220s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {
+            "keygen_time": 0.14522
+          },
+          "total_time": 0.18364620208740234,
+          "memory_delta": 0.0,
+          "cpu_usage": 7.6,
+          "peak_memory": 105.1875
+        }
+      }
+    },
+    "policy_complexity": {
+      "simple": {
+        "encrypt": {
+          "operation_type": "maabe_encrypt",
+          "start_time": 1748518547.090242,
+          "stdout": "Starting operation at 2025-05-29 11:35:47.126634\nEncrypting 1KB message with simple policy\nCiphertext size: 1224 bytes\nEncryption overhead: 19.5%\nEncryption completed in 0.051134s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {
+            "encrypt_time": 0.051134
+          },
+          "total_time": 0.0914313793182373,
+          "memory_delta": 0.0,
+          "cpu_usage": 9.1,
+          "peak_memory": 105.1875
+        },
+        "decrypt": {
+          "operation_type": "maabe_decrypt",
+          "start_time": 1748518547.1819665,
+          "stdout": "Starting operation at 2025-05-29 11:35:47.217460\nDecrypting with 3 satisfying attributes\nDecryption completed in 0.054094s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {
+            "decrypt_time": 0.054094
+          },
+          "total_time": 0.0934455394744873,
+          "memory_delta": 0.0,
+          "cpu_usage": 8.4,
+          "peak_memory": 105.1875
+        }
+      },
+      "medium": {
+        "encrypt": {
+          "operation_type": "maabe_encrypt",
+          "start_time": 1748518547.2757332,
+          "stdout": "Starting operation at 2025-05-29 11:35:47.312167\nEncrypting 1KB message with medium policy\nCiphertext size: 1424 bytes\nEncryption overhead: 39.1%\nEncryption completed in 0.076668s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {
+            "encrypt_time": 0.076668
+          },
+          "total_time": 0.1172029972076416,
+          "memory_delta": 0.0,
+          "cpu_usage": 8.1,
+          "peak_memory": 105.1875
+        },
+        "decrypt": {
+          "operation_type": "maabe_decrypt",
+          "start_time": 1748518547.393245,
+          "stdout": "Starting operation at 2025-05-29 11:35:47.427283\nDecrypting with 3 satisfying attributes\nDecryption completed in 0.054097s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {
+            "decrypt_time": 0.054097
+          },
+          "total_time": 0.0921328067779541,
+          "memory_delta": 0.0,
+          "cpu_usage": 8.4,
+          "peak_memory": 105.1875
+        }
+      },
+      "complex": {
+        "encrypt": {
+          "operation_type": "maabe_encrypt",
+          "start_time": 1748518547.485714,
+          "stdout": "Starting operation at 2025-05-29 11:35:47.519391\nEncrypting 1KB message with complex policy\nCiphertext size: 1824 bytes\nEncryption overhead: 78.1%\nEncryption completed in 0.102178s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {
+            "encrypt_time": 0.102178
+          },
+          "total_time": 0.14019370079040527,
+          "memory_delta": 0.0,
+          "cpu_usage": 8.3,
+          "peak_memory": 105.1875
+        },
+        "decrypt": {
+          "operation_type": "maabe_decrypt",
+          "start_time": 1748518547.626198,
+          "stdout": "Starting operation at 2025-05-29 11:35:47.659589\nDecrypting with 3 satisfying attributes\nDecryption completed in 0.054096s\n",
+          "stderr": "",
+          "success": true,
+          "detailed_timing": {
+            "decrypt_time": 0.054096
+          },
+          "total_time": 0.09187555313110352,
+          "memory_delta": 0.0,
+          "cpu_usage": 13.4,
+          "peak_memory": 105.1875
+        }
+      }
+    }
+  },
+  "gas_tracking": {},
+  "metadata": {
+    "timestamp": "2025-05-29T11:34:33.978682",
+    "iterations": 5,
+    "blockchain_config": {
+      "gas_price_gwei": 20,
+      "eth_price_usd": 2000
+    },
+    "enhanced_gas_tracking": false
+  }
+}

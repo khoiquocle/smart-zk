@@ -32,10 +32,10 @@ def generate_attributes(roles_file):
         print(f'Using existing process instance ID from .env: {process_instance_id}')
     except:
         # Only generate new ID if none exists
-        now = datetime.now()
-        now = int(now.strftime("%Y%m%d%H%M%S%f"))
-        random.seed(now)
-        process_instance_id = random.randint(10**19, 2**64 - 1)
+    now = datetime.now()
+    now = int(now.strftime("%Y%m%d%H%M%S%f"))
+    random.seed(now)
+    process_instance_id = random.randint(10**19, 2**64 - 1)
         print(f'Generated new process instance ID: {process_instance_id}')
         # Save the new ID to .env
         store_process_id_to_env(str(process_instance_id))
@@ -128,50 +128,50 @@ def generate_attributes(roles_file):
     x = conn.cursor()
 
     try:
-        # Save user<->IPFS basic mapping
+    # Save user<->IPFS basic mapping
         print("DEBUG: Inserting into user_attributes table...")
-        x.execute("INSERT OR IGNORE INTO user_attributes VALUES (?,?,?)",
-                  (str(process_instance_id), hash_file, file_to_str))
+    x.execute("INSERT OR IGNORE INTO user_attributes VALUES (?,?,?)",
+              (str(process_instance_id), hash_file, file_to_str))
         print("DEBUG: user_attributes insert successful")
 
-        # Create commitment table if missing
+    # Create commitment table if missing
         print("DEBUG: Creating attribute_commitments table...")
-        x.execute('''
-        CREATE TABLE IF NOT EXISTS attribute_commitments (
-            process_instance TEXT,
-            address TEXT,
-            auth_id INTEGER,
-            attr_type INTEGER,
-            commitment TEXT,
-            secret TEXT,
-            value TEXT,
-            expiry TEXT,
-            PRIMARY KEY (process_instance, address, auth_id, attr_type)
-        )
-        ''')
+    x.execute('''
+    CREATE TABLE IF NOT EXISTS attribute_commitments (
+        process_instance TEXT,
+        address TEXT,
+        auth_id INTEGER,
+        attr_type INTEGER,
+        commitment TEXT,
+        secret TEXT,
+        value TEXT,
+        expiry TEXT,
+        PRIMARY KEY (process_instance, address, auth_id, attr_type)
+    )
+    ''')
         print("DEBUG: attribute_commitments table created successfully")
 
-        # Save detailed commitment info
+    # Save detailed commitment info
         print("DEBUG: Inserting commitment data...")
         insert_count = 0
-        for address, auth_attrs in attribute_commitments.items():
-            for auth_id, type_attrs in auth_attrs.items():
-                for attr_type, attr_data in type_attrs.items():
+    for address, auth_attrs in attribute_commitments.items():
+        for auth_id, type_attrs in auth_attrs.items():
+            for attr_type, attr_data in type_attrs.items():
                     # Store commitment as comma-separated string
                     commitment_str = f"{attr_data['commitment']}"
-                    x.execute(
-                        "INSERT OR REPLACE INTO attribute_commitments VALUES (?,?,?,?,?,?,?,?)",
-                        (
-                            str(process_instance_id),
-                            address,
-                            auth_id,
-                            attr_type,
+                x.execute(
+                    "INSERT OR REPLACE INTO attribute_commitments VALUES (?,?,?,?,?,?,?,?)",
+                    (
+                        str(process_instance_id),
+                        address,
+                        auth_id,
+                        attr_type,
                             commitment_str,
-                            str(attr_data["secret"]),
-                            attr_data["value"],
-                            str(attr_data["expiry"])
-                        )
+                        str(attr_data["secret"]),
+                        attr_data["value"],
+                        str(attr_data["expiry"])
                     )
+                )
                     insert_count += 1
                     print(f"DEBUG: Inserted commitment for {address}, auth {auth_id}, type {attr_type}")
 
@@ -180,7 +180,7 @@ def generate_attributes(roles_file):
         print(f"DEBUG: Inserted {insert_count} commitment records")
 
         print("DEBUG: Committing database changes...")
-        conn.commit()
+    conn.commit()
         print("DEBUG: Database commit successful")
         
     except Exception as e:
@@ -188,7 +188,7 @@ def generate_attributes(roles_file):
         conn.rollback()
         raise e
     finally:
-        conn.close()
+    conn.close()
         print("DEBUG: Database connection closed")
 
 # CLI Interface

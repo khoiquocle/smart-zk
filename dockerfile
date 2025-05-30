@@ -61,14 +61,27 @@ RUN rm -rf ~/.ipfs && \
 # Update PATH to ensure new IPFS is found first
 ENV PATH="/usr/local/bin:${PATH}"
 
+# Install system dependencies for Python packages
+RUN apt-get update && apt-get install -y \
+    python3-dev \
+    python3-pip \
+    libjpeg-dev \
+    zlib1g-dev \
+    libpng-dev \
+    libfreetype6-dev \
+    libtiff-dev \
+    pkg-config \
+    && rm -rf /var/lib/apt/lists/*
+
 # Install benchmark dependencies
 RUN pip3 install --no-cache-dir \
     psutil>=5.8.0 \
+    numpy>=1.21.0 \
+    pandas>=1.3.0 \
+    pillow>=8.3.2 \
     matplotlib>=3.5.0 \
     seaborn>=0.11.0 \
     plotly>=5.0.0 \
-    pandas>=1.3.0 \
-    numpy>=1.21.0 \
     tqdm>=4.62.0 \
     tabulate>=0.8.9
 
