@@ -73,7 +73,7 @@ SMART-ZK is a comprehensive zero-knowledge proof system implementation that enab
 - **Software**
   - Python 3.x
   - IPFS daemon
-  - PostgreSQL 12+
+  - SQLite
   - Web3.py
   - Node.js (for IPFS)
 
@@ -96,7 +96,7 @@ SMART-ZK is a comprehensive zero-knowledge proof system implementation that enab
 ## Prerequisites
 - Python 3.x
 - IPFS daemon
-- PostgreSQL database
+- SQLite database
 - Required Python packages (install via pip):
   ```bash
   pip install web3 requests
