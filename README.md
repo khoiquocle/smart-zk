@@ -62,21 +62,6 @@ SMART-ZK is a comprehensive zero-knowledge proof system implementation that enab
    - Blockchain immutability
    - Secure database access controls
 
-## Project Structure
-```
-/test
-├── src/                    # Source code directory
-│   ├── simple_gas_tracker.py    # Gas cost tracking tool
-│   ├── benchmark_martzk_enhanced.py  # Enhanced benchmarking tool
-│   └── demo_gas_tracking.py     # Gas tracking demonstration
-├── sh_files/              # Shell scripts for workflow execution
-│   ├── db_and_IPFS.sh     # Database and IPFS setup
-│   ├── authorities_sequential.sh  # Sequential authority operations
-│   ├── coordinated_setup.sh      # Coordinated setup process
-│   └── decipher_enhanced.sh      # Enhanced deciphering process
-└── README.md              # This documentation file
-```
-
 ## Technical Specifications
 
 ### System Requirements
@@ -199,14 +184,6 @@ The system generates detailed reports including:
 3. **Encoding Issues**
    - Use the latest version of the gas tracker
    - Ensure proper file permissions
-
-## Contributing
-1. Fork the repository
-2. Create a feature branch
-3. Submit a pull request
-
-## License
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Contact
 For support or questions, please open an issue in the repository.
