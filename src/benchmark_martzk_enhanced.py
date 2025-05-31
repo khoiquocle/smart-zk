@@ -527,7 +527,7 @@ class MARTSIABenchmark:
                 key = f'zksnark_{op}_{circuit}'
                 times = [result[key]['total_time'] for result in performance_results.values() if key in result and result[key]['success']]
                 if times:
-                    print(f"         {op.replace('_', ' ').title()}: {statistics.mean(times):.3f}s +/- {statistics.stdev(times):.3f}s")
+                    print(f"{op.replace('_', ' ').title()}: {statistics.mean(times):.3f}s +/- {statistics.stdev(times):.3f}s")
     
     def analyze_cost_metrics(self, performance_results):
         """Analyze cost metrics"""

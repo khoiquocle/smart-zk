@@ -1,4 +1,4 @@
-# SMART-ZK: Secure Multi-Authority Real-Time Zero-Knowledge System
+# SMART-ZK: Enhancing Privacy Preserving and Security in Multi-Party Business Blockchain-Based Process
 
 ## Overview
 SMART-ZK is a comprehensive zero-knowledge proof system implementation that enables secure, real-time verification of supply chain data. The system uses a multi-authority approach to ensure trust and transparency across the supply chain network.
