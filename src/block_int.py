@@ -2,10 +2,94 @@ from web3 import Web3
 from decouple import config
 import json
 import base64
+import time
+from datetime import datetime
 
 # Connect to Ganache
 ganache_url = "http://127.0.0.1:7545"
 web3 = Web3(Web3.HTTPProvider(ganache_url))
+
+# Gas tracking global configuration
+GAS_TRACKING_ENABLED = True
+GAS_PRICE_GWEI = 20  # Default gas price in Gwei
+ETH_PRICE_USD = 2000  # Default ETH price in USD
+gas_tracking_data = []
+
+# Gas tracking functions
+def enable_gas_tracking(gas_price_gwei=20, eth_price_usd=2000):
+    """Enable gas tracking with custom gas price and ETH price"""
+    global GAS_TRACKING_ENABLED, GAS_PRICE_GWEI, ETH_PRICE_USD
+    GAS_TRACKING_ENABLED = True
+    GAS_PRICE_GWEI = gas_price_gwei
+    ETH_PRICE_USD = eth_price_usd
+    print(f"[GAS TRACKER] Enabled - Gas Price: {gas_price_gwei} Gwei, ETH Price: ${eth_price_usd}")
+
+def disable_gas_tracking():
+    """Disable gas tracking"""
+    global GAS_TRACKING_ENABLED
+    GAS_TRACKING_ENABLED = False
+    print("[GAS TRACKER] Disabled")
+
+def track_gas_usage(step_name, tx_receipt, operation_type="unknown"):
+    """Track gas usage for a transaction and display costs"""
+    if not GAS_TRACKING_ENABLED:
+        return
+    
+    gas_used = tx_receipt.gasUsed
+    gas_price_wei = GAS_PRICE_GWEI * 1e9
+    eth_cost = (gas_used * gas_price_wei) / 1e18
+    usd_cost = eth_cost * ETH_PRICE_USD
+    
+    # Store tracking data
+    tracking_entry = {
+        'step_name': step_name,
+        'operation_type': operation_type,
+        'gas_used': gas_used,
+        'gas_price_gwei': GAS_PRICE_GWEI,
+        'eth_cost': eth_cost,
+        'usd_cost': usd_cost,
+        'timestamp': datetime.now().isoformat(),
+        'tx_hash': tx_receipt.transactionHash.hex()
+    }
+    gas_tracking_data.append(tracking_entry)
+    
+    # Display gas usage
+    print(f"[GAS] {step_name}: {gas_used:,} gas (ETH: {eth_cost:.6f}, USD: ${usd_cost:.2f})")
+
+def print_gas_summary():
+    """Print summary of all tracked gas usage"""
+    if not GAS_TRACKING_ENABLED or not gas_tracking_data:
+        print("[GAS] No gas tracking data available")
+        return
+    
+    print("\n" + "="*70)
+    print("GAS USAGE SUMMARY")
+    print("="*70)
+    
+    total_gas = 0
+    total_eth = 0
+    total_usd = 0
+    
+    for entry in gas_tracking_data:
+        total_gas += entry['gas_used']
+        total_eth += entry['eth_cost']
+        total_usd += entry['usd_cost']
+        print(f"{entry['step_name']:<40} {entry['gas_used']:>10,} gas ${entry['usd_cost']:>6.2f}")
+    
+    print("-"*70)
+    print(f"{'TOTAL':<40} {total_gas:>10,} gas ${total_usd:>6.2f}")
+    print(f"Total ETH Cost: {total_eth:.6f} ETH")
+    print("="*70)
+
+def get_gas_tracking_data():
+    """Return gas tracking data for analysis"""
+    return gas_tracking_data.copy()
+
+def clear_gas_tracking_data():
+    """Clear gas tracking data"""
+    global gas_tracking_data
+    gas_tracking_data.clear()
+    print("[GAS TRACKER] Data cleared")
 
 # MARTZK Dual-Function Implementation
 # Phase 1: Authority Setup - Use MA-ABE contract for setElementHashed, sendElements, etc.
@@ -57,6 +141,7 @@ def activate_contract(attribute_certifier_address, private_key):
     transaction_hash = __send_txt__(signed_transaction.rawTransaction)
     print(f'tx_hash: {web3.toHex(transaction_hash)}')
     tx_receipt = web3.eth.wait_for_transaction_receipt(transaction_hash, timeout=600)
+    track_gas_usage("Contract Activation", tx_receipt, "contract_setup")
     if verbose:
         print(tx_receipt)
 
@@ -89,6 +174,7 @@ def send_authority_names(authority_address, private_key, process_instance_id, ha
     transaction_hash = __send_txt__(signed_transaction.rawTransaction)
     print(f'tx_hash: {web3.toHex(transaction_hash)}')
     tx_receipt = web3.eth.wait_for_transaction_receipt(transaction_hash, timeout=600)
+    track_gas_usage("Authority Names Registration", tx_receipt, "authority_setup")
     if verbose:
         print(tx_receipt)
 
@@ -116,6 +202,7 @@ def sendHashedElements(authority_address, private_key, process_instance_id, elem
     transaction_hash = __send_txt__(signed_transaction.rawTransaction)
     print(f'tx_hash: {web3.toHex(transaction_hash)}')
     tx_receipt = web3.eth.wait_for_transaction_receipt(transaction_hash, timeout=600)
+    track_gas_usage("Hashed Elements Storage", tx_receipt, "authority_setup")
     if verbose:
         print(tx_receipt)
 
@@ -144,6 +231,7 @@ def sendElements(authority_address, private_key, process_instance_id, elements):
     transaction_hash = __send_txt__(signed_transaction.rawTransaction)
     print(f'tx_hash: {web3.toHex(transaction_hash)}')
     tx_receipt = web3.eth.wait_for_transaction_receipt(transaction_hash, timeout=600)
+    track_gas_usage("Initial Parameters Storage", tx_receipt, "authority_setup")
     if verbose:
         print(tx_receipt)
 
@@ -173,6 +261,7 @@ def send_parameters_link(authority_address, private_key, process_instance_id, ha
     transaction_hash = __send_txt__(signed_transaction.rawTransaction)
     print(f'tx_hash: {web3.toHex(transaction_hash)}')
     tx_receipt = web3.eth.wait_for_transaction_receipt(transaction_hash, timeout=600)
+    track_gas_usage("Public Parameters Link", tx_receipt, "authority_setup")
     if verbose:
         print(tx_receipt)
 
@@ -199,6 +288,7 @@ def send_publicKey_link(authority_address, private_key, process_instance_id, has
     transaction_hash = __send_txt__(signed_transaction.rawTransaction)
     print(f'tx_hash: {web3.toHex(transaction_hash)}')
     tx_receipt = web3.eth.wait_for_transaction_receipt(transaction_hash, timeout=600)
+    track_gas_usage("Public Key Registration", tx_receipt, "authority_setup")
     if verbose:
         print(tx_receipt)
 
@@ -226,6 +316,7 @@ def send_MessageIPFSLink(dataOwner_address, private_key, message_id, hash_file):
     transaction_hash = __send_txt__(signed_transaction.rawTransaction)
     print(f'tx_hash: {web3.toHex(transaction_hash)}')
     tx_receipt = web3.eth.wait_for_transaction_receipt(transaction_hash, timeout=600)
+    track_gas_usage("Message IPFS Link Storage", tx_receipt, "data_storage")
     if verbose:
         print(tx_receipt)
 
@@ -255,6 +346,7 @@ def send_users_attributes(attribute_certifier_address, private_key, process_inst
     transaction_hash = __send_txt__(signed_transaction.rawTransaction)
     print(f'tx_hash: {web3.toHex(transaction_hash)}')
     tx_receipt = web3.eth.wait_for_transaction_receipt(transaction_hash, timeout=600)
+    track_gas_usage("User Attributes Registration", tx_receipt, "attribute_certification")
     if verbose:
         print(tx_receipt)
 
@@ -280,6 +372,7 @@ def send_publicKey_readers(reader_address, private_key, hash_file):
     transaction_hash = __send_txt__(signed_transaction.rawTransaction)
     print(f'tx_hash: {web3.toHex(transaction_hash)}')
     tx_receipt = web3.eth.wait_for_transaction_receipt(transaction_hash, timeout=600)
+    track_gas_usage("Reader Public Key Registration", tx_receipt, "reader_setup")
     if verbose:
         print(tx_receipt)
 
@@ -327,6 +420,7 @@ def send_users_attributes_with_commitment(certifier_address, private_key, proces
     
     # Wait for transaction receipt
     tx_receipt = web3.eth.waitForTransactionReceipt(tx_hash)
+    track_gas_usage("Attribute Commitment Storage", tx_receipt, "zksnark_certification")
     return tx_receipt
 
 def retrieve_users_attributes_with_zksnark(process_instance_id):
@@ -363,4 +457,86 @@ def verify_process_proof(proof_a, proof_b, proof_c, public_inputs):
     """Verify process proof using ZK-SNARK contract"""
     contract = get_zksnark_contract()
     return contract.functions.verifyProcessProof(proof_a, proof_b, proof_c, public_inputs).call()
+
+# Add zkSNARK verification functions with gas tracking
+def verify_attribute_proof_onchain(proof_a, proof_b, proof_c, public_inputs, sender_address, private_key):
+    """Verify attribute proof on-chain using ZK-SNARK contract with gas tracking"""
+    contract = get_zksnark_contract()
+    
+    # Build transaction
+    nonce = web3.eth.getTransactionCount(sender_address)
+    tx = contract.functions.verifyAttributeProof(
+        proof_a,
+        proof_b,
+        proof_c,
+        public_inputs
+    ).buildTransaction({
+        'chainId': chain_id,
+        'gas': 3000000,
+        'gasPrice': web3.toWei('50', 'gwei'),
+        'nonce': nonce,
+    })
+    
+    # Sign and send transaction
+    signed_tx = web3.eth.account.signTransaction(tx, private_key)
+    tx_hash = web3.eth.sendRawTransaction(signed_tx.rawTransaction)
+    
+    # Wait for transaction receipt
+    tx_receipt = web3.eth.waitForTransactionReceipt(tx_hash)
+    track_gas_usage("Attribute Proof Verification", tx_receipt, "zksnark_verification")
+    return tx_receipt
+
+def verify_policy_proof_onchain(proof_a, proof_b, proof_c, public_inputs, sender_address, private_key):
+    """Verify policy proof on-chain using ZK-SNARK contract with gas tracking"""
+    contract = get_zksnark_contract()
+    
+    # Build transaction
+    nonce = web3.eth.getTransactionCount(sender_address)
+    tx = contract.functions.verifyPolicyProof(
+        proof_a,
+        proof_b,
+        proof_c,
+        public_inputs
+    ).buildTransaction({
+        'chainId': chain_id,
+        'gas': 3000000,
+        'gasPrice': web3.toWei('50', 'gwei'),
+        'nonce': nonce,
+    })
+    
+    # Sign and send transaction
+    signed_tx = web3.eth.account.signTransaction(tx, private_key)
+    tx_hash = web3.eth.sendRawTransaction(signed_tx.rawTransaction)
+    
+    # Wait for transaction receipt
+    tx_receipt = web3.eth.waitForTransactionReceipt(tx_hash)
+    track_gas_usage("Policy Proof Verification", tx_receipt, "zksnark_verification")
+    return tx_receipt
+
+def verify_process_proof_onchain(proof_a, proof_b, proof_c, public_inputs, sender_address, private_key):
+    """Verify process proof on-chain using ZK-SNARK contract with gas tracking"""
+    contract = get_zksnark_contract()
+    
+    # Build transaction
+    nonce = web3.eth.getTransactionCount(sender_address)
+    tx = contract.functions.verifyProcessProof(
+        proof_a,
+        proof_b,
+        proof_c,
+        public_inputs
+    ).buildTransaction({
+        'chainId': chain_id,
+        'gas': 3000000,
+        'gasPrice': web3.toWei('50', 'gwei'),
+        'nonce': nonce,
+    })
+    
+    # Sign and send transaction
+    signed_tx = web3.eth.account.signTransaction(tx, private_key)
+    tx_hash = web3.eth.sendRawTransaction(signed_tx.rawTransaction)
+    
+    # Wait for transaction receipt
+    tx_receipt = web3.eth.waitForTransactionReceipt(tx_hash)
+    track_gas_usage("Process Proof Verification", tx_receipt, "zksnark_verification")
+    return tx_receipt
 
