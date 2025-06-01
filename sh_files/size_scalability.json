@@ -1,0 +1,2101 @@
+{
+  "workflow_start": "2025-05-31T16:34:18.485011",
+  "config": {
+    "gas_price_gwei": 20.0,
+    "eth_price_usd": 2000.0
+  },
+  "components": [
+    {
+      "timestamp": "2025-05-31T16:34:18.485060",
+      "component_info": {
+        "component": "data_owner",
+        "sender": "LOGISTIC",
+        "process_instance_id": 14346233703771857702,
+        "input_path": "../input_files/",
+        "policies_path": "../json_files/policies.json"
+      },
+      "summary": {
+        "gas_used": 89772,
+        "eth_cost": 0.00179544,
+        "usd_cost": 3.59088,
+        "steps_count": 1,
+        "file_operations_count": 8,
+        "encryption_time_seconds": 1.1553981304168701,
+        "decryption_time_seconds": 0,
+        "total_time_seconds": 1.1553981304168701
+      },
+      "gas_steps": [
+        {
+          "step_name": "Message IPFS Link Storage",
+          "operation_type": "data_storage",
+          "gas_used": 89772,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.00179544,
+          "usd_cost": 3.59088,
+          "timestamp": "2025-05-31T16:34:18.459183",
+          "tx_hash": "0x1371d4eff6858fe44b1b30c0c51142f25c8e8da91bceaf9ab4adb533e16ef576"
+        }
+      ],
+      "file_operations": [
+        {
+          "operation_type": "encryption",
+          "file_name": "export_document_slice1.pdf",
+          "start_time": "2025-05-31T16:34:15.141159",
+          "end_time": "2025-05-31T16:34:15.209510",
+          "duration_seconds": 0.06835126876831055,
+          "duration_ms": 68.35126876831055,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:34:15.209523",
+          "additional_info": {
+            "file_size_bytes": 981296,
+            "policy": "(CUSTOMS@AUTH1 or ((LOGISTIC@AUTH1 and LOGISTIC@AUTH2) or MANUFACTURER@AUTH1))",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "export_document_slice2.pdf",
+          "start_time": "2025-05-31T16:34:15.209530",
+          "end_time": "2025-05-31T16:34:15.333709",
+          "duration_seconds": 0.12417888641357422,
+          "duration_ms": 124.17888641357422,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:34:15.333720",
+          "additional_info": {
+            "file_size_bytes": 982696,
+            "policy": "((CUSTOMS@AUTH1 and INTERNATIONAL@AUTH2) or ((SUPPLIER@AUTH1 and SUPPLIER@AUTH2) or (SUPPLIER@AUTH1 and SUPPLIER@AUTH3) or (SUPPLIER@AUTH1 and SUPPLIER@AUTH4) or (SUPPLIER@AUTH2 and SUPPLIER@AUTH3) or (SUPPLIER@AUTH2 and SUPPLIER@AUTH4) or (SUPPLIER@AUTH3 and SUPPLIER@AUTH4)))",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "export_document_slice3.pdf",
+          "start_time": "2025-05-31T16:34:15.333724",
+          "end_time": "2025-05-31T16:34:15.395180",
+          "duration_seconds": 0.061455488204956055,
+          "duration_ms": 61.455488204956055,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:34:15.395191",
+          "additional_info": {
+            "file_size_bytes": 981220,
+            "policy": "((SUPPLIER@AUTH3 and SUPPLIER@AUTH4 and ELECTRIC@AUTH2) or MANUFACTURER@AUTH1)",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "export_document_slice4.pdf",
+          "start_time": "2025-05-31T16:34:15.395196",
+          "end_time": "2025-05-31T16:34:15.463017",
+          "duration_seconds": 0.06782102584838867,
+          "duration_ms": 67.82102584838867,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:34:15.463029",
+          "additional_info": {
+            "file_size_bytes": 981292,
+            "policy": "(CUSTOMS@AUTH1 or ((SUPPLIER@AUTH2 and RAW@AUTH1) or (LOGISTIC@AUTH1 and LOGISTIC@AUTH2)))",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "100kb.txt",
+          "start_time": "2025-05-31T16:34:15.463034",
+          "end_time": "2025-05-31T16:34:15.512487",
+          "duration_seconds": 0.049453020095825195,
+          "duration_ms": 49.453020095825195,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:34:15.512506",
+          "additional_info": {
+            "file_size_bytes": 137808,
+            "policy": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "1mb.txt",
+          "start_time": "2025-05-31T16:34:15.512513",
+          "end_time": "2025-05-31T16:34:15.565493",
+          "duration_seconds": 0.05297970771789551,
+          "duration_ms": 52.97970771789551,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:34:15.565504",
+          "additional_info": {
+            "file_size_bytes": 1378080,
+            "policy": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "10mb.txt",
+          "start_time": "2025-05-31T16:34:15.565510",
+          "end_time": "2025-05-31T16:34:15.656582",
+          "duration_seconds": 0.09107232093811035,
+          "duration_ms": 91.07232093811035,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:34:15.656595",
+          "additional_info": {
+            "file_size_bytes": 13780800,
+            "policy": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "100mb.txt",
+          "start_time": "2025-05-31T16:34:15.656600",
+          "end_time": "2025-05-31T16:34:16.296686",
+          "duration_seconds": 0.6400864124298096,
+          "duration_ms": 640.0864124298096,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:34:16.296698",
+          "additional_info": {
+            "file_size_bytes": 137808000,
+            "policy": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+            "symmetric_key_length": 64
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-31T16:39:22.027587",
+      "component_info": {
+        "component": "data_owner",
+        "sender": "LOGISTIC",
+        "process_instance_id": 14346233703771857702,
+        "input_path": "../input_files/",
+        "policies_path": "../json_files/policies.json"
+      },
+      "summary": {
+        "gas_used": 89772,
+        "eth_cost": 0.00179544,
+        "usd_cost": 3.59088,
+        "steps_count": 1,
+        "file_operations_count": 8,
+        "encryption_time_seconds": 1.148902416229248,
+        "decryption_time_seconds": 0,
+        "total_time_seconds": 1.148902416229248
+      },
+      "gas_steps": [
+        {
+          "step_name": "Message IPFS Link Storage",
+          "operation_type": "data_storage",
+          "gas_used": 89772,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.00179544,
+          "usd_cost": 3.59088,
+          "timestamp": "2025-05-31T16:39:22.005997",
+          "tx_hash": "0x41c5b6509db720886a4c0568d9d6a3d704c58e8c8ff0f51af043ebef33087802"
+        }
+      ],
+      "file_operations": [
+        {
+          "operation_type": "encryption",
+          "file_name": "export_document_slice1.pdf",
+          "start_time": "2025-05-31T16:39:18.716207",
+          "end_time": "2025-05-31T16:39:18.783830",
+          "duration_seconds": 0.06762290000915527,
+          "duration_ms": 67.62290000915527,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:39:18.783841",
+          "additional_info": {
+            "file_size_bytes": 981296,
+            "policy": "(CUSTOMS@AUTH1 or ((LOGISTIC@AUTH1 and LOGISTIC@AUTH2) or MANUFACTURER@AUTH1))",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "export_document_slice2.pdf",
+          "start_time": "2025-05-31T16:39:18.783866",
+          "end_time": "2025-05-31T16:39:18.907184",
+          "duration_seconds": 0.12331843376159668,
+          "duration_ms": 123.31843376159668,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:39:18.907196",
+          "additional_info": {
+            "file_size_bytes": 982696,
+            "policy": "((CUSTOMS@AUTH1 and INTERNATIONAL@AUTH2) or ((SUPPLIER@AUTH1 and SUPPLIER@AUTH2) or (SUPPLIER@AUTH1 and SUPPLIER@AUTH3) or (SUPPLIER@AUTH1 and SUPPLIER@AUTH4) or (SUPPLIER@AUTH2 and SUPPLIER@AUTH3) or (SUPPLIER@AUTH2 and SUPPLIER@AUTH4) or (SUPPLIER@AUTH3 and SUPPLIER@AUTH4)))",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "export_document_slice3.pdf",
+          "start_time": "2025-05-31T16:39:18.907215",
+          "end_time": "2025-05-31T16:39:18.967951",
+          "duration_seconds": 0.06073570251464844,
+          "duration_ms": 60.73570251464844,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:39:18.967963",
+          "additional_info": {
+            "file_size_bytes": 981220,
+            "policy": "((SUPPLIER@AUTH3 and SUPPLIER@AUTH4 and ELECTRIC@AUTH2) or MANUFACTURER@AUTH1)",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "export_document_slice4.pdf",
+          "start_time": "2025-05-31T16:39:18.967982",
+          "end_time": "2025-05-31T16:39:19.035061",
+          "duration_seconds": 0.0670783519744873,
+          "duration_ms": 67.0783519744873,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:39:19.035073",
+          "additional_info": {
+            "file_size_bytes": 981292,
+            "policy": "(CUSTOMS@AUTH1 or ((SUPPLIER@AUTH2 and RAW@AUTH1) or (LOGISTIC@AUTH1 and LOGISTIC@AUTH2)))",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "100kb.txt",
+          "start_time": "2025-05-31T16:39:19.035092",
+          "end_time": "2025-05-31T16:39:19.082672",
+          "duration_seconds": 0.04757976531982422,
+          "duration_ms": 47.57976531982422,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:39:19.082684",
+          "additional_info": {
+            "file_size_bytes": 137808,
+            "policy": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "1mb.txt",
+          "start_time": "2025-05-31T16:39:19.082703",
+          "end_time": "2025-05-31T16:39:19.133648",
+          "duration_seconds": 0.05094480514526367,
+          "duration_ms": 50.94480514526367,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:39:19.133661",
+          "additional_info": {
+            "file_size_bytes": 1378080,
+            "policy": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "10mb.txt",
+          "start_time": "2025-05-31T16:39:19.133679",
+          "end_time": "2025-05-31T16:39:19.222612",
+          "duration_seconds": 0.08893275260925293,
+          "duration_ms": 88.93275260925293,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:39:19.222625",
+          "additional_info": {
+            "file_size_bytes": 13780800,
+            "policy": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "100mb.txt",
+          "start_time": "2025-05-31T16:39:19.222645",
+          "end_time": "2025-05-31T16:39:19.865335",
+          "duration_seconds": 0.6426897048950195,
+          "duration_ms": 642.6897048950195,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:39:19.865348",
+          "additional_info": {
+            "file_size_bytes": 137808000,
+            "policy": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+            "symmetric_key_length": 64
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-31T16:40:18.694042",
+      "component_info": {
+        "component": "data_owner",
+        "sender": "LOGISTIC",
+        "process_instance_id": 14346233703771857702,
+        "input_path": "../input_files/",
+        "policies_path": "../json_files/policies.json"
+      },
+      "summary": {
+        "gas_used": 89772,
+        "eth_cost": 0.00179544,
+        "usd_cost": 3.59088,
+        "steps_count": 1,
+        "file_operations_count": 8,
+        "encryption_time_seconds": 1.1307258605957031,
+        "decryption_time_seconds": 0,
+        "total_time_seconds": 1.1307258605957031
+      },
+      "gas_steps": [
+        {
+          "step_name": "Message IPFS Link Storage",
+          "operation_type": "data_storage",
+          "gas_used": 89772,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.00179544,
+          "usd_cost": 3.59088,
+          "timestamp": "2025-05-31T16:40:18.670045",
+          "tx_hash": "0xcb8b467de9acb474bf2ce3376844cf9a081a72ded71c7bfa4811670a99aeb595"
+        }
+      ],
+      "file_operations": [
+        {
+          "operation_type": "encryption",
+          "file_name": "export_document_slice1.pdf",
+          "start_time": "2025-05-31T16:40:15.419635",
+          "end_time": "2025-05-31T16:40:15.495415",
+          "duration_seconds": 0.07577991485595703,
+          "duration_ms": 75.77991485595703,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:40:15.495428",
+          "additional_info": {
+            "file_size_bytes": 981296,
+            "policy": "(CUSTOMS@AUTH1 or ((LOGISTIC@AUTH1 and LOGISTIC@AUTH2) or MANUFACTURER@AUTH1))",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "export_document_slice2.pdf",
+          "start_time": "2025-05-31T16:40:15.495472",
+          "end_time": "2025-05-31T16:40:15.622342",
+          "duration_seconds": 0.12687039375305176,
+          "duration_ms": 126.87039375305176,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:40:15.622353",
+          "additional_info": {
+            "file_size_bytes": 982696,
+            "policy": "((CUSTOMS@AUTH1 and INTERNATIONAL@AUTH2) or ((SUPPLIER@AUTH1 and SUPPLIER@AUTH2) or (SUPPLIER@AUTH1 and SUPPLIER@AUTH3) or (SUPPLIER@AUTH1 and SUPPLIER@AUTH4) or (SUPPLIER@AUTH2 and SUPPLIER@AUTH3) or (SUPPLIER@AUTH2 and SUPPLIER@AUTH4) or (SUPPLIER@AUTH3 and SUPPLIER@AUTH4)))",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "export_document_slice3.pdf",
+          "start_time": "2025-05-31T16:40:15.622372",
+          "end_time": "2025-05-31T16:40:15.682677",
+          "duration_seconds": 0.060304880142211914,
+          "duration_ms": 60.304880142211914,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:40:15.682688",
+          "additional_info": {
+            "file_size_bytes": 981220,
+            "policy": "((SUPPLIER@AUTH3 and SUPPLIER@AUTH4 and ELECTRIC@AUTH2) or MANUFACTURER@AUTH1)",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "export_document_slice4.pdf",
+          "start_time": "2025-05-31T16:40:15.682708",
+          "end_time": "2025-05-31T16:40:15.749092",
+          "duration_seconds": 0.06638455390930176,
+          "duration_ms": 66.38455390930176,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:40:15.749104",
+          "additional_info": {
+            "file_size_bytes": 981292,
+            "policy": "(CUSTOMS@AUTH1 or ((SUPPLIER@AUTH2 and RAW@AUTH1) or (LOGISTIC@AUTH1 and LOGISTIC@AUTH2)))",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "100kb.txt",
+          "start_time": "2025-05-31T16:40:15.749124",
+          "end_time": "2025-05-31T16:40:15.797583",
+          "duration_seconds": 0.04845929145812988,
+          "duration_ms": 48.45929145812988,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:40:15.797595",
+          "additional_info": {
+            "file_size_bytes": 137808,
+            "policy": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "1mb.txt",
+          "start_time": "2025-05-31T16:40:15.797614",
+          "end_time": "2025-05-31T16:40:15.849523",
+          "duration_seconds": 0.05190849304199219,
+          "duration_ms": 51.90849304199219,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:40:15.849535",
+          "additional_info": {
+            "file_size_bytes": 1378080,
+            "policy": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "10mb.txt",
+          "start_time": "2025-05-31T16:40:15.849558",
+          "end_time": "2025-05-31T16:40:15.938422",
+          "duration_seconds": 0.08886432647705078,
+          "duration_ms": 88.86432647705078,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:40:15.938437",
+          "additional_info": {
+            "file_size_bytes": 13780800,
+            "policy": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "100mb.txt",
+          "start_time": "2025-05-31T16:40:15.938461",
+          "end_time": "2025-05-31T16:40:16.550615",
+          "duration_seconds": 0.6121540069580078,
+          "duration_ms": 612.1540069580078,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:40:16.550630",
+          "additional_info": {
+            "file_size_bytes": 137808000,
+            "policy": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+            "symmetric_key_length": 64
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-31T16:40:37.578294",
+      "component_info": {
+        "component": "data_owner",
+        "sender": "LOGISTIC",
+        "process_instance_id": 14346233703771857702,
+        "input_path": "../input_files/",
+        "policies_path": "../json_files/policies.json"
+      },
+      "summary": {
+        "gas_used": 89772,
+        "eth_cost": 0.00179544,
+        "usd_cost": 3.59088,
+        "steps_count": 1,
+        "file_operations_count": 8,
+        "encryption_time_seconds": 1.1878662109375,
+        "decryption_time_seconds": 0,
+        "total_time_seconds": 1.1878662109375
+      },
+      "gas_steps": [
+        {
+          "step_name": "Message IPFS Link Storage",
+          "operation_type": "data_storage",
+          "gas_used": 89772,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.00179544,
+          "usd_cost": 3.59088,
+          "timestamp": "2025-05-31T16:40:37.558161",
+          "tx_hash": "0x17fc81c21bde4f8456bcf39c2619ad5a2900b36fe96a5cb6ad7bb0c201e022c9"
+        }
+      ],
+      "file_operations": [
+        {
+          "operation_type": "encryption",
+          "file_name": "export_document_slice1.pdf",
+          "start_time": "2025-05-31T16:40:34.251732",
+          "end_time": "2025-05-31T16:40:34.320083",
+          "duration_seconds": 0.06835103034973145,
+          "duration_ms": 68.35103034973145,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:40:34.320095",
+          "additional_info": {
+            "file_size_bytes": 981296,
+            "policy": "(CUSTOMS@AUTH1 or ((LOGISTIC@AUTH1 and LOGISTIC@AUTH2) or MANUFACTURER@AUTH1))",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "export_document_slice2.pdf",
+          "start_time": "2025-05-31T16:40:34.320119",
+          "end_time": "2025-05-31T16:40:34.445118",
+          "duration_seconds": 0.12499833106994629,
+          "duration_ms": 124.99833106994629,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:40:34.445132",
+          "additional_info": {
+            "file_size_bytes": 982696,
+            "policy": "((CUSTOMS@AUTH1 and INTERNATIONAL@AUTH2) or ((SUPPLIER@AUTH1 and SUPPLIER@AUTH2) or (SUPPLIER@AUTH1 and SUPPLIER@AUTH3) or (SUPPLIER@AUTH1 and SUPPLIER@AUTH4) or (SUPPLIER@AUTH2 and SUPPLIER@AUTH3) or (SUPPLIER@AUTH2 and SUPPLIER@AUTH4) or (SUPPLIER@AUTH3 and SUPPLIER@AUTH4)))",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "export_document_slice3.pdf",
+          "start_time": "2025-05-31T16:40:34.445162",
+          "end_time": "2025-05-31T16:40:34.506463",
+          "duration_seconds": 0.06130099296569824,
+          "duration_ms": 61.30099296569824,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:40:34.506475",
+          "additional_info": {
+            "file_size_bytes": 981220,
+            "policy": "((SUPPLIER@AUTH3 and SUPPLIER@AUTH4 and ELECTRIC@AUTH2) or MANUFACTURER@AUTH1)",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "export_document_slice4.pdf",
+          "start_time": "2025-05-31T16:40:34.506498",
+          "end_time": "2025-05-31T16:40:34.574487",
+          "duration_seconds": 0.06798958778381348,
+          "duration_ms": 67.98958778381348,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:40:34.574499",
+          "additional_info": {
+            "file_size_bytes": 981292,
+            "policy": "(CUSTOMS@AUTH1 or ((SUPPLIER@AUTH2 and RAW@AUTH1) or (LOGISTIC@AUTH1 and LOGISTIC@AUTH2)))",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "100kb.txt",
+          "start_time": "2025-05-31T16:40:34.574518",
+          "end_time": "2025-05-31T16:40:34.640898",
+          "duration_seconds": 0.06638002395629883,
+          "duration_ms": 66.38002395629883,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:40:34.640910",
+          "additional_info": {
+            "file_size_bytes": 137808,
+            "policy": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "1mb.txt",
+          "start_time": "2025-05-31T16:40:34.640929",
+          "end_time": "2025-05-31T16:40:34.693367",
+          "duration_seconds": 0.05243825912475586,
+          "duration_ms": 52.43825912475586,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:40:34.693380",
+          "additional_info": {
+            "file_size_bytes": 1378080,
+            "policy": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "10mb.txt",
+          "start_time": "2025-05-31T16:40:34.693408",
+          "end_time": "2025-05-31T16:40:34.787401",
+          "duration_seconds": 0.09399247169494629,
+          "duration_ms": 93.99247169494629,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:40:34.787413",
+          "additional_info": {
+            "file_size_bytes": 13780800,
+            "policy": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "100mb.txt",
+          "start_time": "2025-05-31T16:40:34.787440",
+          "end_time": "2025-05-31T16:40:35.439855",
+          "duration_seconds": 0.6524155139923096,
+          "duration_ms": 652.4155139923096,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:40:35.439867",
+          "additional_info": {
+            "file_size_bytes": 137808000,
+            "policy": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+            "symmetric_key_length": 64
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-31T16:41:00.833403",
+      "component_info": {
+        "component": "data_owner",
+        "sender": "LOGISTIC",
+        "process_instance_id": 14346233703771857702,
+        "input_path": "../input_files/",
+        "policies_path": "../json_files/policies.json"
+      },
+      "summary": {
+        "gas_used": 89772,
+        "eth_cost": 0.00179544,
+        "usd_cost": 3.59088,
+        "steps_count": 1,
+        "file_operations_count": 8,
+        "encryption_time_seconds": 1.135767936706543,
+        "decryption_time_seconds": 0,
+        "total_time_seconds": 1.135767936706543
+      },
+      "gas_steps": [
+        {
+          "step_name": "Message IPFS Link Storage",
+          "operation_type": "data_storage",
+          "gas_used": 89772,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.00179544,
+          "usd_cost": 3.59088,
+          "timestamp": "2025-05-31T16:41:00.811619",
+          "tx_hash": "0xe33bd199f1d040c02318a146962fdb7b7bc14ef01e71249fce2a018a5c842229"
+        }
+      ],
+      "file_operations": [
+        {
+          "operation_type": "encryption",
+          "file_name": "export_document_slice1.pdf",
+          "start_time": "2025-05-31T16:40:57.549437",
+          "end_time": "2025-05-31T16:40:57.617308",
+          "duration_seconds": 0.0678708553314209,
+          "duration_ms": 67.8708553314209,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:40:57.617320",
+          "additional_info": {
+            "file_size_bytes": 981296,
+            "policy": "(CUSTOMS@AUTH1 or ((LOGISTIC@AUTH1 and LOGISTIC@AUTH2) or MANUFACTURER@AUTH1))",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "export_document_slice2.pdf",
+          "start_time": "2025-05-31T16:40:57.617346",
+          "end_time": "2025-05-31T16:40:57.740474",
+          "duration_seconds": 0.12312817573547363,
+          "duration_ms": 123.12817573547363,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:40:57.740485",
+          "additional_info": {
+            "file_size_bytes": 982696,
+            "policy": "((CUSTOMS@AUTH1 and INTERNATIONAL@AUTH2) or ((SUPPLIER@AUTH1 and SUPPLIER@AUTH2) or (SUPPLIER@AUTH1 and SUPPLIER@AUTH3) or (SUPPLIER@AUTH1 and SUPPLIER@AUTH4) or (SUPPLIER@AUTH2 and SUPPLIER@AUTH3) or (SUPPLIER@AUTH2 and SUPPLIER@AUTH4) or (SUPPLIER@AUTH3 and SUPPLIER@AUTH4)))",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "export_document_slice3.pdf",
+          "start_time": "2025-05-31T16:40:57.740506",
+          "end_time": "2025-05-31T16:40:57.801307",
+          "duration_seconds": 0.060800790786743164,
+          "duration_ms": 60.800790786743164,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:40:57.801319",
+          "additional_info": {
+            "file_size_bytes": 981220,
+            "policy": "((SUPPLIER@AUTH3 and SUPPLIER@AUTH4 and ELECTRIC@AUTH2) or MANUFACTURER@AUTH1)",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "export_document_slice4.pdf",
+          "start_time": "2025-05-31T16:40:57.801339",
+          "end_time": "2025-05-31T16:40:57.867839",
+          "duration_seconds": 0.06650042533874512,
+          "duration_ms": 66.50042533874512,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:40:57.867849",
+          "additional_info": {
+            "file_size_bytes": 981292,
+            "policy": "(CUSTOMS@AUTH1 or ((SUPPLIER@AUTH2 and RAW@AUTH1) or (LOGISTIC@AUTH1 and LOGISTIC@AUTH2)))",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "100kb.txt",
+          "start_time": "2025-05-31T16:40:57.867867",
+          "end_time": "2025-05-31T16:40:57.915647",
+          "duration_seconds": 0.04777956008911133,
+          "duration_ms": 47.77956008911133,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:40:57.915660",
+          "additional_info": {
+            "file_size_bytes": 137808,
+            "policy": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "1mb.txt",
+          "start_time": "2025-05-31T16:40:57.915682",
+          "end_time": "2025-05-31T16:40:57.967606",
+          "duration_seconds": 0.051924705505371094,
+          "duration_ms": 51.924705505371094,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:40:57.967618",
+          "additional_info": {
+            "file_size_bytes": 1378080,
+            "policy": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "10mb.txt",
+          "start_time": "2025-05-31T16:40:57.967641",
+          "end_time": "2025-05-31T16:40:58.056828",
+          "duration_seconds": 0.0891866683959961,
+          "duration_ms": 89.1866683959961,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:40:58.056842",
+          "additional_info": {
+            "file_size_bytes": 13780800,
+            "policy": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "100mb.txt",
+          "start_time": "2025-05-31T16:40:58.056864",
+          "end_time": "2025-05-31T16:40:58.685441",
+          "duration_seconds": 0.6285767555236816,
+          "duration_ms": 628.5767555236816,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:40:58.685452",
+          "additional_info": {
+            "file_size_bytes": 137808000,
+            "policy": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+            "symmetric_key_length": 64
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-31T16:45:50.028670",
+      "component_info": {
+        "component": "data_owner",
+        "sender": "LOGISTIC",
+        "process_instance_id": 14346233703771857702,
+        "input_path": "../input_files/",
+        "policies_path": "../json_files/policies.json"
+      },
+      "summary": {
+        "gas_used": 89772,
+        "eth_cost": 0.00179544,
+        "usd_cost": 3.59088,
+        "steps_count": 1,
+        "file_operations_count": 9,
+        "encryption_time_seconds": 1.200984239578247,
+        "decryption_time_seconds": 0,
+        "total_time_seconds": 1.200984239578247
+      },
+      "gas_steps": [
+        {
+          "step_name": "Message IPFS Link Storage",
+          "operation_type": "data_storage",
+          "gas_used": 89772,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.00179544,
+          "usd_cost": 3.59088,
+          "timestamp": "2025-05-31T16:45:50.028365",
+          "tx_hash": "0x6ffb2fb3f572f9aeff68425944da6ad64c9df6430fe8250258903af2f147cfbe"
+        }
+      ],
+      "file_operations": [
+        {
+          "operation_type": "encryption",
+          "file_name": "export_document_slice1.pdf",
+          "start_time": "2025-05-31T16:45:46.727694",
+          "end_time": "2025-05-31T16:45:46.804667",
+          "duration_seconds": 0.07697391510009766,
+          "duration_ms": 76.97391510009766,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:45:46.804680",
+          "additional_info": {
+            "file_size_bytes": 981296,
+            "policy": "(CUSTOMS@AUTH1 or ((LOGISTIC@AUTH1 and LOGISTIC@AUTH2) or MANUFACTURER@AUTH1))",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "export_document_slice2.pdf",
+          "start_time": "2025-05-31T16:45:46.804709",
+          "end_time": "2025-05-31T16:45:46.947851",
+          "duration_seconds": 0.1431417465209961,
+          "duration_ms": 143.1417465209961,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:45:46.947861",
+          "additional_info": {
+            "file_size_bytes": 982696,
+            "policy": "((CUSTOMS@AUTH1 and INTERNATIONAL@AUTH2) or ((SUPPLIER@AUTH1 and SUPPLIER@AUTH2) or (SUPPLIER@AUTH1 and SUPPLIER@AUTH3) or (SUPPLIER@AUTH1 and SUPPLIER@AUTH4) or (SUPPLIER@AUTH2 and SUPPLIER@AUTH3) or (SUPPLIER@AUTH2 and SUPPLIER@AUTH4) or (SUPPLIER@AUTH3 and SUPPLIER@AUTH4)))",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "export_document_slice3.pdf",
+          "start_time": "2025-05-31T16:45:46.947879",
+          "end_time": "2025-05-31T16:45:47.006832",
+          "duration_seconds": 0.058953046798706055,
+          "duration_ms": 58.953046798706055,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:45:47.006842",
+          "additional_info": {
+            "file_size_bytes": 981220,
+            "policy": "((SUPPLIER@AUTH3 and SUPPLIER@AUTH4 and ELECTRIC@AUTH2) or MANUFACTURER@AUTH1)",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "export_document_slice4.pdf",
+          "start_time": "2025-05-31T16:45:47.006861",
+          "end_time": "2025-05-31T16:45:47.076391",
+          "duration_seconds": 0.06952977180480957,
+          "duration_ms": 69.52977180480957,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:45:47.076404",
+          "additional_info": {
+            "file_size_bytes": 981292,
+            "policy": "(CUSTOMS@AUTH1 or ((SUPPLIER@AUTH2 and RAW@AUTH1) or (LOGISTIC@AUTH1 and LOGISTIC@AUTH2)))",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "10kb.txt",
+          "start_time": "2025-05-31T16:45:47.076424",
+          "end_time": "2025-05-31T16:45:47.125652",
+          "duration_seconds": 0.049227237701416016,
+          "duration_ms": 49.227237701416016,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:45:47.125675",
+          "additional_info": {
+            "file_size_bytes": 17920,
+            "policy": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "100kb.txt",
+          "start_time": "2025-05-31T16:45:47.125715",
+          "end_time": "2025-05-31T16:45:47.177038",
+          "duration_seconds": 0.051323890686035156,
+          "duration_ms": 51.323890686035156,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:45:47.177053",
+          "additional_info": {
+            "file_size_bytes": 137808,
+            "policy": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "1mb.txt",
+          "start_time": "2025-05-31T16:45:47.177080",
+          "end_time": "2025-05-31T16:45:47.236707",
+          "duration_seconds": 0.05962634086608887,
+          "duration_ms": 59.62634086608887,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:45:47.236723",
+          "additional_info": {
+            "file_size_bytes": 1378080,
+            "policy": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "10mb.txt",
+          "start_time": "2025-05-31T16:45:47.236758",
+          "end_time": "2025-05-31T16:45:47.327888",
+          "duration_seconds": 0.09112954139709473,
+          "duration_ms": 91.12954139709473,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:45:47.327903",
+          "additional_info": {
+            "file_size_bytes": 13780800,
+            "policy": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "100mb.txt",
+          "start_time": "2025-05-31T16:45:47.327928",
+          "end_time": "2025-05-31T16:45:47.929006",
+          "duration_seconds": 0.6010787487030029,
+          "duration_ms": 601.0787487030029,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:45:47.929019",
+          "additional_info": {
+            "file_size_bytes": 137808000,
+            "policy": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+            "symmetric_key_length": 64
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-31T16:46:14.921282",
+      "component_info": {
+        "component": "data_owner",
+        "sender": "LOGISTIC",
+        "process_instance_id": 14346233703771857702,
+        "input_path": "../input_files/",
+        "policies_path": "../json_files/policies.json"
+      },
+      "summary": {
+        "gas_used": 89772,
+        "eth_cost": 0.00179544,
+        "usd_cost": 3.59088,
+        "steps_count": 1,
+        "file_operations_count": 9,
+        "encryption_time_seconds": 1.1571223735809326,
+        "decryption_time_seconds": 0,
+        "total_time_seconds": 1.1571223735809326
+      },
+      "gas_steps": [
+        {
+          "step_name": "Message IPFS Link Storage",
+          "operation_type": "data_storage",
+          "gas_used": 89772,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.00179544,
+          "usd_cost": 3.59088,
+          "timestamp": "2025-05-31T16:46:14.920868",
+          "tx_hash": "0xe00c1925994408e67e03439ac8d996eda3d70565a558994b8732c5c0974f2d7a"
+        }
+      ],
+      "file_operations": [
+        {
+          "operation_type": "encryption",
+          "file_name": "export_document_slice1.pdf",
+          "start_time": "2025-05-31T16:46:11.665566",
+          "end_time": "2025-05-31T16:46:11.732340",
+          "duration_seconds": 0.06677460670471191,
+          "duration_ms": 66.77460670471191,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:46:11.732351",
+          "additional_info": {
+            "file_size_bytes": 981296,
+            "policy": "(CUSTOMS@AUTH1 or ((LOGISTIC@AUTH1 and LOGISTIC@AUTH2) or MANUFACTURER@AUTH1))",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "export_document_slice2.pdf",
+          "start_time": "2025-05-31T16:46:11.732379",
+          "end_time": "2025-05-31T16:46:11.860866",
+          "duration_seconds": 0.12848711013793945,
+          "duration_ms": 128.48711013793945,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:46:11.860877",
+          "additional_info": {
+            "file_size_bytes": 982696,
+            "policy": "((CUSTOMS@AUTH1 and INTERNATIONAL@AUTH2) or ((SUPPLIER@AUTH1 and SUPPLIER@AUTH2) or (SUPPLIER@AUTH1 and SUPPLIER@AUTH3) or (SUPPLIER@AUTH1 and SUPPLIER@AUTH4) or (SUPPLIER@AUTH2 and SUPPLIER@AUTH3) or (SUPPLIER@AUTH2 and SUPPLIER@AUTH4) or (SUPPLIER@AUTH3 and SUPPLIER@AUTH4)))",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "export_document_slice3.pdf",
+          "start_time": "2025-05-31T16:46:11.860894",
+          "end_time": "2025-05-31T16:46:11.920961",
+          "duration_seconds": 0.060066938400268555,
+          "duration_ms": 60.066938400268555,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:46:11.920972",
+          "additional_info": {
+            "file_size_bytes": 981220,
+            "policy": "((SUPPLIER@AUTH3 and SUPPLIER@AUTH4 and ELECTRIC@AUTH2) or MANUFACTURER@AUTH1)",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "export_document_slice4.pdf",
+          "start_time": "2025-05-31T16:46:11.920991",
+          "end_time": "2025-05-31T16:46:11.986326",
+          "duration_seconds": 0.06533503532409668,
+          "duration_ms": 65.33503532409668,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:46:11.986337",
+          "additional_info": {
+            "file_size_bytes": 981292,
+            "policy": "(CUSTOMS@AUTH1 or ((SUPPLIER@AUTH2 and RAW@AUTH1) or (LOGISTIC@AUTH1 and LOGISTIC@AUTH2)))",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "10kb.txt",
+          "start_time": "2025-05-31T16:46:11.986356",
+          "end_time": "2025-05-31T16:46:12.033493",
+          "duration_seconds": 0.04713606834411621,
+          "duration_ms": 47.13606834411621,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:46:12.033503",
+          "additional_info": {
+            "file_size_bytes": 17920,
+            "policy": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "100kb.txt",
+          "start_time": "2025-05-31T16:46:12.033521",
+          "end_time": "2025-05-31T16:46:12.084014",
+          "duration_seconds": 0.05049276351928711,
+          "duration_ms": 50.49276351928711,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:46:12.084026",
+          "additional_info": {
+            "file_size_bytes": 137808,
+            "policy": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "1mb.txt",
+          "start_time": "2025-05-31T16:46:12.084046",
+          "end_time": "2025-05-31T16:46:12.134709",
+          "duration_seconds": 0.05066275596618652,
+          "duration_ms": 50.66275596618652,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:46:12.134720",
+          "additional_info": {
+            "file_size_bytes": 1378080,
+            "policy": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "10mb.txt",
+          "start_time": "2025-05-31T16:46:12.134743",
+          "end_time": "2025-05-31T16:46:12.220946",
+          "duration_seconds": 0.08620285987854004,
+          "duration_ms": 86.20285987854004,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:46:12.220960",
+          "additional_info": {
+            "file_size_bytes": 13780800,
+            "policy": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "100mb.txt",
+          "start_time": "2025-05-31T16:46:12.220982",
+          "end_time": "2025-05-31T16:46:12.822946",
+          "duration_seconds": 0.6019642353057861,
+          "duration_ms": 601.9642353057861,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:46:12.822959",
+          "additional_info": {
+            "file_size_bytes": 137808000,
+            "policy": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+            "symmetric_key_length": 64
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-31T16:47:52.552175",
+      "component_info": {
+        "component": "data_owner",
+        "sender": "LOGISTIC",
+        "process_instance_id": 14346233703771857702,
+        "input_path": "../input_files/",
+        "policies_path": "../json_files/policies.json"
+      },
+      "summary": {
+        "gas_used": 89772,
+        "eth_cost": 0.00179544,
+        "usd_cost": 3.59088,
+        "steps_count": 1,
+        "file_operations_count": 9,
+        "encryption_time_seconds": 1.1815788745880127,
+        "decryption_time_seconds": 0,
+        "total_time_seconds": 1.1815788745880127
+      },
+      "gas_steps": [
+        {
+          "step_name": "Message IPFS Link Storage",
+          "operation_type": "data_storage",
+          "gas_used": 89772,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.00179544,
+          "usd_cost": 3.59088,
+          "timestamp": "2025-05-31T16:47:52.551843",
+          "tx_hash": "0xc2632cdb9c9cdecdd69a2735576db9643ba6880fc8966edb8355c1c8183db950"
+        }
+      ],
+      "file_operations": [
+        {
+          "operation_type": "encryption",
+          "file_name": "export_document_slice1.pdf",
+          "start_time": "2025-05-31T16:47:49.165446",
+          "end_time": "2025-05-31T16:47:49.232495",
+          "duration_seconds": 0.06704878807067871,
+          "duration_ms": 67.04878807067871,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:47:49.232507",
+          "additional_info": {
+            "file_size_bytes": 981296,
+            "policy": "(CUSTOMS@AUTH1 or ((LOGISTIC@AUTH1 and LOGISTIC@AUTH2) or MANUFACTURER@AUTH1))",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "export_document_slice2.pdf",
+          "start_time": "2025-05-31T16:47:49.232535",
+          "end_time": "2025-05-31T16:47:49.364457",
+          "duration_seconds": 0.13192129135131836,
+          "duration_ms": 131.92129135131836,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:47:49.364468",
+          "additional_info": {
+            "file_size_bytes": 982696,
+            "policy": "((CUSTOMS@AUTH1 and INTERNATIONAL@AUTH2) or ((SUPPLIER@AUTH1 and SUPPLIER@AUTH2) or (SUPPLIER@AUTH1 and SUPPLIER@AUTH3) or (SUPPLIER@AUTH1 and SUPPLIER@AUTH4) or (SUPPLIER@AUTH2 and SUPPLIER@AUTH3) or (SUPPLIER@AUTH2 and SUPPLIER@AUTH4) or (SUPPLIER@AUTH3 and SUPPLIER@AUTH4)))",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "export_document_slice3.pdf",
+          "start_time": "2025-05-31T16:47:49.364486",
+          "end_time": "2025-05-31T16:47:49.424899",
+          "duration_seconds": 0.060413360595703125,
+          "duration_ms": 60.413360595703125,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:47:49.424910",
+          "additional_info": {
+            "file_size_bytes": 981220,
+            "policy": "((SUPPLIER@AUTH3 and SUPPLIER@AUTH4 and ELECTRIC@AUTH2) or MANUFACTURER@AUTH1)",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "export_document_slice4.pdf",
+          "start_time": "2025-05-31T16:47:49.424928",
+          "end_time": "2025-05-31T16:47:49.491557",
+          "duration_seconds": 0.06662893295288086,
+          "duration_ms": 66.62893295288086,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:47:49.491569",
+          "additional_info": {
+            "file_size_bytes": 981292,
+            "policy": "(CUSTOMS@AUTH1 or ((SUPPLIER@AUTH2 and RAW@AUTH1) or (LOGISTIC@AUTH1 and LOGISTIC@AUTH2)))",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "10kb.txt",
+          "start_time": "2025-05-31T16:47:49.491588",
+          "end_time": "2025-05-31T16:47:49.539696",
+          "duration_seconds": 0.048108816146850586,
+          "duration_ms": 48.108816146850586,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:47:49.539707",
+          "additional_info": {
+            "file_size_bytes": 17920,
+            "policy": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "100kb.txt",
+          "start_time": "2025-05-31T16:47:49.539726",
+          "end_time": "2025-05-31T16:47:49.588301",
+          "duration_seconds": 0.048575401306152344,
+          "duration_ms": 48.575401306152344,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:47:49.588312",
+          "additional_info": {
+            "file_size_bytes": 137808,
+            "policy": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "1mb.txt",
+          "start_time": "2025-05-31T16:47:49.588331",
+          "end_time": "2025-05-31T16:47:49.638638",
+          "duration_seconds": 0.05030703544616699,
+          "duration_ms": 50.30703544616699,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:47:49.638651",
+          "additional_info": {
+            "file_size_bytes": 1378080,
+            "policy": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "10mb.txt",
+          "start_time": "2025-05-31T16:47:49.638674",
+          "end_time": "2025-05-31T16:47:49.726960",
+          "duration_seconds": 0.08828568458557129,
+          "duration_ms": 88.28568458557129,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:47:49.726971",
+          "additional_info": {
+            "file_size_bytes": 13780800,
+            "policy": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "100mb.txt",
+          "start_time": "2025-05-31T16:47:49.726995",
+          "end_time": "2025-05-31T16:47:50.347285",
+          "duration_seconds": 0.6202895641326904,
+          "duration_ms": 620.2895641326904,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:47:50.347297",
+          "additional_info": {
+            "file_size_bytes": 137808000,
+            "policy": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+            "symmetric_key_length": 64
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-31T16:50:58.510637",
+      "component_info": {
+        "component": "reader",
+        "reader_name": "RAW_MATERIAL_SUPPLIER",
+        "message_id": 17681114763176748658,
+        "slice_id": 10966884499085569531,
+        "process_instance_id": 14346233703771857702,
+        "output_folder": "../output_files/"
+      },
+      "summary": {
+        "gas_used": 0,
+        "eth_cost": 0,
+        "usd_cost": 0,
+        "steps_count": 0,
+        "file_operations_count": 1,
+        "encryption_time_seconds": 0,
+        "decryption_time_seconds": 0.050295114517211914,
+        "total_time_seconds": 0.050295114517211914
+      },
+      "gas_steps": [],
+      "file_operations": [
+        {
+          "operation_type": "decryption",
+          "file_name": "10kb.txt",
+          "start_time": "2025-05-31T16:50:58.443371",
+          "end_time": "2025-05-31T16:50:58.493666",
+          "duration_seconds": 0.050295114517211914,
+          "duration_ms": 50.295114517211914,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:50:58.493692",
+          "additional_info": {
+            "encrypted_file_size_bytes": 23971,
+            "output_path": "/test/output_files/10kb.txt",
+            "symmetric_key_source": "direct_metadata"
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-31T16:51:27.718180",
+      "component_info": {
+        "component": "reader",
+        "reader_name": "RAW_MATERIAL_SUPPLIER",
+        "message_id": 17681114763176748658,
+        "slice_id": 10966884499085569531,
+        "process_instance_id": 14346233703771857702,
+        "output_folder": "../output_files/"
+      },
+      "summary": {
+        "gas_used": 0,
+        "eth_cost": 0,
+        "usd_cost": 0,
+        "steps_count": 0,
+        "file_operations_count": 1,
+        "encryption_time_seconds": 0,
+        "decryption_time_seconds": 0.0492861270904541,
+        "total_time_seconds": 0.0492861270904541
+      },
+      "gas_steps": [],
+      "file_operations": [
+        {
+          "operation_type": "decryption",
+          "file_name": "10kb.txt",
+          "start_time": "2025-05-31T16:51:27.656894",
+          "end_time": "2025-05-31T16:51:27.706180",
+          "duration_seconds": 0.0492861270904541,
+          "duration_ms": 49.2861270904541,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:51:27.706203",
+          "additional_info": {
+            "encrypted_file_size_bytes": 23971,
+            "output_path": "/test/output_files/10kb.txt",
+            "symmetric_key_source": "direct_metadata"
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-31T16:58:37.381129",
+      "component_info": {
+        "component": "data_owner",
+        "sender": "LOGISTIC",
+        "process_instance_id": 14346233703771857702,
+        "input_path": "../input_files/",
+        "policies_path": "../json_files/policies.json"
+      },
+      "summary": {
+        "gas_used": 89772,
+        "eth_cost": 0.00179544,
+        "usd_cost": 3.59088,
+        "steps_count": 1,
+        "file_operations_count": 9,
+        "encryption_time_seconds": 1.198911190032959,
+        "decryption_time_seconds": 0,
+        "total_time_seconds": 1.198911190032959
+      },
+      "gas_steps": [
+        {
+          "step_name": "Message IPFS Link Storage",
+          "operation_type": "data_storage",
+          "gas_used": 89772,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.00179544,
+          "usd_cost": 3.59088,
+          "timestamp": "2025-05-31T16:58:37.380660",
+          "tx_hash": "0x60aefd78d07e335a58cae175bf2ef57b9fef30ed7dbb85474db6319b580c9edd"
+        }
+      ],
+      "file_operations": [
+        {
+          "operation_type": "encryption",
+          "file_name": "export_document_slice1.pdf",
+          "start_time": "2025-05-31T16:58:34.071757",
+          "end_time": "2025-05-31T16:58:34.141793",
+          "duration_seconds": 0.07003569602966309,
+          "duration_ms": 70.03569602966309,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:58:34.141807",
+          "additional_info": {
+            "file_size_bytes": 981296,
+            "policy": "(CUSTOMS@AUTH1 or ((LOGISTIC@AUTH1 and LOGISTIC@AUTH2) or MANUFACTURER@AUTH1))",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "export_document_slice2.pdf",
+          "start_time": "2025-05-31T16:58:34.141839",
+          "end_time": "2025-05-31T16:58:34.265951",
+          "duration_seconds": 0.12411189079284668,
+          "duration_ms": 124.11189079284668,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:58:34.265963",
+          "additional_info": {
+            "file_size_bytes": 982696,
+            "policy": "((CUSTOMS@AUTH1 and INTERNATIONAL@AUTH2) or ((SUPPLIER@AUTH1 and SUPPLIER@AUTH2) or (SUPPLIER@AUTH1 and SUPPLIER@AUTH3) or (SUPPLIER@AUTH1 and SUPPLIER@AUTH4) or (SUPPLIER@AUTH2 and SUPPLIER@AUTH3) or (SUPPLIER@AUTH2 and SUPPLIER@AUTH4) or (SUPPLIER@AUTH3 and SUPPLIER@AUTH4)))",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "export_document_slice3.pdf",
+          "start_time": "2025-05-31T16:58:34.265986",
+          "end_time": "2025-05-31T16:58:34.326832",
+          "duration_seconds": 0.06084561347961426,
+          "duration_ms": 60.84561347961426,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:58:34.326845",
+          "additional_info": {
+            "file_size_bytes": 981220,
+            "policy": "((SUPPLIER@AUTH3 and SUPPLIER@AUTH4 and ELECTRIC@AUTH2) or MANUFACTURER@AUTH1)",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "export_document_slice4.pdf",
+          "start_time": "2025-05-31T16:58:34.326869",
+          "end_time": "2025-05-31T16:58:34.393973",
+          "duration_seconds": 0.06710410118103027,
+          "duration_ms": 67.10410118103027,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:58:34.393985",
+          "additional_info": {
+            "file_size_bytes": 981292,
+            "policy": "(CUSTOMS@AUTH1 or ((SUPPLIER@AUTH2 and RAW@AUTH1) or (LOGISTIC@AUTH1 and LOGISTIC@AUTH2)))",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "10kb.txt",
+          "start_time": "2025-05-31T16:58:34.394009",
+          "end_time": "2025-05-31T16:58:34.441848",
+          "duration_seconds": 0.04783940315246582,
+          "duration_ms": 47.83940315246582,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:58:34.441859",
+          "additional_info": {
+            "file_size_bytes": 17920,
+            "policy": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "100kb.txt",
+          "start_time": "2025-05-31T16:58:34.441880",
+          "end_time": "2025-05-31T16:58:34.490615",
+          "duration_seconds": 0.04873514175415039,
+          "duration_ms": 48.73514175415039,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:58:34.490626",
+          "additional_info": {
+            "file_size_bytes": 137808,
+            "policy": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "1mb.txt",
+          "start_time": "2025-05-31T16:58:34.490647",
+          "end_time": "2025-05-31T16:58:34.541174",
+          "duration_seconds": 0.050527095794677734,
+          "duration_ms": 50.527095794677734,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:58:34.541185",
+          "additional_info": {
+            "file_size_bytes": 1378080,
+            "policy": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "10mb.txt",
+          "start_time": "2025-05-31T16:58:34.541205",
+          "end_time": "2025-05-31T16:58:34.631792",
+          "duration_seconds": 0.09058666229248047,
+          "duration_ms": 90.58666229248047,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:58:34.631805",
+          "additional_info": {
+            "file_size_bytes": 13780800,
+            "policy": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+            "symmetric_key_length": 64
+          }
+        },
+        {
+          "operation_type": "encryption",
+          "file_name": "100mb.txt",
+          "start_time": "2025-05-31T16:58:34.631827",
+          "end_time": "2025-05-31T16:58:35.270952",
+          "duration_seconds": 0.6391255855560303,
+          "duration_ms": 639.1255855560303,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:58:35.270964",
+          "additional_info": {
+            "file_size_bytes": 137808000,
+            "policy": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+            "symmetric_key_length": 64
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-31T16:59:57.696615",
+      "component_info": {
+        "component": "reader",
+        "reader_name": "RAW_MATERIAL_SUPPLIER",
+        "message_id": 17364425026670491051,
+        "slice_id": 13450787155536509029,
+        "process_instance_id": 14346233703771857702,
+        "output_folder": "../output_files/"
+      },
+      "summary": {
+        "gas_used": 0,
+        "eth_cost": 0,
+        "usd_cost": 0,
+        "steps_count": 0,
+        "file_operations_count": 1,
+        "encryption_time_seconds": 0,
+        "decryption_time_seconds": 0.07576441764831543,
+        "total_time_seconds": 0.07576441764831543
+      },
+      "gas_steps": [],
+      "file_operations": [
+        {
+          "operation_type": "decryption",
+          "file_name": "100kb.txt",
+          "start_time": "2025-05-31T16:59:57.602035",
+          "end_time": "2025-05-31T16:59:57.677799",
+          "duration_seconds": 0.07576441764831543,
+          "duration_ms": 75.76441764831543,
+          "status": "completed",
+          "timestamp": "2025-05-31T16:59:57.677829",
+          "additional_info": {
+            "encrypted_file_size_bytes": 183819,
+            "output_path": "/test/output_files/100kb.txt",
+            "symmetric_key_source": "direct_metadata"
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-31T17:00:07.641475",
+      "component_info": {
+        "component": "reader",
+        "reader_name": "RAW_MATERIAL_SUPPLIER",
+        "message_id": 17364425026670491051,
+        "slice_id": 13450787155536509029,
+        "process_instance_id": 14346233703771857702,
+        "output_folder": "../output_files/"
+      },
+      "summary": {
+        "gas_used": 0,
+        "eth_cost": 0,
+        "usd_cost": 0,
+        "steps_count": 0,
+        "file_operations_count": 1,
+        "encryption_time_seconds": 0,
+        "decryption_time_seconds": 0.05103492736816406,
+        "total_time_seconds": 0.05103492736816406
+      },
+      "gas_steps": [],
+      "file_operations": [
+        {
+          "operation_type": "decryption",
+          "file_name": "100kb.txt",
+          "start_time": "2025-05-31T17:00:07.563192",
+          "end_time": "2025-05-31T17:00:07.614227",
+          "duration_seconds": 0.05103492736816406,
+          "duration_ms": 51.03492736816406,
+          "status": "completed",
+          "timestamp": "2025-05-31T17:00:07.614255",
+          "additional_info": {
+            "encrypted_file_size_bytes": 183819,
+            "output_path": "/test/output_files/100kb.txt",
+            "symmetric_key_source": "direct_metadata"
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-31T17:00:16.784779",
+      "component_info": {
+        "component": "reader",
+        "reader_name": "RAW_MATERIAL_SUPPLIER",
+        "message_id": 17364425026670491051,
+        "slice_id": 13450787155536509029,
+        "process_instance_id": 14346233703771857702,
+        "output_folder": "../output_files/"
+      },
+      "summary": {
+        "gas_used": 0,
+        "eth_cost": 0,
+        "usd_cost": 0,
+        "steps_count": 0,
+        "file_operations_count": 1,
+        "encryption_time_seconds": 0,
+        "decryption_time_seconds": 0.05040240287780762,
+        "total_time_seconds": 0.05040240287780762
+      },
+      "gas_steps": [],
+      "file_operations": [
+        {
+          "operation_type": "decryption",
+          "file_name": "100kb.txt",
+          "start_time": "2025-05-31T17:00:16.710161",
+          "end_time": "2025-05-31T17:00:16.760563",
+          "duration_seconds": 0.05040240287780762,
+          "duration_ms": 50.40240287780762,
+          "status": "completed",
+          "timestamp": "2025-05-31T17:00:16.760587",
+          "additional_info": {
+            "encrypted_file_size_bytes": 183819,
+            "output_path": "/test/output_files/100kb.txt",
+            "symmetric_key_source": "direct_metadata"
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-31T17:01:16.236781",
+      "component_info": {
+        "component": "reader",
+        "reader_name": "RAW_MATERIAL_SUPPLIER",
+        "message_id": 17364425026670491051,
+        "slice_id": 14141262495756761340,
+        "process_instance_id": 14346233703771857702,
+        "output_folder": "../output_files/"
+      },
+      "summary": {
+        "gas_used": 0,
+        "eth_cost": 0,
+        "usd_cost": 0,
+        "steps_count": 0,
+        "file_operations_count": 1,
+        "encryption_time_seconds": 0,
+        "decryption_time_seconds": 0.06020927429199219,
+        "total_time_seconds": 0.06020927429199219
+      },
+      "gas_steps": [],
+      "file_operations": [
+        {
+          "operation_type": "decryption",
+          "file_name": "1mb.txt",
+          "start_time": "2025-05-31T17:01:16.152011",
+          "end_time": "2025-05-31T17:01:16.212220",
+          "duration_seconds": 0.06020927429199219,
+          "duration_ms": 60.20927429199219,
+          "status": "completed",
+          "timestamp": "2025-05-31T17:01:16.212250",
+          "additional_info": {
+            "encrypted_file_size_bytes": 1837515,
+            "output_path": "/test/output_files/1mb.txt",
+            "symmetric_key_source": "direct_metadata"
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-31T17:01:22.600696",
+      "component_info": {
+        "component": "reader",
+        "reader_name": "RAW_MATERIAL_SUPPLIER",
+        "message_id": 17364425026670491051,
+        "slice_id": 14141262495756761340,
+        "process_instance_id": 14346233703771857702,
+        "output_folder": "../output_files/"
+      },
+      "summary": {
+        "gas_used": 0,
+        "eth_cost": 0,
+        "usd_cost": 0,
+        "steps_count": 0,
+        "file_operations_count": 1,
+        "encryption_time_seconds": 0,
+        "decryption_time_seconds": 0.05948162078857422,
+        "total_time_seconds": 0.05948162078857422
+      },
+      "gas_steps": [],
+      "file_operations": [
+        {
+          "operation_type": "decryption",
+          "file_name": "1mb.txt",
+          "start_time": "2025-05-31T17:01:22.516344",
+          "end_time": "2025-05-31T17:01:22.575826",
+          "duration_seconds": 0.05948162078857422,
+          "duration_ms": 59.48162078857422,
+          "status": "completed",
+          "timestamp": "2025-05-31T17:01:22.575855",
+          "additional_info": {
+            "encrypted_file_size_bytes": 1837515,
+            "output_path": "/test/output_files/1mb.txt",
+            "symmetric_key_source": "direct_metadata"
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-31T17:01:30.124370",
+      "component_info": {
+        "component": "reader",
+        "reader_name": "RAW_MATERIAL_SUPPLIER",
+        "message_id": 17364425026670491051,
+        "slice_id": 14141262495756761340,
+        "process_instance_id": 14346233703771857702,
+        "output_folder": "../output_files/"
+      },
+      "summary": {
+        "gas_used": 0,
+        "eth_cost": 0,
+        "usd_cost": 0,
+        "steps_count": 0,
+        "file_operations_count": 1,
+        "encryption_time_seconds": 0,
+        "decryption_time_seconds": 0.06089472770690918,
+        "total_time_seconds": 0.06089472770690918
+      },
+      "gas_steps": [],
+      "file_operations": [
+        {
+          "operation_type": "decryption",
+          "file_name": "1mb.txt",
+          "start_time": "2025-05-31T17:01:30.043621",
+          "end_time": "2025-05-31T17:01:30.104516",
+          "duration_seconds": 0.06089472770690918,
+          "duration_ms": 60.89472770690918,
+          "status": "completed",
+          "timestamp": "2025-05-31T17:01:30.104554",
+          "additional_info": {
+            "encrypted_file_size_bytes": 1837515,
+            "output_path": "/test/output_files/1mb.txt",
+            "symmetric_key_source": "direct_metadata"
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-31T17:01:49.368776",
+      "component_info": {
+        "component": "reader",
+        "reader_name": "RAW_MATERIAL_SUPPLIER",
+        "message_id": 17364425026670491051,
+        "slice_id": 16015261029936961320,
+        "process_instance_id": 14346233703771857702,
+        "output_folder": "../output_files/"
+      },
+      "summary": {
+        "gas_used": 0,
+        "eth_cost": 0,
+        "usd_cost": 0,
+        "steps_count": 0,
+        "file_operations_count": 1,
+        "encryption_time_seconds": 0,
+        "decryption_time_seconds": 0.157958984375,
+        "total_time_seconds": 0.157958984375
+      },
+      "gas_steps": [],
+      "file_operations": [
+        {
+          "operation_type": "decryption",
+          "file_name": "10mb.txt",
+          "start_time": "2025-05-31T17:01:49.187644",
+          "end_time": "2025-05-31T17:01:49.345603",
+          "duration_seconds": 0.157958984375,
+          "duration_ms": 157.958984375,
+          "status": "completed",
+          "timestamp": "2025-05-31T17:01:49.345641",
+          "additional_info": {
+            "encrypted_file_size_bytes": 18374475,
+            "output_path": "/test/output_files/10mb.txt",
+            "symmetric_key_source": "direct_metadata"
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-31T17:02:00.652255",
+      "component_info": {
+        "component": "reader",
+        "reader_name": "RAW_MATERIAL_SUPPLIER",
+        "message_id": 17364425026670491051,
+        "slice_id": 16015261029936961320,
+        "process_instance_id": 14346233703771857702,
+        "output_folder": "../output_files/"
+      },
+      "summary": {
+        "gas_used": 0,
+        "eth_cost": 0,
+        "usd_cost": 0,
+        "steps_count": 0,
+        "file_operations_count": 1,
+        "encryption_time_seconds": 0,
+        "decryption_time_seconds": 0.154280424118042,
+        "total_time_seconds": 0.154280424118042
+      },
+      "gas_steps": [],
+      "file_operations": [
+        {
+          "operation_type": "decryption",
+          "file_name": "10mb.txt",
+          "start_time": "2025-05-31T17:02:00.478669",
+          "end_time": "2025-05-31T17:02:00.632950",
+          "duration_seconds": 0.154280424118042,
+          "duration_ms": 154.280424118042,
+          "status": "completed",
+          "timestamp": "2025-05-31T17:02:00.632997",
+          "additional_info": {
+            "encrypted_file_size_bytes": 18374475,
+            "output_path": "/test/output_files/10mb.txt",
+            "symmetric_key_source": "direct_metadata"
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-31T17:02:29.800754",
+      "component_info": {
+        "component": "reader",
+        "reader_name": "RAW_MATERIAL_SUPPLIER",
+        "message_id": 17364425026670491051,
+        "slice_id": 16015261029936961320,
+        "process_instance_id": 14346233703771857702,
+        "output_folder": "../output_files/"
+      },
+      "summary": {
+        "gas_used": 0,
+        "eth_cost": 0,
+        "usd_cost": 0,
+        "steps_count": 0,
+        "file_operations_count": 1,
+        "encryption_time_seconds": 0,
+        "decryption_time_seconds": 0.1566636562347412,
+        "total_time_seconds": 0.1566636562347412
+      },
+      "gas_steps": [],
+      "file_operations": [
+        {
+          "operation_type": "decryption",
+          "file_name": "10mb.txt",
+          "start_time": "2025-05-31T17:02:29.618994",
+          "end_time": "2025-05-31T17:02:29.775657",
+          "duration_seconds": 0.1566636562347412,
+          "duration_ms": 156.6636562347412,
+          "status": "completed",
+          "timestamp": "2025-05-31T17:02:29.775694",
+          "additional_info": {
+            "encrypted_file_size_bytes": 18374475,
+            "output_path": "/test/output_files/10mb.txt",
+            "symmetric_key_source": "direct_metadata"
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-31T17:02:51.412200",
+      "component_info": {
+        "component": "reader",
+        "reader_name": "RAW_MATERIAL_SUPPLIER",
+        "message_id": 17364425026670491051,
+        "slice_id": 11820546382969647810,
+        "process_instance_id": 14346233703771857702,
+        "output_folder": "../output_files/"
+      },
+      "summary": {
+        "gas_used": 0,
+        "eth_cost": 0,
+        "usd_cost": 0,
+        "steps_count": 0,
+        "file_operations_count": 1,
+        "encryption_time_seconds": 0,
+        "decryption_time_seconds": 1.1438031196594238,
+        "total_time_seconds": 1.1438031196594238
+      },
+      "gas_steps": [],
+      "file_operations": [
+        {
+          "operation_type": "decryption",
+          "file_name": "100mb.txt",
+          "start_time": "2025-05-31T17:02:50.239767",
+          "end_time": "2025-05-31T17:02:51.383570",
+          "duration_seconds": 1.1438031196594238,
+          "duration_ms": 1143.8031196594238,
+          "status": "completed",
+          "timestamp": "2025-05-31T17:02:51.383610",
+          "additional_info": {
+            "encrypted_file_size_bytes": 183744075,
+            "output_path": "/test/output_files/100mb.txt",
+            "symmetric_key_source": "direct_metadata"
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-31T17:03:08.815813",
+      "component_info": {
+        "component": "reader",
+        "reader_name": "RAW_MATERIAL_SUPPLIER",
+        "message_id": 17364425026670491051,
+        "slice_id": 11820546382969647810,
+        "process_instance_id": 14346233703771857702,
+        "output_folder": "../output_files/"
+      },
+      "summary": {
+        "gas_used": 0,
+        "eth_cost": 0,
+        "usd_cost": 0,
+        "steps_count": 0,
+        "file_operations_count": 1,
+        "encryption_time_seconds": 0,
+        "decryption_time_seconds": 1.215885877609253,
+        "total_time_seconds": 1.215885877609253
+      },
+      "gas_steps": [],
+      "file_operations": [
+        {
+          "operation_type": "decryption",
+          "file_name": "100mb.txt",
+          "start_time": "2025-05-31T17:03:07.572338",
+          "end_time": "2025-05-31T17:03:08.788224",
+          "duration_seconds": 1.215885877609253,
+          "duration_ms": 1215.885877609253,
+          "status": "completed",
+          "timestamp": "2025-05-31T17:03:08.788270",
+          "additional_info": {
+            "encrypted_file_size_bytes": 183744075,
+            "output_path": "/test/output_files/100mb.txt",
+            "symmetric_key_source": "direct_metadata"
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-31T17:03:30.127569",
+      "component_info": {
+        "component": "reader",
+        "reader_name": "RAW_MATERIAL_SUPPLIER",
+        "message_id": 17364425026670491051,
+        "slice_id": 11820546382969647810,
+        "process_instance_id": 14346233703771857702,
+        "output_folder": "../output_files/"
+      },
+      "summary": {
+        "gas_used": 0,
+        "eth_cost": 0,
+        "usd_cost": 0,
+        "steps_count": 0,
+        "file_operations_count": 1,
+        "encryption_time_seconds": 0,
+        "decryption_time_seconds": 1.1935656070709229,
+        "total_time_seconds": 1.1935656070709229
+      },
+      "gas_steps": [],
+      "file_operations": [
+        {
+          "operation_type": "decryption",
+          "file_name": "100mb.txt",
+          "start_time": "2025-05-31T17:03:28.909224",
+          "end_time": "2025-05-31T17:03:30.102790",
+          "duration_seconds": 1.1935656070709229,
+          "duration_ms": 1193.5656070709229,
+          "status": "completed",
+          "timestamp": "2025-05-31T17:03:30.102830",
+          "additional_info": {
+            "encrypted_file_size_bytes": 183744075,
+            "output_path": "/test/output_files/100mb.txt",
+            "symmetric_key_source": "direct_metadata"
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-06-01T07:35:45.169694",
+      "component_info": {
+        "component": "reader",
+        "reader_name": "RAW_MATERIAL_SUPPLIER",
+        "message_id": 17364425026670491051,
+        "slice_id": 11820546382969647810,
+        "process_instance_id": 14346233703771857702,
+        "output_folder": "../output_files/"
+      },
+      "summary": {
+        "gas_used": 0,
+        "eth_cost": 0,
+        "usd_cost": 0,
+        "steps_count": 0,
+        "file_operations_count": 1,
+        "encryption_time_seconds": 0,
+        "decryption_time_seconds": 1.16410231590271,
+        "total_time_seconds": 1.16410231590271
+      },
+      "gas_steps": [],
+      "file_operations": [
+        {
+          "operation_type": "decryption",
+          "operation_name": "100mb.txt",
+          "start_time": "2025-06-01T07:35:43.880129",
+          "end_time": "2025-06-01T07:35:45.044231",
+          "duration_seconds": 1.16410231590271,
+          "duration_ms": 1164.10231590271,
+          "status": "completed",
+          "timestamp": "2025-06-01T07:35:45.145247",
+          "system_cpu_percent": 6.7,
+          "system_memory_percent": 73.2,
+          "system_memory_used_mb": 20178.11328125,
+          "system_memory_available_mb": 8446.04296875,
+          "process_cpu_percent": 0.0,
+          "process_memory_mb": 584.4765625,
+          "additional_info": {
+            "encrypted_file_size_bytes": 183744075,
+            "output_path": "/test/output_files/100mb.txt",
+            "symmetric_key_source": "direct_metadata"
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-06-01T07:35:59.992376",
+      "component_info": {
+        "component": "reader",
+        "reader_name": "RAW_MATERIAL_SUPPLIER",
+        "message_id": 17364425026670491051,
+        "slice_id": 14141262495756761340,
+        "process_instance_id": 14346233703771857702,
+        "output_folder": "../output_files/"
+      },
+      "summary": {
+        "gas_used": 0,
+        "eth_cost": 0,
+        "usd_cost": 0,
+        "steps_count": 0,
+        "file_operations_count": 1,
+        "encryption_time_seconds": 0,
+        "decryption_time_seconds": 0.061247825622558594,
+        "total_time_seconds": 0.061247825622558594
+      },
+      "gas_steps": [],
+      "file_operations": [
+        {
+          "operation_type": "decryption",
+          "operation_name": "1mb.txt",
+          "start_time": "2025-06-01T07:35:59.812817",
+          "end_time": "2025-06-01T07:35:59.874064",
+          "duration_seconds": 0.061247825622558594,
+          "duration_ms": 61.247825622558594,
+          "status": "completed",
+          "timestamp": "2025-06-01T07:35:59.975170",
+          "system_cpu_percent": 10.9,
+          "system_memory_percent": 71.2,
+          "system_memory_used_mb": 19525.52734375,
+          "system_memory_available_mb": 9098.0625,
+          "process_cpu_percent": 0.0,
+          "process_memory_mb": 459.97265625,
+          "additional_info": {
+            "encrypted_file_size_bytes": 1837515,
+            "output_path": "/test/output_files/1mb.txt",
+            "symmetric_key_source": "direct_metadata"
+          }
+        }
+      ]
+    }
+  ],
+  "total_summary": {
+    "total_gas": 807948,
+    "total_eth": 0.01615896,
+    "total_usd": 32.317919999999994,
+    "total_steps": 9,
+    "total_file_operations": 92,
+    "total_encryption_time": 10.497257232666016,
+    "total_decryption_time": 5.70487642288208
+  },
+  "last_updated": "2025-06-01T07:35:59.992396"
+}

@@ -4,7 +4,7 @@
 run_commands() {
     local authority=$1
     gnome-terminal -- bash -c "\
-        docker exec -it boring_meitner bash -c ' \
+        docker exec -it brave_boyd bash -c ' \
             sleep 0.3 && \
             cd sh_files && \
             sleep 0.3 && \

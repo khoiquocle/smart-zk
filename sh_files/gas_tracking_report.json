@@ -1,0 +1,800 @@
+{
+  "workflow_start": "2025-05-31T11:51:33.503008",
+  "config": {
+    "gas_price_gwei": 20.0,
+    "eth_price_usd": 2000.0
+  },
+  "components": [
+    {
+      "timestamp": "2025-05-31T11:51:33.503021",
+      "component_info": {
+        "component": "authority",
+        "authority_number": 2,
+        "process_instance_id": 14346233703771857702
+      },
+      "summary": {
+        "gas_used": 197347,
+        "eth_cost": 0.00394694,
+        "usd_cost": 7.89388,
+        "steps_count": 5
+      },
+      "steps": [
+        {
+          "step_name": "Authority Names Registration",
+          "operation_type": "authority_setup",
+          "gas_used": 27955,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.0005591,
+          "usd_cost": 1.1181999999999999,
+          "timestamp": "2025-05-31T11:51:32.895374",
+          "tx_hash": "0x793c58417d80c2e5ec2f99a07e77a9a2a11dbdf6e089ce358c30d1000652e514"
+        },
+        {
+          "step_name": "Hashed Elements Storage",
+          "operation_type": "authority_setup",
+          "gas_used": 45280,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.0009056,
+          "usd_cost": 1.8112,
+          "timestamp": "2025-05-31T11:51:33.010495",
+          "tx_hash": "0xf2014d709e7d264d775a6d263b32c2122f59be5d84bf3c5ec060e0a90e213b5b"
+        },
+        {
+          "step_name": "Initial Parameters Storage",
+          "operation_type": "authority_setup",
+          "gas_used": 57093,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.00114186,
+          "usd_cost": 2.2837199999999998,
+          "timestamp": "2025-05-31T11:51:33.129691",
+          "tx_hash": "0xdbfdae5a2d367f0a08936ad3645658deab4dcd4f58d037d39af20f0345e19979"
+        },
+        {
+          "step_name": "Public Parameters Link",
+          "operation_type": "authority_setup",
+          "gas_used": 33531,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.00067062,
+          "usd_cost": 1.34124,
+          "timestamp": "2025-05-31T11:51:33.414052",
+          "tx_hash": "0xbd68168309a0538f81b6df2b9fd02aeed67412702ae8d9f8072b15a7cd8798f2"
+        },
+        {
+          "step_name": "Public Key Registration",
+          "operation_type": "authority_setup",
+          "gas_used": 33488,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.00066976,
+          "usd_cost": 1.33952,
+          "timestamp": "2025-05-31T11:51:33.502898",
+          "tx_hash": "0xbb4f44df2553ad2f91f33c80a3dfef4a0ad3697858bfabdf9b3ac867b6be33c3"
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-31T11:51:33.565276",
+      "component_info": {
+        "component": "authority",
+        "authority_number": 1,
+        "process_instance_id": 14346233703771857702
+      },
+      "summary": {
+        "gas_used": 197347,
+        "eth_cost": 0.00394694,
+        "usd_cost": 7.89388,
+        "steps_count": 5
+      },
+      "steps": [
+        {
+          "step_name": "Authority Names Registration",
+          "operation_type": "authority_setup",
+          "gas_used": 27955,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.0005591,
+          "usd_cost": 1.1181999999999999,
+          "timestamp": "2025-05-31T11:51:32.906717",
+          "tx_hash": "0x7362c3c48d660133974406be11ebf79f866754f89d396bab21165c1b50397024"
+        },
+        {
+          "step_name": "Hashed Elements Storage",
+          "operation_type": "authority_setup",
+          "gas_used": 45280,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.0009056,
+          "usd_cost": 1.8112,
+          "timestamp": "2025-05-31T11:51:33.030291",
+          "tx_hash": "0x3438da7e3d099e7863211b48c3ce5c99953641f98a2931a3d0d80d5bd22e6c8a"
+        },
+        {
+          "step_name": "Initial Parameters Storage",
+          "operation_type": "authority_setup",
+          "gas_used": 57093,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.00114186,
+          "usd_cost": 2.2837199999999998,
+          "timestamp": "2025-05-31T11:51:33.154791",
+          "tx_hash": "0x02df7181a40cf29b84d2e4d7f20ffb3beb6d7b2844816131d3febc5a0c78ef08"
+        },
+        {
+          "step_name": "Public Parameters Link",
+          "operation_type": "authority_setup",
+          "gas_used": 33531,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.00067062,
+          "usd_cost": 1.34124,
+          "timestamp": "2025-05-31T11:51:33.478529",
+          "tx_hash": "0x995cd667b0bb01df7545a69ce0fe9b587ba230e447e2428b1c4bb464f6b8ac48"
+        },
+        {
+          "step_name": "Public Key Registration",
+          "operation_type": "authority_setup",
+          "gas_used": 33488,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.00066976,
+          "usd_cost": 1.33952,
+          "timestamp": "2025-05-31T11:51:33.565056",
+          "tx_hash": "0xe497dff2cc79b6dd902e35d8ff02c070ac424387289fc9d95a42b8d537d81e42"
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-31T11:51:43.444018",
+      "component_info": {
+        "component": "authority",
+        "authority_number": 4,
+        "process_instance_id": 14346233703771857702
+      },
+      "summary": {
+        "gas_used": 197347,
+        "eth_cost": 0.00394694,
+        "usd_cost": 7.89388,
+        "steps_count": 5
+      },
+      "steps": [
+        {
+          "step_name": "Authority Names Registration",
+          "operation_type": "authority_setup",
+          "gas_used": 27955,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.0005591,
+          "usd_cost": 1.1181999999999999,
+          "timestamp": "2025-05-31T11:51:43.022533",
+          "tx_hash": "0x539350f9ea3e2280ad7c6d8046b4ac1971352f109038c0b044422d24cc2e74db"
+        },
+        {
+          "step_name": "Hashed Elements Storage",
+          "operation_type": "authority_setup",
+          "gas_used": 45280,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.0009056,
+          "usd_cost": 1.8112,
+          "timestamp": "2025-05-31T11:51:43.098013",
+          "tx_hash": "0x4429b164901b367341c370453f291bea612c29c16e676b5883ef03bdfca842e3"
+        },
+        {
+          "step_name": "Initial Parameters Storage",
+          "operation_type": "authority_setup",
+          "gas_used": 57093,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.00114186,
+          "usd_cost": 2.2837199999999998,
+          "timestamp": "2025-05-31T11:51:43.160556",
+          "tx_hash": "0x5a75bae51ddf68cc8b007c1154342eebc5474f4431c875e0afc383f0b8d87d1d"
+        },
+        {
+          "step_name": "Public Parameters Link",
+          "operation_type": "authority_setup",
+          "gas_used": 33531,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.00067062,
+          "usd_cost": 1.34124,
+          "timestamp": "2025-05-31T11:51:43.370723",
+          "tx_hash": "0xde2f65a6be0c7c403663fd097656be9b01e36b43072d351a8c7395b64d1888c0"
+        },
+        {
+          "step_name": "Public Key Registration",
+          "operation_type": "authority_setup",
+          "gas_used": 33488,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.00066976,
+          "usd_cost": 1.33952,
+          "timestamp": "2025-05-31T11:51:43.443824",
+          "tx_hash": "0x2aa6d64afc7fb7b70e5abd914cb7ac665f788dc0194b99a44d936194d032ecc1"
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-31T11:51:43.516770",
+      "component_info": {
+        "component": "authority",
+        "authority_number": 3,
+        "process_instance_id": 14346233703771857702
+      },
+      "summary": {
+        "gas_used": 197347,
+        "eth_cost": 0.00394694,
+        "usd_cost": 7.89388,
+        "steps_count": 5
+      },
+      "steps": [
+        {
+          "step_name": "Authority Names Registration",
+          "operation_type": "authority_setup",
+          "gas_used": 27955,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.0005591,
+          "usd_cost": 1.1181999999999999,
+          "timestamp": "2025-05-31T11:51:32.970115",
+          "tx_hash": "0xcbcc284c0db2a5a56111447d592fcede036c2a4da92294b8f099de0267304d52"
+        },
+        {
+          "step_name": "Hashed Elements Storage",
+          "operation_type": "authority_setup",
+          "gas_used": 45280,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.0009056,
+          "usd_cost": 1.8112,
+          "timestamp": "2025-05-31T11:51:33.052365",
+          "tx_hash": "0x80af5e31ce1c2eeb6db135674d43d5e5708587b4af215a23e234aa3c4bbef798"
+        },
+        {
+          "step_name": "Initial Parameters Storage",
+          "operation_type": "authority_setup",
+          "gas_used": 57093,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.00114186,
+          "usd_cost": 2.2837199999999998,
+          "timestamp": "2025-05-31T11:51:33.177352",
+          "tx_hash": "0xa8d89b1eb95823b546c97bebbe413abe64312eecb0c41b9547a17663c58aa018"
+        },
+        {
+          "step_name": "Public Parameters Link",
+          "operation_type": "authority_setup",
+          "gas_used": 33531,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.00067062,
+          "usd_cost": 1.34124,
+          "timestamp": "2025-05-31T11:51:43.431937",
+          "tx_hash": "0x6355679a36aaf5bb89c174f7f021f2f43861c27a88fc7c80a54560e4cd527458"
+        },
+        {
+          "step_name": "Public Key Registration",
+          "operation_type": "authority_setup",
+          "gas_used": 33488,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.00066976,
+          "usd_cost": 1.33952,
+          "timestamp": "2025-05-31T11:51:43.516558",
+          "tx_hash": "0x51fc4e52445652424be092c6083b5606a6e62fd667e943500e1fe0c8d2511b23"
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-31T11:54:31.869628",
+      "component_info": {
+        "component": "data_owner",
+        "sender": "LOGISTIC",
+        "process_instance_id": 14346233703771857702,
+        "input_path": "../input_files/",
+        "policies_path": "../json_files/policies.json"
+      },
+      "summary": {
+        "gas_used": 89772,
+        "eth_cost": 0.00179544,
+        "usd_cost": 3.59088,
+        "steps_count": 1
+      },
+      "steps": [
+        {
+          "step_name": "Message IPFS Link Storage",
+          "operation_type": "data_storage",
+          "gas_used": 89772,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.00179544,
+          "usd_cost": 3.59088,
+          "timestamp": "2025-05-31T11:54:31.869326",
+          "tx_hash": "0x4c6d58fadfd1e5eedb8a21328690366a26d9ef352890b659a4b295145ef64ba5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-31T12:08:04.917271",
+      "component_info": {
+        "component": "attribute_certifier",
+        "process_instance_id": 14346233703771857702,
+        "commitments_stored": 10
+      },
+      "summary": {
+        "gas_used": 360026,
+        "eth_cost": 0.00720052,
+        "usd_cost": 14.401039999999998,
+        "steps_count": 10
+      },
+      "steps": [
+        {
+          "step_name": "Attribute Commitment Storage",
+          "operation_type": "zksnark_certification",
+          "gas_used": 36005,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.0007201,
+          "usd_cost": 1.4402,
+          "timestamp": "2025-05-31T12:08:04.631418",
+          "tx_hash": "0xce2e78a1413aa6cf884b178fffb78e5b96fefa4ce35a4b6d993e12241a39f8cd"
+        },
+        {
+          "step_name": "Attribute Commitment Storage",
+          "operation_type": "zksnark_certification",
+          "gas_used": 36005,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.0007201,
+          "usd_cost": 1.4402,
+          "timestamp": "2025-05-31T12:08:04.658214",
+          "tx_hash": "0x0b8def485380a61eea0869fb30387fda92e4eba2e5851ceaf7c7d9be686f83c0"
+        },
+        {
+          "step_name": "Attribute Commitment Storage",
+          "operation_type": "zksnark_certification",
+          "gas_used": 36005,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.0007201,
+          "usd_cost": 1.4402,
+          "timestamp": "2025-05-31T12:08:04.684237",
+          "tx_hash": "0x4a4914cf732e52acec67cafd3f4118fa352db8e2696f735678e2832212e473b6"
+        },
+        {
+          "step_name": "Attribute Commitment Storage",
+          "operation_type": "zksnark_certification",
+          "gas_used": 36005,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.0007201,
+          "usd_cost": 1.4402,
+          "timestamp": "2025-05-31T12:08:04.710041",
+          "tx_hash": "0x48f391eb94862630f27d272aeb2db7f348b6ecd1ab20095a723972466397fc07"
+        },
+        {
+          "step_name": "Attribute Commitment Storage",
+          "operation_type": "zksnark_certification",
+          "gas_used": 35993,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.00071986,
+          "usd_cost": 1.43972,
+          "timestamp": "2025-05-31T12:08:04.735752",
+          "tx_hash": "0xacaa5cccbcc572293e17f119b4dd2a7162c08aa356f4ec449bc032702f70daa9"
+        },
+        {
+          "step_name": "Attribute Commitment Storage",
+          "operation_type": "zksnark_certification",
+          "gas_used": 36005,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.0007201,
+          "usd_cost": 1.4402,
+          "timestamp": "2025-05-31T12:08:04.764906",
+          "tx_hash": "0xbd0a7ca535b1069b50e362d77b1b9537ef962d0be2e4deeed014a6f98a3d53cd"
+        },
+        {
+          "step_name": "Attribute Commitment Storage",
+          "operation_type": "zksnark_certification",
+          "gas_used": 36005,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.0007201,
+          "usd_cost": 1.4402,
+          "timestamp": "2025-05-31T12:08:04.796596",
+          "tx_hash": "0x2a19ffed2e5f777f68321c959f5983a61da5492069fbeaee22cd694db2c61313"
+        },
+        {
+          "step_name": "Attribute Commitment Storage",
+          "operation_type": "zksnark_certification",
+          "gas_used": 36005,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.0007201,
+          "usd_cost": 1.4402,
+          "timestamp": "2025-05-31T12:08:04.834858",
+          "tx_hash": "0x317cf8258d22084b9d77484969369166d148435ab13bb626f0541b373bf76310"
+        },
+        {
+          "step_name": "Attribute Commitment Storage",
+          "operation_type": "zksnark_certification",
+          "gas_used": 35993,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.00071986,
+          "usd_cost": 1.43972,
+          "timestamp": "2025-05-31T12:08:04.880963",
+          "tx_hash": "0xa8a942dfd6b02ac9b875dcb121101e1cadbd6f8219e195846ece05f7c95f7806"
+        },
+        {
+          "step_name": "Attribute Commitment Storage",
+          "operation_type": "zksnark_certification",
+          "gas_used": 36005,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.0007201,
+          "usd_cost": 1.4402,
+          "timestamp": "2025-05-31T12:08:04.907710",
+          "tx_hash": "0x61467ff6f8bb3c4a850ac3d09b47ac081cb645e59ca2cad6196b75a6ee3735ab"
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-31T12:14:52.354702",
+      "component_info": {
+        "component": "authority",
+        "authority_number": 1,
+        "process_instance_id": 14346233703771857702
+      },
+      "summary": {
+        "gas_used": 180547,
+        "eth_cost": 0.00361094,
+        "usd_cost": 7.22188,
+        "steps_count": 5
+      },
+      "steps": [
+        {
+          "step_name": "Authority Names Registration",
+          "operation_type": "authority_setup",
+          "gas_used": 27955,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.0005591,
+          "usd_cost": 1.1181999999999999,
+          "timestamp": "2025-05-31T12:14:51.657427",
+          "tx_hash": "0xc6d085a8114f76e552811f5fd3d05d25652ddf125a8d7c9d534ce9697fd90f79"
+        },
+        {
+          "step_name": "Hashed Elements Storage",
+          "operation_type": "authority_setup",
+          "gas_used": 45280,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.0009056,
+          "usd_cost": 1.8112,
+          "timestamp": "2025-05-31T12:14:51.729716",
+          "tx_hash": "0x2f85f8cc1e854c971cec8e61d2578307a3716e124c213c71c15e40bd995730dc"
+        },
+        {
+          "step_name": "Initial Parameters Storage",
+          "operation_type": "authority_setup",
+          "gas_used": 40293,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.00080586,
+          "usd_cost": 1.61172,
+          "timestamp": "2025-05-31T12:14:51.930026",
+          "tx_hash": "0x00f99725d0c15bf7e9e99e56d4ee94914a98ede45a104061549f3bdaab209feb"
+        },
+        {
+          "step_name": "Public Parameters Link",
+          "operation_type": "authority_setup",
+          "gas_used": 33531,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.00067062,
+          "usd_cost": 1.34124,
+          "timestamp": "2025-05-31T12:14:52.265881",
+          "tx_hash": "0xfa090710131034c18d93ebf8070836ff07bed6444636e6242aff859815cd8dd8"
+        },
+        {
+          "step_name": "Public Key Registration",
+          "operation_type": "authority_setup",
+          "gas_used": 33488,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.00066976,
+          "usd_cost": 1.33952,
+          "timestamp": "2025-05-31T12:14:52.354305",
+          "tx_hash": "0x6fe41225020afc71c2d5072b0efbe724f9c73453dc812ba226b23db5e08e4813"
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-31T12:14:52.683302",
+      "component_info": {
+        "component": "authority",
+        "authority_number": 2,
+        "process_instance_id": 14346233703771857702
+      },
+      "summary": {
+        "gas_used": 180547,
+        "eth_cost": 0.00361094,
+        "usd_cost": 7.22188,
+        "steps_count": 5
+      },
+      "steps": [
+        {
+          "step_name": "Authority Names Registration",
+          "operation_type": "authority_setup",
+          "gas_used": 27955,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.0005591,
+          "usd_cost": 1.1181999999999999,
+          "timestamp": "2025-05-31T12:14:51.874149",
+          "tx_hash": "0x65a3d1ea0b437a37e2960e6e97cd5f61729eb153e1e2a31603bdd02f0a6504ff"
+        },
+        {
+          "step_name": "Hashed Elements Storage",
+          "operation_type": "authority_setup",
+          "gas_used": 45280,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.0009056,
+          "usd_cost": 1.8112,
+          "timestamp": "2025-05-31T12:14:51.947300",
+          "tx_hash": "0xd7f305fe523bf36f554377037c78b1a03c1530efa710795f4b8ae932adbf6b3e"
+        },
+        {
+          "step_name": "Initial Parameters Storage",
+          "operation_type": "authority_setup",
+          "gas_used": 40293,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.00080586,
+          "usd_cost": 1.61172,
+          "timestamp": "2025-05-31T12:14:52.312110",
+          "tx_hash": "0xb6eaa0ee15a7faa05c1e20278184a4009d5c81ea93b3ec7ef0870d7068d58d7e"
+        },
+        {
+          "step_name": "Public Parameters Link",
+          "operation_type": "authority_setup",
+          "gas_used": 33531,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.00067062,
+          "usd_cost": 1.34124,
+          "timestamp": "2025-05-31T12:14:52.607002",
+          "tx_hash": "0x830552df465ef4ce0bf993d3058b1c17c40e2437ea1a2043b927757c7e3eec2a"
+        },
+        {
+          "step_name": "Public Key Registration",
+          "operation_type": "authority_setup",
+          "gas_used": 33488,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.00066976,
+          "usd_cost": 1.33952,
+          "timestamp": "2025-05-31T12:14:52.683049",
+          "tx_hash": "0x99f646806e4dc941b9e45307555e4c162db896790f08fcd67890a0ec84f14467"
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-31T12:14:52.756782",
+      "component_info": {
+        "component": "authority",
+        "authority_number": 3,
+        "process_instance_id": 14346233703771857702
+      },
+      "summary": {
+        "gas_used": 180547,
+        "eth_cost": 0.00361094,
+        "usd_cost": 7.22188,
+        "steps_count": 5
+      },
+      "steps": [
+        {
+          "step_name": "Authority Names Registration",
+          "operation_type": "authority_setup",
+          "gas_used": 27955,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.0005591,
+          "usd_cost": 1.1181999999999999,
+          "timestamp": "2025-05-31T12:14:52.097537",
+          "tx_hash": "0x7b6906b7a2895dcfab70730686e1a62f10fcd3fdd1a309648e2a473e02ee55ad"
+        },
+        {
+          "step_name": "Hashed Elements Storage",
+          "operation_type": "authority_setup",
+          "gas_used": 45280,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.0009056,
+          "usd_cost": 1.8112,
+          "timestamp": "2025-05-31T12:14:52.201825",
+          "tx_hash": "0x3d05947a65aab268c613f824a557c5cd69a1db8054caa5a40fae9e417ed5580f"
+        },
+        {
+          "step_name": "Initial Parameters Storage",
+          "operation_type": "authority_setup",
+          "gas_used": 40293,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.00080586,
+          "usd_cost": 1.61172,
+          "timestamp": "2025-05-31T12:14:52.444953",
+          "tx_hash": "0x94e8d155ca3aa54971903437efe95fcd25b39818217c2d0e2522f5f136890f23"
+        },
+        {
+          "step_name": "Public Parameters Link",
+          "operation_type": "authority_setup",
+          "gas_used": 33531,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.00067062,
+          "usd_cost": 1.34124,
+          "timestamp": "2025-05-31T12:14:52.677463",
+          "tx_hash": "0x9e0e0798bbe88427770c6859dfbe709a4732b4b178f9f95079407e8849aca193"
+        },
+        {
+          "step_name": "Public Key Registration",
+          "operation_type": "authority_setup",
+          "gas_used": 33488,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.00066976,
+          "usd_cost": 1.33952,
+          "timestamp": "2025-05-31T12:14:52.756525",
+          "tx_hash": "0x5ae4d94d3ac1addb55175201971c83e6e20ee055e3e2a3a6086fdbc90d29c231"
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-31T12:14:52.844275",
+      "component_info": {
+        "component": "authority",
+        "authority_number": 4,
+        "process_instance_id": 14346233703771857702
+      },
+      "summary": {
+        "gas_used": 174947,
+        "eth_cost": 0.0034989400000000003,
+        "usd_cost": 6.997879999999999,
+        "steps_count": 5
+      },
+      "steps": [
+        {
+          "step_name": "Authority Names Registration",
+          "operation_type": "authority_setup",
+          "gas_used": 27955,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.0005591,
+          "usd_cost": 1.1181999999999999,
+          "timestamp": "2025-05-31T12:14:52.227794",
+          "tx_hash": "0x6eb5806f801c1cca5f4fd6ad9bf8d3c57e79abf8f3b7e76bf2bc3cdbd1d38683"
+        },
+        {
+          "step_name": "Hashed Elements Storage",
+          "operation_type": "authority_setup",
+          "gas_used": 45280,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.0009056,
+          "usd_cost": 1.8112,
+          "timestamp": "2025-05-31T12:14:52.333116",
+          "tx_hash": "0x16c97a835c107483d69795dc1e8d30b478a6bf146bfe743cc34cdb3d4ac0bd51"
+        },
+        {
+          "step_name": "Initial Parameters Storage",
+          "operation_type": "authority_setup",
+          "gas_used": 40293,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.00080586,
+          "usd_cost": 1.61172,
+          "timestamp": "2025-05-31T12:14:52.509950",
+          "tx_hash": "0x250993983d21d4114b1e43a29df5318719b3fbfe8a9bed021ab2ed0c5522d203"
+        },
+        {
+          "step_name": "Public Parameters Link",
+          "operation_type": "authority_setup",
+          "gas_used": 27931,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.00055862,
+          "usd_cost": 1.11724,
+          "timestamp": "2025-05-31T12:14:52.781507",
+          "tx_hash": "0xd606797d5c844b93825eacd1185831012b20f5c34198a72a4bdd5320b3743c9c"
+        },
+        {
+          "step_name": "Public Key Registration",
+          "operation_type": "authority_setup",
+          "gas_used": 33488,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.00066976,
+          "usd_cost": 1.33952,
+          "timestamp": "2025-05-31T12:14:52.844048",
+          "tx_hash": "0xbfa06bdc2c43c2b41d87d69ea4775a57cdca3fbefd41fffb0a8f802278289cf5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-31T12:22:14.905043",
+      "component_info": {
+        "component": "data_owner",
+        "sender": "LOGISTIC",
+        "process_instance_id": 14346233703771857702,
+        "input_path": "../input_files/",
+        "policies_path": "../json_files/policies.json"
+      },
+      "summary": {
+        "gas_used": 89772,
+        "eth_cost": 0.00179544,
+        "usd_cost": 3.59088,
+        "steps_count": 1
+      },
+      "steps": [
+        {
+          "step_name": "Message IPFS Link Storage",
+          "operation_type": "data_storage",
+          "gas_used": 89772,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.00179544,
+          "usd_cost": 3.59088,
+          "timestamp": "2025-05-31T12:22:14.904648",
+          "tx_hash": "0x6fc8f8db6cf21c12a22b4aed5bf421d6eed9703b3ca10734ac96ca656e06aca5"
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-31T16:14:57.858258",
+      "component_info": {
+        "component": "data_owner",
+        "sender": "LOGISTIC",
+        "process_instance_id": 14346233703771857702,
+        "input_path": "../input_files/",
+        "policies_path": "../json_files/policies.json"
+      },
+      "summary": {
+        "gas_used": 89772,
+        "eth_cost": 0.00179544,
+        "usd_cost": 3.59088,
+        "steps_count": 1
+      },
+      "steps": [
+        {
+          "step_name": "Message IPFS Link Storage",
+          "operation_type": "data_storage",
+          "gas_used": 89772,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.00179544,
+          "usd_cost": 3.59088,
+          "timestamp": "2025-05-31T16:14:57.857522",
+          "tx_hash": "0xa71ca89eb9268b1934d7cb0c9237fa890b9aa3db0a454c8118ab62575e852918"
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-31T16:20:02.593741",
+      "component_info": {
+        "component": "data_owner",
+        "sender": "LOGISTIC",
+        "process_instance_id": 14346233703771857702,
+        "input_path": "../input_files/",
+        "policies_path": "../json_files/policies.json"
+      },
+      "summary": {
+        "gas_used": 89772,
+        "eth_cost": 0.00179544,
+        "usd_cost": 3.59088,
+        "steps_count": 1
+      },
+      "steps": [
+        {
+          "step_name": "Message IPFS Link Storage",
+          "operation_type": "data_storage",
+          "gas_used": 89772,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.00179544,
+          "usd_cost": 3.59088,
+          "timestamp": "2025-05-31T16:20:02.593375",
+          "tx_hash": "0x0ca419a7a41d13225fdfe08d5060f7c43940352e76db28c14fb566d08f2979e7"
+        }
+      ]
+    },
+    {
+      "timestamp": "2025-05-31T16:21:05.904289",
+      "component_info": {
+        "component": "data_owner",
+        "sender": "LOGISTIC",
+        "process_instance_id": 14346233703771857702,
+        "input_path": "../input_files/",
+        "policies_path": "../json_files/policies.json"
+      },
+      "summary": {
+        "gas_used": 89772,
+        "eth_cost": 0.00179544,
+        "usd_cost": 3.59088,
+        "steps_count": 1
+      },
+      "steps": [
+        {
+          "step_name": "Message IPFS Link Storage",
+          "operation_type": "data_storage",
+          "gas_used": 89772,
+          "gas_price_gwei": 20.0,
+          "eth_cost": 0.00179544,
+          "usd_cost": 3.59088,
+          "timestamp": "2025-05-31T16:21:05.871175",
+          "tx_hash": "0x619c75042c0ee0d47e60c76a7263c7366cdfca13c048969e8bcdc922e1c5a8d1"
+        }
+      ]
+    }
+  ],
+  "total_summary": {
+    "total_gas": 2314862,
+    "total_eth": 0.04629724000000001,
+    "total_usd": 92.59447999999999,
+    "total_steps": 55
+  },
+  "last_updated": "2025-05-31T16:21:05.904304"
+}
