@@ -26,10 +26,17 @@ def store_process_id_to_env(value):
 
 # Main logic: assign attributes, generate commitments, upload to IPFS, log to blockchain & SQLite
 def generate_attributes(roles_file):
+    # Initialize gas tracking (display mode to show real-time tracking)
+    gas_price_gwei = float(config('GAS_PRICE_GWEI', default=5))
+    eth_price_usd = float(config('ETH_PRICE_USD', default=2000))
+    block_int.enable_gas_tracking(gas_price_gwei, eth_price_usd, silent=False)
+    
+    print("[ATTRIBUTE CERTIFIER] Starting attribute certification...")
+    
     # Try to read existing process instance ID from .env first
     try:
         process_instance_id = int(config('PROCESS_INSTANCE_ID'))
-        print(f'Using existing process instance ID from .env: {process_instance_id}')
+        print(f'Using existing process instance ID: {process_instance_id}')
     except:
         # Only generate new ID if none exists
         now = datetime.now()
@@ -51,6 +58,7 @@ def generate_attributes(roles_file):
     dict_users = {}
     attribute_commitments = {}
 
+    print("Generating attribute commitments...")
     for role, attributes in roles.items():
         address = config(f'{role}_ADDRESS')
         dict_users[address] = [f'{process_instance_id}@{auth}' for auth in authorities] + attributes
@@ -93,6 +101,7 @@ def generate_attributes(roles_file):
             }
 
     # IPFS: Upload process metadata
+    print("Uploading metadata to IPFS...")
     f = io.StringIO()
     dict_users_dumped = json.dumps(dict_users)
     f.write('"process_instance_id": ' + str(process_instance_id) + '####')
@@ -105,12 +114,16 @@ def generate_attributes(roles_file):
     print(f'IPFS hash: {hash_file}')
 
     # Send attributes + commitments to blockchain
+    print("Storing attribute commitments on blockchain...")
     certifier_address = config('CERTIFIER_ADDRESS')
     private_key = config('CERTIFIER_PRIVATEKEY')
 
+    commitment_count = 0
     for address, auth_attrs in attribute_commitments.items():
         for auth_id, type_attrs in auth_attrs.items():
             for attr_type, attr_data in type_attrs.items():
+                commitment_count += 1
+                print(f"Storing commitment {commitment_count} for user {address[:8]}...{address[-4:]}")
                 # Use the commitment value directly
                 commitment_for_blockchain = attr_data["commitment"]
                 block_int.send_users_attributes_with_commitment(
@@ -191,6 +204,8 @@ def generate_attributes(roles_file):
     finally:
         conn.close()
         print("DEBUG: Database connection closed")
+
+    print(f"[ATTRIBUTE CERTIFIER] Successfully certified {commitment_count} attributes")
 
 # CLI Interface
 if __name__ == "__main__":

@@ -136,52 +136,79 @@ def cipher_data(groupObj, maabe, api, process_instance_id, sender_name, input_fi
         if file_name not in file_contents or file_contents[file_name] is None:
             print(f"WARNING: Skipping encryption for {file_name} - no valid content")
             continue
-            
-        # FIX: Simplest possible approach - just store the symmetric key directly
-        # Use MA-ABE only for access control, not for key protection
         
-        # Generate a random group element for MA-ABE (dummy - just for access control)
-        dummy_element = groupObj.random(GT)
+        # Start timing the encryption for this file
+        file_encryption_start = time.time()
         
-        # Generate a simple random symmetric key  
-        symmetric_key = secrets.token_hex(32)  # 32 bytes = 64 hex chars
-        
-        print(f"DEBUG ENCRYPTION: Generated symmetric key: {symmetric_key[:50]}...")
-        print(f"DEBUG ENCRYPTION: Symmetric key length: {len(symmetric_key)}")
-        
-        keys.append(symmetric_key)  # Store the symmetric key
-        ciphered_key = maabe.encrypt(public_parameters, pk, dummy_element, access_policy[file_name])
-        ciphered_key_bytes = objectToBytes(ciphered_key, groupObj)
-        ciphered_key_bytes_string = ciphered_key_bytes.decode('utf-8')
-        
-        # FIX: Encrypt file contents with additional error handling
         try:
+            # FIX: Simplest possible approach - just store the symmetric key directly
+            # Use MA-ABE only for access control, not for key protection
+            
+            # Generate a random group element for MA-ABE (dummy - just for access control)
+            dummy_element = groupObj.random(GT)
+            
+            # Generate a simple random symmetric key  
+            symmetric_key = secrets.token_hex(32)  # 32 bytes = 64 hex chars
+            
+            print(f"DEBUG ENCRYPTION: Generated symmetric key: {symmetric_key[:50]}...")
+            print(f"DEBUG ENCRYPTION: Symmetric key length: {len(symmetric_key)}")
+            
+            keys.append(symmetric_key)  # Store the symmetric key
+            ciphered_key = maabe.encrypt(public_parameters, pk, dummy_element, access_policy[file_name])
+            ciphered_key_bytes = objectToBytes(ciphered_key, groupObj)
+            ciphered_key_bytes_string = ciphered_key_bytes.decode('utf-8')
+            
+            # FIX: Encrypt file contents with additional error handling
             cipher = cryptocode.encrypt(file_contents[file_name], symmetric_key)
             if cipher is None:
                 print(f"WARNING: Encryption failed for {file_name}")
+                file_encryption_end = time.time()
+                block_int.track_file_operation_time(
+                    "encryption", file_name, file_encryption_start, file_encryption_end, 
+                    status="failed", additional_info={"error": "symmetric_encryption_failed"}
+                )
                 continue
+            
+            dict_pol = {
+                'CipheredKey': ciphered_key_bytes_string,
+                'FileName': file_name,
+                'EncryptedFile': cipher,
+                'SymmetricKey': symmetric_key  # Store symmetric key directly in metadata
+            }
+            
+            # Handle multiple policies with slice ID
+            if len(valid_files) > 1:  # FIX: Use valid_files instead of access_policy
+                now = int(datetime.now().strftime("%Y%m%d%H%M%S%f"))
+                random.seed(now)
+                slice_id = random.randint(10_000_000_000_000_000_000, 18_446_744_073_709_551_615)
+                dict_pol['Slice_id'] = slice_id
+                print(f'slice id {file_name}: {slice_id}')
+                with open('../src/.cache', 'a') as file:
+                    file.write(f'slice id {file_name}: {slice_id} | slice{index + 1}\n')
+            
+            header.append(dict_pol)
+            
+            # End timing and track successful encryption
+            file_encryption_end = time.time()
+            file_size = len(file_contents[file_name])
+            block_int.track_file_operation_time(
+                "encryption", file_name, file_encryption_start, file_encryption_end,
+                status="completed", 
+                additional_info={
+                    "file_size_bytes": file_size,
+                    "policy": policy,
+                    "symmetric_key_length": len(symmetric_key)
+                }
+            )
+            
         except Exception as e:
             print(f"ERROR: Failed to encrypt {file_name}: {e}")
+            file_encryption_end = time.time()
+            block_int.track_file_operation_time(
+                "encryption", file_name, file_encryption_start, file_encryption_end,
+                status="error", additional_info={"error": str(e)}
+            )
             continue
-            
-        dict_pol = {
-            'CipheredKey': ciphered_key_bytes_string,
-            'FileName': file_name,
-            'EncryptedFile': cipher,
-            'SymmetricKey': symmetric_key  # Store symmetric key directly in metadata
-        }
-        
-        # Handle multiple policies with slice ID
-        if len(valid_files) > 1:  # FIX: Use valid_files instead of access_policy
-            now = int(datetime.now().strftime("%Y%m%d%H%M%S%f"))
-            random.seed(now)
-            slice_id = random.randint(10_000_000_000_000_000_000, 18_446_744_073_709_551_615)
-            dict_pol['Slice_id'] = slice_id
-            print(f'slice id {file_name}: {slice_id}')
-            with open('../src/.cache', 'a') as file:
-                file.write(f'slice id {file_name}: {slice_id} | slice{index + 1}\n')
-        
-        header.append(dict_pol)
     
     # FIX: Check if any files were successfully encrypted
     if not header:
@@ -216,6 +243,14 @@ def cipher_data(groupObj, maabe, api, process_instance_id, sender_name, input_fi
     print(f"[SUCCESS] Successfully encrypted and sent {len(header)} files to IPFS")
 
 if __name__ == '__main__':
+    # Initialize gas tracking (display mode for blockchain operations)
+    gas_price_gwei = float(config('GAS_PRICE_GWEI', default=5))
+    eth_price_usd = float(config('ETH_PRICE_USD', default=2000))
+    block_int.enable_gas_tracking(gas_price_gwei, eth_price_usd, silent=False)
+    
+    # Initialize time tracking for file operations (display mode)
+    block_int.enable_time_tracking(silent=False)
+    
     groupObj = PairingGroup('SS512')
     maabe = MaabeRW15(groupObj)
     api = ipfshttpclient.connect('/ip4/127.0.0.1/tcp/5001')
@@ -233,4 +268,24 @@ if __name__ == '__main__':
     conn = sqlite3.connect('../databases/data_owner/data_owner.db')
     x = conn.cursor()
     authorities_names_and_addresses = authorities_names_and_addresses()
+    
+    print(f"[DATA OWNER] Starting encryption process...")
+    print(f"Sender: {args.sender_name}")
+    
     cipher_data(groupObj, maabe, api, process_instance_id, args.sender_name, args.input, args.policies)
+    
+    print(f"[DATA OWNER] Encryption process completed!")
+    
+    # Save gas data to JSON file  
+    filename = block_int.save_gas_data_to_json(
+        filename="size_scalability.json",
+        process_info={
+            'component': 'data_owner',
+            'sender': args.sender_name,
+            'process_instance_id': process_instance_id,
+            'input_path': args.input,
+            'policies_path': args.policies
+        }
+    )
+    if filename:
+        print(f"[GAS] Data saved to: {filename}")

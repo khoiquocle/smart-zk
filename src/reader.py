@@ -20,6 +20,7 @@ from path_utils import get_reader_db
 from zksnark.prover import generate_proof
 from zksnark.utils import compute_pedersen_hash
 # --- End zkSNARK Imports ---
+import time
 
 def merge_dicts(*dict_args):
     """
@@ -96,30 +97,33 @@ def actual_decryption(remaining, public_parameters, user_sk, output_folder):
     print(f"DEBUG: User GID: {user_sk.get('GID', 'None')}")
     print(f"DEBUG: User keys: {list(user_sk.get('keys', {}).keys()) if 'keys' in user_sk else 'No keys'}")
     
-    # Show detailed attribute information
-    if 'keys' in user_sk:
-        for key_name, key_data in user_sk['keys'].items():
-            print(f"DEBUG: Key '{key_name}': {type(key_data)}")
-            if hasattr(key_data, 'keys'):
-                print(f"DEBUG:   Sub-keys: {list(key_data.keys())}")
-    
-    test = remaining["CipheredKey"].encode("utf-8")
-    ct = bytesToObject(test, groupObj)
-    print(f"DEBUG: Ciphertext object type: {type(ct)}")
-    print(f"DEBUG: Ciphertext object keys: {list(ct.keys()) if hasattr(ct, 'keys') else 'No keys method'}")
-    
-    # Try to extract policy from ciphertext if possible
-    if hasattr(ct, 'get') and ct.get('policy'):
-        print(f"DEBUG: Embedded policy in ciphertext: {ct['policy']}")
-    elif hasattr(ct, '__dict__'):
-        print(f"DEBUG: Ciphertext attributes: {ct.__dict__}")
-    else:
-        print(f"DEBUG: Ciphertext object structure: {ct}")
-    
-    print(f"DEBUG: About to call maabe.decrypt()...")
-    print(f"DEBUG: Public parameters keys: {list(public_parameters.keys())}")
+    file_name = remaining.get("FileName", "unknown_file")
+    file_decryption_start = time.time()
     
     try:
+        # Show detailed attribute information
+        if 'keys' in user_sk:
+            for key_name, key_data in user_sk['keys'].items():
+                print(f"DEBUG: Key '{key_name}': {type(key_data)}")
+                if hasattr(key_data, 'keys'):
+                    print(f"DEBUG:   Sub-keys: {list(key_data.keys())}")
+        
+        test = remaining["CipheredKey"].encode("utf-8")
+        ct = bytesToObject(test, groupObj)
+        print(f"DEBUG: Ciphertext object type: {type(ct)}")
+        print(f"DEBUG: Ciphertext object keys: {list(ct.keys()) if hasattr(ct, 'keys') else 'No keys method'}")
+        
+        # Try to extract policy from ciphertext if possible
+        if hasattr(ct, 'get') and ct.get('policy'):
+            print(f"DEBUG: Embedded policy in ciphertext: {ct['policy']}")
+        elif hasattr(ct, '__dict__'):
+            print(f"DEBUG: Ciphertext attributes: {ct.__dict__}")
+        else:
+            print(f"DEBUG: Ciphertext object structure: {ct}")
+        
+        print(f"DEBUG: About to call maabe.decrypt()...")
+        print(f"DEBUG: Public parameters keys: {list(public_parameters.keys())}")
+        
         v2 = maabe.decrypt(public_parameters, user_sk, ct)
         print(f"DEBUG: Decryption successful! Result type: {type(v2)}")
         
@@ -165,10 +169,34 @@ def actual_decryption(remaining, public_parameters, user_sk, output_folder):
         print(f"DEBUG: Decryption successful!")
         base64_to_file(decryptedFile, output_folder_path+"/"+remaining["FileName"])
         print(f"DEBUG: ========== Decryption completed successfully ==========")
+        
+        # Track successful decryption
+        file_decryption_end = time.time()
+        import block_int
+        file_size = len(remaining.get("EncryptedFile", ""))
+        block_int.track_file_operation_time(
+            "decryption", file_name, file_decryption_start, file_decryption_end,
+            status="completed",
+            additional_info={
+                "encrypted_file_size_bytes": file_size,
+                "output_path": output_folder_path + "/" + remaining["FileName"],
+                "symmetric_key_source": "direct_metadata" if 'SymmetricKey' in remaining else "encrypted_metadata" if 'EncryptedSymmetricKey' in remaining else "hash_fallback"
+            }
+        )
+        
     except Exception as e:
         print(f"DEBUG: MA-ABE decryption failed with exception: {e}")
         print(f"DEBUG: Exception type: {type(e)}")
         print(f"DEBUG: ========== Decryption failed ==========")
+        
+        # Track failed decryption
+        file_decryption_end = time.time()
+        import block_int
+        block_int.track_file_operation_time(
+            "decryption", file_name, file_decryption_start, file_decryption_end,
+            status="failed",
+            additional_info={"error": str(e)}
+        )
         raise
 
 # --- New zkSNARK Function ---
@@ -455,6 +483,15 @@ if __name__ == "__main__":
     maabe = MaabeRW15(groupObj)
     api = ipfshttpclient.connect("/ip4/127.0.0.1/tcp/5001") # Ensure IPFS daemon is running
     
+    # Initialize time tracking for file operations (display mode)
+    import block_int
+    block_int.enable_time_tracking(silent=False)
+    
+    # Initialize gas tracking for blockchain operations (display mode)
+    gas_price_gwei = float(config('GAS_PRICE_GWEI', default=5))
+    eth_price_usd = float(config('ETH_PRICE_USD', default=2000))
+    block_int.enable_gas_tracking(gas_price_gwei, eth_price_usd, silent=False)
+    
     try:
         process_instance_id = int(process_instance_id_env)
         print(f"DEBUG: Converted process_instance_id to int: {process_instance_id}")
@@ -489,6 +526,22 @@ if __name__ == "__main__":
     try:
         print(f"Starting decryption process for Message ID: {message_id}, Slice ID: {slice_id}")
         start(process_instance_id, message_id, slice_id, sender_address, output_folder, merged)
+        
+        # Save time tracking data to JSON file
+        filename = block_int.save_gas_data_to_json(
+            filename="size_scalability.json",
+            process_info={
+                'component': 'reader',
+                'reader_name': args.reader_name,
+                'message_id': message_id,
+                'slice_id': slice_id,
+                'process_instance_id': process_instance_id,
+                'output_folder': output_folder
+            }
+        )
+        if filename:
+            print(f"[TIME] Data saved to: {filename}")
+        
     except Exception as e:
         print(f"\n--- An error occurred during the decryption process ---")
         print(f"Error: {e}")

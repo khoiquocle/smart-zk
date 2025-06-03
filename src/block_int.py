@@ -4,6 +4,7 @@ import json
 import base64
 import time
 from datetime import datetime
+import psutil
 
 # Connect to Ganache
 ganache_url = "http://127.0.0.1:7545"
@@ -11,27 +12,143 @@ web3 = Web3(Web3.HTTPProvider(ganache_url))
 
 # Gas tracking global configuration
 GAS_TRACKING_ENABLED = True
-GAS_PRICE_GWEI = 20  # Default gas price in Gwei
+GAS_PRICE_GWEI = 5  # Default gas price in Gwei
 ETH_PRICE_USD = 2000  # Default ETH price in USD
 gas_tracking_data = []
+SILENT_MODE = True  # Silent gas tracking by default
+
+# Time tracking for encryption/decryption operations
+time_tracking_data = []
+TIME_TRACKING_ENABLED = True
+
+# Time tracking functions
+def track_operation_performance(operation_type, operation_name, start_time, end_time, status="completed", additional_info=None):
+    """Track time, CPU, and memory for any operation (file operations, blockchain transactions, etc.)"""
+    if not TIME_TRACKING_ENABLED:
+        return
+    
+    duration_seconds = end_time - start_time
+    
+    # Get current system resource usage
+    try:
+        current_cpu = psutil.cpu_percent(interval=0.1)  # Short interval for current usage
+        memory_info = psutil.virtual_memory()
+        current_memory_percent = memory_info.percent
+        current_memory_mb = memory_info.used / (1024 * 1024)
+        available_memory_mb = memory_info.available / (1024 * 1024)
+        
+        # Get current process info
+        current_process = psutil.Process()
+        process_cpu = current_process.cpu_percent()
+        process_memory_mb = current_process.memory_info().rss / (1024 * 1024)
+        
+    except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
+        # Fallback if psutil fails
+        current_cpu = 0
+        current_memory_percent = 0
+        current_memory_mb = 0
+        available_memory_mb = 0
+        process_cpu = 0
+        process_memory_mb = 0
+    
+    tracking_entry = {
+        'operation_type': operation_type,  # 'encryption', 'decryption', 'blockchain', etc.
+        'operation_name': operation_name,  # file name, transaction type, etc.
+        'start_time': datetime.fromtimestamp(start_time).isoformat(),
+        'end_time': datetime.fromtimestamp(end_time).isoformat(),
+        'duration_seconds': duration_seconds,
+        'duration_ms': duration_seconds * 1000,
+        'status': status,
+        'timestamp': datetime.now().isoformat(),
+        # System resource usage
+        'system_cpu_percent': current_cpu,
+        'system_memory_percent': current_memory_percent,
+        'system_memory_used_mb': current_memory_mb,
+        'system_memory_available_mb': available_memory_mb,
+        # Process-specific usage
+        'process_cpu_percent': process_cpu,
+        'process_memory_mb': process_memory_mb,
+        'additional_info': additional_info or {}
+    }
+    
+    time_tracking_data.append(tracking_entry)
+    
+    # Only display if not in silent mode
+    if not SILENT_MODE:
+        # More informative display with file size and resource usage
+        additional_info = additional_info or {}
+        file_size = additional_info.get('file_size_bytes', additional_info.get('encrypted_file_size_bytes'))
+        
+        if file_size:
+            if file_size < 1024:
+                size_str = f" ({file_size} bytes)"
+            elif file_size < 1024*1024:
+                size_str = f" ({file_size/1024:.1f} KB)"
+            elif file_size < 1024*1024*1024:
+                size_str = f" ({file_size/(1024*1024):.1f} MB)"
+            else:
+                size_str = f" ({file_size/(1024*1024*1024):.1f} GB)"
+        else:
+            size_str = ""
+        
+        if status == "completed":
+            print(f"[PERF] {operation_type.upper()} '{operation_name}'{size_str}: {duration_seconds:.3f}s | CPU: {current_cpu:.1f}% | RAM: {process_memory_mb:.1f}MB")
+        else:
+            print(f"[PERF] {operation_type.upper()} '{operation_name}'{size_str}: {duration_seconds:.3f}s - {status.upper()} | CPU: {current_cpu:.1f}% | RAM: {process_memory_mb:.1f}MB")
+            if additional_info.get('error'):
+                print(f"       Error: {additional_info['error']}")
+
+# Backward compatibility function
+def track_file_operation_time(operation_type, file_name, start_time, end_time, status="completed", additional_info=None):
+    """Backward compatibility wrapper for file operations"""
+    return track_operation_performance(operation_type, file_name, start_time, end_time, status, additional_info)
+
+def enable_time_tracking(silent=True):
+    """Enable time tracking for file operations"""
+    global TIME_TRACKING_ENABLED, SILENT_MODE
+    TIME_TRACKING_ENABLED = True
+    SILENT_MODE = silent
+    if not silent:
+        print("[TIME TRACKER] Enabled")
+
+def disable_time_tracking():
+    """Disable time tracking"""
+    global TIME_TRACKING_ENABLED
+    TIME_TRACKING_ENABLED = False
+    if not SILENT_MODE:
+        print("[TIME TRACKER] Disabled")
+
+def get_time_tracking_data():
+    """Return time tracking data for analysis"""
+    return time_tracking_data.copy()
+
+def clear_time_tracking_data():
+    """Clear time tracking data"""
+    global time_tracking_data
+    time_tracking_data.clear()
+    if not SILENT_MODE:
+        print("[TIME TRACKER] Data cleared")
 
 # Gas tracking functions
-def enable_gas_tracking(gas_price_gwei=20, eth_price_usd=2000):
+def enable_gas_tracking(gas_price_gwei=5, eth_price_usd=2000, silent=True):
     """Enable gas tracking with custom gas price and ETH price"""
-    global GAS_TRACKING_ENABLED, GAS_PRICE_GWEI, ETH_PRICE_USD
+    global GAS_TRACKING_ENABLED, GAS_PRICE_GWEI, ETH_PRICE_USD, SILENT_MODE
     GAS_TRACKING_ENABLED = True
     GAS_PRICE_GWEI = gas_price_gwei
     ETH_PRICE_USD = eth_price_usd
-    print(f"[GAS TRACKER] Enabled - Gas Price: {gas_price_gwei} Gwei, ETH Price: ${eth_price_usd}")
+    SILENT_MODE = silent
+    if not silent:
+        print(f"[GAS TRACKER] Enabled - Gas Price: {gas_price_gwei} Gwei, ETH Price: ${eth_price_usd}")
 
 def disable_gas_tracking():
     """Disable gas tracking"""
     global GAS_TRACKING_ENABLED
     GAS_TRACKING_ENABLED = False
-    print("[GAS TRACKER] Disabled")
+    if not SILENT_MODE:
+        print("[GAS TRACKER] Disabled")
 
 def track_gas_usage(step_name, tx_receipt, operation_type="unknown"):
-    """Track gas usage for a transaction and display costs"""
+    """Track gas usage for a transaction and save to data (silent by default)"""
     if not GAS_TRACKING_ENABLED:
         return
     
@@ -39,6 +156,18 @@ def track_gas_usage(step_name, tx_receipt, operation_type="unknown"):
     gas_price_wei = GAS_PRICE_GWEI * 1e9
     eth_cost = (gas_used * gas_price_wei) / 1e18
     usd_cost = eth_cost * ETH_PRICE_USD
+    
+    # Get current system resource usage for blockchain operations
+    try:
+        current_cpu = psutil.cpu_percent(interval=0.1)
+        memory_info = psutil.virtual_memory()
+        current_memory_percent = memory_info.percent
+        current_process = psutil.Process()
+        process_memory_mb = current_process.memory_info().rss / (1024 * 1024)
+    except:
+        current_cpu = 0
+        current_memory_percent = 0
+        process_memory_mb = 0
     
     # Store tracking data
     tracking_entry = {
@@ -49,18 +178,27 @@ def track_gas_usage(step_name, tx_receipt, operation_type="unknown"):
         'eth_cost': eth_cost,
         'usd_cost': usd_cost,
         'timestamp': datetime.now().isoformat(),
-        'tx_hash': tx_receipt.transactionHash.hex()
+        'tx_hash': tx_receipt.transactionHash.hex(),
+        # System resource usage during blockchain operation
+        'system_cpu_percent': current_cpu,
+        'system_memory_percent': current_memory_percent,
+        'process_memory_mb': process_memory_mb
     }
     gas_tracking_data.append(tracking_entry)
     
-    # Display gas usage
-    print(f"[GAS] {step_name}: {gas_used:,} gas (ETH: {eth_cost:.6f}, USD: ${usd_cost:.2f})")
+    # Only display if not in silent mode
+    if not SILENT_MODE:
+        print(f"[GAS] {step_name}: {gas_used:,} gas (ETH: {eth_cost:.6f}, USD: ${usd_cost:.2f}) | CPU: {current_cpu:.1f}% | RAM: {process_memory_mb:.1f}MB")
 
 def print_gas_summary():
-    """Print summary of all tracked gas usage"""
+    """Print summary of all tracked gas usage (only if not silent)"""
     if not GAS_TRACKING_ENABLED or not gas_tracking_data:
-        print("[GAS] No gas tracking data available")
+        if not SILENT_MODE:
+            print("[GAS] No gas tracking data available")
         return
+    
+    if SILENT_MODE:
+        return  # Don't print anything in silent mode
     
     print("\n" + "="*70)
     print("GAS USAGE SUMMARY")
@@ -81,6 +219,130 @@ def print_gas_summary():
     print(f"Total ETH Cost: {total_eth:.6f} ETH")
     print("="*70)
 
+def save_gas_data_to_json(filename=None, process_info=None):
+    """Save gas tracking data and time tracking data to shared JSON file"""
+    if not gas_tracking_data and not time_tracking_data:
+        return None
+    
+    # Use a shared filename for all components
+    if filename is None:
+        filename = "gas_tracking_report.json"
+    
+    # Try to load existing data
+    existing_data = {}
+    try:
+        import json
+        with open(filename, 'r') as f:
+            existing_data = json.load(f)
+    except FileNotFoundError:
+        # File doesn't exist yet, start fresh
+        existing_data = {
+            "workflow_start": datetime.now().isoformat(),
+            "config": {
+                "gas_price_gwei": GAS_PRICE_GWEI,
+                "eth_price_usd": ETH_PRICE_USD
+            },
+            "components": [],
+            "total_summary": {
+                "total_gas": 0,
+                "total_eth": 0,
+                "total_usd": 0,
+                "total_steps": 0,
+                "total_file_operations": 0,
+                "total_encryption_time": 0,
+                "total_decryption_time": 0
+            }
+        }
+    except json.JSONDecodeError:
+        # File is corrupted, start fresh
+        existing_data = {
+            "workflow_start": datetime.now().isoformat(),
+            "config": {
+                "gas_price_gwei": GAS_PRICE_GWEI,
+                "eth_price_usd": ETH_PRICE_USD
+            },
+            "components": [],
+            "total_summary": {
+                "total_gas": 0,
+                "total_eth": 0,
+                "total_usd": 0,
+                "total_steps": 0,
+                "total_file_operations": 0,
+                "total_encryption_time": 0,
+                "total_decryption_time": 0
+            }
+        }
+    
+    # Ensure existing data has all required fields (backward compatibility)
+    if 'total_summary' not in existing_data:
+        existing_data['total_summary'] = {}
+    
+    total_summary = existing_data['total_summary']
+    
+    # Add missing fields with default values
+    if 'total_file_operations' not in total_summary:
+        total_summary['total_file_operations'] = 0
+    if 'total_encryption_time' not in total_summary:
+        total_summary['total_encryption_time'] = 0
+    if 'total_decryption_time' not in total_summary:
+        total_summary['total_decryption_time'] = 0
+    if 'total_gas' not in total_summary:
+        total_summary['total_gas'] = 0
+    if 'total_eth' not in total_summary:
+        total_summary['total_eth'] = 0
+    if 'total_usd' not in total_summary:
+        total_summary['total_usd'] = 0
+    if 'total_steps' not in total_summary:
+        total_summary['total_steps'] = 0
+    
+    # Calculate totals for this component
+    component_gas = sum(entry['gas_used'] for entry in gas_tracking_data)
+    component_eth = sum(entry['eth_cost'] for entry in gas_tracking_data)
+    component_usd = sum(entry['usd_cost'] for entry in gas_tracking_data)
+    
+    # Calculate time tracking totals
+    component_encryption_time = sum(entry['duration_seconds'] for entry in time_tracking_data if entry['operation_type'] == 'encryption')
+    component_decryption_time = sum(entry['duration_seconds'] for entry in time_tracking_data if entry['operation_type'] == 'decryption')
+    component_total_time = component_encryption_time + component_decryption_time
+    
+    # Create component entry
+    component_entry = {
+        'timestamp': datetime.now().isoformat(),
+        'component_info': process_info or {},
+        'summary': {
+            'gas_used': component_gas,
+            'eth_cost': component_eth,
+            'usd_cost': component_usd,
+            'steps_count': len(gas_tracking_data),
+            'file_operations_count': len(time_tracking_data),
+            'encryption_time_seconds': component_encryption_time,
+            'decryption_time_seconds': component_decryption_time,
+            'total_time_seconds': component_total_time
+        },
+        'gas_steps': gas_tracking_data.copy(),
+        'file_operations': time_tracking_data.copy()
+    }
+    
+    # Add component to existing data
+    existing_data['components'].append(component_entry)
+    
+    # Update total summary (now safe because we ensured all fields exist)
+    existing_data['total_summary']['total_gas'] += component_gas
+    existing_data['total_summary']['total_eth'] += component_eth
+    existing_data['total_summary']['total_usd'] += component_usd
+    existing_data['total_summary']['total_steps'] += len(gas_tracking_data)
+    existing_data['total_summary']['total_file_operations'] += len(time_tracking_data)
+    existing_data['total_summary']['total_encryption_time'] += component_encryption_time
+    existing_data['total_summary']['total_decryption_time'] += component_decryption_time
+    existing_data['last_updated'] = datetime.now().isoformat()
+    
+    # Save updated data
+    import json
+    with open(filename, 'w') as f:
+        json.dump(existing_data, f, indent=2)
+    
+    return filename
+
 def get_gas_tracking_data():
     """Return gas tracking data for analysis"""
     return gas_tracking_data.copy()
@@ -89,7 +351,15 @@ def clear_gas_tracking_data():
     """Clear gas tracking data"""
     global gas_tracking_data
     gas_tracking_data.clear()
-    print("[GAS TRACKER] Data cleared")
+    if not SILENT_MODE:
+        print("[GAS TRACKER] Data cleared")
+
+def clear_all_tracking_data():
+    """Clear both gas and time tracking data"""
+    clear_gas_tracking_data()
+    clear_time_tracking_data()
+    if not SILENT_MODE:
+        print("[TRACKER] All tracking data cleared")
 
 # MARTZK Dual-Function Implementation
 # Phase 1: Authority Setup - Use MA-ABE contract for setElementHashed, sendElements, etc.

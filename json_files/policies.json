@@ -1,6 +1,12 @@
 {
     "export_document_slice1.pdf": "(CUSTOMS@AUTH1 or ((LOGISTIC@AUTH1 and LOGISTIC@AUTH2) or MANUFACTURER@AUTH1))",
-    "export_document_slice2.pdf": "(CUSTOMS@AUTH1 or SUPPLIER@2+)",
+    "export_document_slice2.pdf": "((CUSTOMS@AUTH1 and INTERNATIONAL@AUTH2) or SUPPLIER@2+)",
     "export_document_slice3.pdf": "((SUPPLIER@AUTH3 and SUPPLIER@AUTH4 and ELECTRIC@AUTH2) or MANUFACTURER@AUTH1)",
-    "export_document_slice4.pdf": "(CUSTOMS@AUTH1 or ((SUPPLIER@AUTH2 and RAW@AUTH1) or (LOGISTIC@AUTH1 and LOGISTIC@AUTH2)))"
+    "export_document_slice4.pdf": "(CUSTOMS@AUTH1 or ((SUPPLIER@AUTH2 and RAW@AUTH1) or (LOGISTIC@AUTH1 and LOGISTIC@AUTH2)))",
+    "10kb.txt": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+    "100kb.txt": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+    "1mb.txt": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+    "10mb.txt": "( RAW@AUTH1 and SUPPLIER@AUTH2)",
+    "100mb.txt": "( RAW@AUTH1 and SUPPLIER@AUTH2)"
+
 }

@@ -10,6 +10,7 @@ import sqlite3
 import time
 import argparse
 from authorities_info import authorities_addresses_and_names_separated
+from datetime import datetime
 
 
 class Authority:
@@ -118,6 +119,14 @@ class Authority:
 
 
 def main():
+    # Initialize gas tracking (display mode to show performance tracking)
+    gas_price_gwei = float(config('GAS_PRICE_GWEI', default=5))
+    eth_price_usd = float(config('ETH_PRICE_USD', default=2000))
+    block_int.enable_gas_tracking(gas_price_gwei, eth_price_usd, silent=False)
+    
+    # Enable time tracking display mode
+    block_int.enable_time_tracking(silent=False)
+    
     groupObj = PairingGroup('SS512')
     maabe = MaabeRW15(groupObj)
     api = ipfshttpclient.connect('/ip4/127.0.0.1/tcp/5001')
@@ -131,17 +140,56 @@ def main():
     else:
         authority_number = args.authority
         authority = Authority(authority_number)
-        print("Phase 0.1")
+        
+        print(f"[AUTHORITY {authority_number}] Starting operations...")
+        
+        # Track performance for each authority operation
+        import time
+        
+        # 1. Authority Names Registration
+        start_time = time.time()
         authority.save_authorities_names(api, process_instance_id)
-        print("Phase 0.2")
+        end_time = time.time()
+        block_int.track_operation_performance("authority_setup", f"Authority_{authority_number}_Names_Registration", start_time, end_time)
+        
+        # 2. Initial Parameters Hashing
+        start_time = time.time()
         authority.initial_parameters_hashed(groupObj, process_instance_id)
-        print("Phase 0.3")
+        end_time = time.time()
+        block_int.track_operation_performance("authority_setup", f"Authority_{authority_number}_Initial_Parameters_Hashing", start_time, end_time)
+        
+        # 3. Initial Parameters Broadcasting
+        start_time = time.time()
         authority.initial_parameters(process_instance_id)
-        print("Phase 0.4")
+        end_time = time.time()
+        block_int.track_operation_performance("authority_setup", f"Authority_{authority_number}_Initial_Parameters_Broadcasting", start_time, end_time)
+        
+        # 4. Public Parameters Generation (with retry loop)
+        start_time = time.time()
+        retry_count = 0
         while not authority.generate_public_parameters(groupObj, maabe, api, process_instance_id):
+            retry_count += 1
+            print(f"[AUTHORITY {authority_number}] Waiting for other authorities... (retry {retry_count})")
             time.sleep(5)
-        print("Phase 0.5")
+        end_time = time.time()
+        additional_info = {"retry_count": retry_count, "wait_time_seconds": retry_count * 5}
+        block_int.track_operation_performance("authority_setup", f"Authority_{authority_number}_Public_Parameters_Generation", start_time, end_time, additional_info=additional_info)
+        
+        # 5. Public/Private Key Generation
+        start_time = time.time()
         authority.generate_pk_sk(groupObj, maabe, api, process_instance_id)
+        end_time = time.time()
+        block_int.track_operation_performance("authority_setup", f"Authority_{authority_number}_Key_Generation", start_time, end_time)
+        
+        print(f"[AUTHORITY {authority_number}] All operations completed!")
+        
+        # Save performance data
+        block_int.save_gas_data_to_json("size_scalability.json", {
+            "component": f"authority_{authority_number}",
+            "phase": "Phase_1_Authority_Setup"
+        })
+        
+        print(f"[AUTHORITY {authority_number}] Ready to process key requests")
 
 
 if __name__ == '__main__':

@@ -5,7 +5,6 @@ include "node_modules/circomlib/circuits/comparators.circom";
 template SimpleHash5() {
     signal input in[5];
     signal output out;
-    
     // Very simple hash: weighted sum of inputs (no modulo operations)
     signal weighted[5];
     weighted[0] <== in[0];
@@ -13,13 +12,11 @@ template SimpleHash5() {
     weighted[2] <== in[2] * 961;  // 31^2 = 961
     weighted[3] <== in[3] * 29791; // 31^3 = 29791
     weighted[4] <== in[4] * 923521; // 31^4 = 923521
-    
     signal partial_sums[4];
     partial_sums[0] <== weighted[0] + weighted[1];
     partial_sums[1] <== partial_sums[0] + weighted[2];
     partial_sums[2] <== partial_sums[1] + weighted[3];
     partial_sums[3] <== partial_sums[2] + weighted[4];
-    
     // Output the final sum directly (no modulo)
     out <== partial_sums[3];
 }

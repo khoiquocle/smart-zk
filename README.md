@@ -3,31 +3,6 @@
 ## Overview
 SMART-ZK is a comprehensive zero-knowledge proof system implementation that enables secure, real-time verification of supply chain data. The system uses a multi-authority approach to ensure trust and transparency across the supply chain network.
 
-## System Architecture
-
-### Core Components
-
-#### 1. Multi-Authority System
-- **Manufacturer Authority**: Initiates product verification
-- **Logistics Authority**: Handles shipping and delivery verification
-- **Retailer Authority**: Manages final product verification
-- **Coordinated Setup**: Ensures secure key distribution among authorities
-
-#### 2. Zero-Knowledge Proof System
-- **Proof Generation**: Creates cryptographic proofs for supply chain events
-- **Proof Verification**: Validates proofs without revealing sensitive data
-- **Real-time Verification**: Instant proof validation for supply chain operations
-
-#### 3. Blockchain Integration
-- **Smart Contracts**: Manages authority interactions and proof verification
-- **Gas Optimization**: Efficient transaction handling and cost management
-- **Event Logging**: Secure recording of supply chain events
-
-#### 4. Data Storage
-- **IPFS Integration**: Decentralized storage for large data objects
-- **PostgreSQL Database**: Structured data storage and querying
-- **Hybrid Storage**: Combines on-chain and off-chain storage solutions
-
 ### System Flow
 
 1. **Initialization Phase**
@@ -62,45 +37,6 @@ SMART-ZK is a comprehensive zero-knowledge proof system implementation that enab
    - Blockchain immutability
    - Secure database access controls
 
-## Technical Specifications
-
-### System Requirements
-- **Hardware**
-  - CPU: 4+ cores recommended
-  - RAM: 8GB minimum
-  - Storage: 50GB+ for full node
-
-- **Software**
-  - Python 3.x
-  - IPFS daemon
-  - SQLite
-  - Web3.py
-  - Node.js (for IPFS)
-
-### Network Configuration
-- **IPFS**
-  - API Port: 5001
-  - Gateway Port: 8080
-  - Swarm Port: 4001
-
-- **Database**
-  - Port: 5432
-  - User Authentication
-  - SSL Support
-
-- **Blockchain**
-  - Ethereum Network
-  - Gas Price Monitoring
-  - Transaction Pool Management
-
-## Prerequisites
-- Python 3.x
-- IPFS daemon
-- SQLite database
-- Required Python packages (install via pip):
-  ```bash
-  pip install web3 requests
-  ```
 
 ## Quick Start
 
@@ -113,13 +49,27 @@ ipfs daemon
 sh sh_files/db_and_IPFS.sh
 ```
 
-### 2. Run Gas Tracking
+### 2. Setup attribute certification
 ```bash
-# Basic gas tracking
-python3 src/simple_gas_tracker.py --gas-price 30 --eth-price 2500 --sender MANUFACTURER --requester LOGISTIC
+# Setup certification 
+sh certifications.sh --input ../json_files/roles.json
+```
+### 3. Setup authorities
+```bash
+bash authorities.sh
+```
+### 4. Distribute attributes
+```python
+python3 distribute_attributes.py
+```
+### 5. Encrypt data 
+```bash
+sh cipher.sh --sender_name LOGISTIC --input ../input_files/ --policies ../json_files/policies.json
+```
 
-# Enhanced benchmarking
-python3 src/benchmark_martzk_enhanced.py --help
+### 6. Decrypt data
+```bash
+sh decipher.sh --message_id last_message_id --slice_id slice1 --requester_name MANUFACTURER --output_folder ../output_files/
 ```
 
 ## Features
@@ -136,23 +86,6 @@ python3 src/benchmark_martzk_enhanced.py --help
 3. Coordinated Setup
 4. Enhanced Deciphering
 
-## Configuration
-
-### Gas Tracker Options
-- `--gas-price`: Gas price in Gwei (default: 20)
-- `--eth-price`: ETH price in USD (default: 2000)
-- `--sender`: Sender role (default: MANUFACTURER)
-- `--requester`: Requester role (default: MANUFACTURER)
-
-## Output
-The system generates detailed reports including:
-- Step-by-step execution logs
-- Gas costs per operation
-- Total workflow costs
-- Success/failure status
-- JSON reports for analysis
-
-## Performance Considerations
 
 ### Optimization Strategies
 1. **Gas Optimization**
@@ -170,7 +103,6 @@ The system generates detailed reports including:
    - Request batching
    - Load balancing
 
-## Troubleshooting
 
 ### Common Issues
 1. **IPFS Connection Error**
